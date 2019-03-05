@@ -1,0 +1,25 @@
+{
+  "name": "cdmx007-social-network",
+  "version": "1.0.0",
+  "description": "## Preámbulo",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiaramirez/CDMX007-social-network.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiaramirez/CDMX007-social-network/issues"
+  },
+  "homepage": "https://github.com/claudiaramirez/CDMX007-social-network#readme",
+  "devDependencies": {
+    "jest": "^24.1.0"
+  }
+}
