@@ -1,0 +1,19 @@
+{
+  "name": "cdmx007-social-network",
+  "version": "1.0.0",
+  "description": "Package json para social media",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GENESIS-ENRIQUEZ/CDMX007-social-network.git"
+  },
+  "author": "Cristal García, Brenda Vasques, Génesis Enríquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GENESIS-ENRIQUEZ/CDMX007-social-network/issues"
+  },
+  "homepage": "https://github.com/GENESIS-ENRIQUEZ/CDMX007-social-network#readme"
+}
