@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/GENESIS-ENRIQUEZ/CDMX007-social-network/issues"
   },
-  "homepage": "https://github.com/GENESIS-ENRIQUEZ/CDMX007-social-network#readme"
+  "homepage": "https://github.com/GENESIS-ENRIQUEZ/CDMX007-social-network#readme",
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "htmlhint": "^0.11.0",
+    "jest": "^24.3.0"
+  }
 }
