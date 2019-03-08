@@ -117,6 +117,13 @@ function watcher() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log('usuario activo');
+      if(user.emailVerified == true) {
+        window.location.replace('main.html');
+        console.log('main.html')
+      } 
+      if(user.emailVerified == false) {
+      console.log('verifica tu correo') 
+      }
       // User is signed in.
       var displayName = user.displayName;
       var email = user.email;
@@ -133,12 +140,12 @@ function watcher() {
       console.log('no existe usuario activo');
     }
   });
-}
+}watcher();
 
-watcher();
-
+// funcion para entar a pagina principal (main.html)
+/*
 function loged(){
   window.location.replace('main.html');
   console.log(document.getElementById('btnLogout')) 
 
-  }
+  }*/

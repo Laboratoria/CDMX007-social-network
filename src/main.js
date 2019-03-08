@@ -32,5 +32,5 @@ var mainApp = {};
             console.log(error)
         })
     }),
-    mainApp.logOut = logOut;
+    mainApp.logOut
   })()
