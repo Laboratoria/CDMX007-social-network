@@ -116,7 +116,7 @@ const textPassword2 = document.getElementById('txtPassword2');
 function watcher() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      console.log('usuario activo');
+      console.log(user);
       // User is signed in.
       var displayName = user.displayName;
       var email = user.email;
