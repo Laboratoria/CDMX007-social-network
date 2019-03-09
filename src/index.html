@@ -32,55 +32,80 @@
                 <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
             </div>
         </div>
+        <div class="col s12 center"><a class="waves-effect waves-light btn modal-trigger" href="#modal1">LogIN</a>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Registro</a></div>
 
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                    </div>
+        <!-- Modal logIn -->
+        <div class="col s12">
+            <div class="row">
+                <div id="modal1" class="modal bottom-sheet">
+                    <div class="modal-content">
+                        <h4>LOGIN</h4>
+                        <div class="row">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="email" type="email" class="validate">
+                                    <label for="email">Email</label>
+                                </div>
 
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Password</label>
+                                <div class="input-field col s12">
+                                    <input id="password" type="password" class="validate">
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Entrar</a>
                         </div>
                     </div>
-                    
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-
                 </div>
+            </div>
         </div>
-        </form>
-    </div>
 
+        <!-- Modal Registro -->
+        <div class="col s12">
+            <div class="row">
+                <div id="modal2" class="modal bottom-sheet">
+                    <div class="modal-content">
+                        <h4>Registro</h4>
+                        <div class="row">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="email" type="email" class="validate">
+                                    <label for="email">Email</label>
+                                </div>
 
-    </div>
+                                <div class="input-field col s12">
+                                    <input id="password" type="password" class="validate">
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Entrar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <h1>Social Network</h1>
-    <h2>Registro de usuarios</h2>
-    <input id="txtEmail" type="email">
-    <input id="txtPassword" type="password">
-    <button id="btnSignUp" class="btn btn-secondary">Sign up</button>
+        <h1>Social Network</h1>
+        <h2>Registro de usuarios</h2>
+        <input id="txtEmail" type="email">
+        <input id="txtPassword" type="password">
+        <button id="btnSignUp" class="btn btn-secondary">Sign up</button>
 
-    <h2>Ingreso de usuarios</h2>
-    <input id="txtEmail2" type="email">
-    <input id="txtPassword2" type="password">
-    <button id="btnLogin" class="btn btn-action">Log in</button>
-    <div id='main'></div>
+        <h2>Ingreso de usuarios</h2>
+        <input id="txtEmail2" type="email">
+        <input id="txtPassword2" type="password">
+        <button id="btnLogin" class="btn btn-action">Log in</button>
+        <div id='main'></div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="firebase.js"></script>
-    <script src="app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="firebase.js"></script>
+        <script src="app.js"></script>
 
 </body>
 
