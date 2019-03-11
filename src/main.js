@@ -32,7 +32,7 @@ var mainApp = {};
         }
     });
 
-
+// comentario
     btnLogout.addEventListener('click', function logOut() {
             //pop up de confirmación
             firebase.auth().signOut()
