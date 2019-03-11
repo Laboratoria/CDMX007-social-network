@@ -36,7 +36,7 @@ const textPassword2 = document.getElementById('password-register');
 btnLogin.addEventListener('click', e => {
   const email2 = txtEmail2.value;
   const pass2 = textPassword2.value;
-  console.log(email2, pass2);
+  console.log("eres un usuario Activo");
   firebase.auth().signInWithEmailAndPassword(email2, pass2).catch(function (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
