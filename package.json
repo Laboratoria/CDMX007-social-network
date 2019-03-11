@@ -4,11 +4,11 @@
   "description": "Package json para social media",
   "main": "index.js",
   "scripts": {
-   "htmlhint": "htmlhint src/*.html test/*.html",
-   "eslint": "eslint --ext .js src/ test/",
-   "pretesto": "npm run eslint && npm run htmlhint",
-   "test": "jest --coverage"
- },
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "pretesto": "npm run eslint && npm run htmlhint",
+    "test": "jest --coverage"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GENESIS-ENRIQUEZ/CDMX007-social-network.git"
