@@ -1,11 +1,11 @@
 // Initialize Firebase
   // TODO: Replace with your project's customized code snippet
   var config = {
-    apiKey: "<API_KEY>",
-    authDomain: "<PROJECT_ID>.firebaseapp.com",
-    databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-    projectId: "<PROJECT_ID>",
-    storageBucket: "<BUCKET>.appspot.com",
-    messagingSenderId: "<SENDER_ID>",
+    apiKey: "AIzaSyAeaCttqga9RVnvSt9UWlVvUKrBbx-aJJY",
+    authDomain: "red-social-695d2.firebaseapp.com",
+    databaseURL: "https://red-social-695d2.firebaseio.com",
+    projectId: "red-social-695d2",
+    storageBucket: "red-social-695d2.appspot.com",
+    messagingSenderId: "1072623047426"
   };
   firebase.initializeApp(config);
