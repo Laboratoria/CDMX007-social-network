@@ -178,11 +178,9 @@ db.collection("users").doc(id).delete().then(function() {
 }
 
 //función para editar documentos 
-
 function editUsers(id){
  txtEmail.value
  txtName.value
-
 
 var washingtonRef = db.collection("users").doc(id);
 // Set the "capital" field of the city 'DC'
