@@ -80,7 +80,7 @@ const textPassword2 = document.getElementById('txtPassword2');
 btnLogin.addEventListener('click', e => {
   const email2 = txtEmail2.value;
   const pass2 = textPassword2.value;
-  console.log("eres un usuario Activo");
+  console.log(email2, pass2);
   firebase.auth().signInWithEmailAndPassword(email2, pass2).catch(function (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
