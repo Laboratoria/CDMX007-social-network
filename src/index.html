@@ -8,7 +8,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!--estilos sin framework-->
@@ -16,9 +16,16 @@
 </head>
 <body>
     <main>
+    <nav>
+        <ul>
+            <li><a href=""><img class="img_nav" src="images/homeblack.svg" alt="home"></a></li>
+            <li><a href=""><img class="img_nav" src="images/addblack.svg" alt="more"></a></li>
+            <li><a href=""><img class="img_nav" src="images/profileblack.svg" alt="profile"></a></li>
+        </ul>
+    </nav>
     <div class="container">
         <section class="login-registrer">
-            <h1>Social Network</h1>
+            <h1>SproutThink</h1>
             <h2>Registro de usuarios</h2>
             <input id="name" placeholder= "Nombre completo" type="text">
             <input id="user-name" placeholder= "Nombre de usuario" type="text">
@@ -32,9 +39,11 @@
             <input id= "txtPassword2" type="password">
             <button id = "btnLogin" class= "btn btn-action">Iniciar Sesión</button>
         </section>
-        <section id="container-feed"> Escribe tu primera publicación</section>
+        <section id="container-feed"> 
+            <p>Escribe tu primera publicación</p>
+        </section>
         <section id= "profile">
-            <table class = "table">
+            <table class= "table">
                 <thead>
                     <tr>
                         <th>Email</th>
@@ -59,7 +68,7 @@
     <!---archivo local--->
     <script src= "firebase.js"></script>
      <!---materialize--->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script src= "app.js"></script> 
 </body>
 </html>
