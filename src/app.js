@@ -5,6 +5,7 @@ const btnSingUp = document.getElementById('btnSignUp');
 const txtName = document.getElementById('name');
 const txtUserName = document.getElementById('user-name');
 const txtBirthday = document.getElementById('birthday');
+const btnSaveProfile = document.getElementById('save-profile');
 
 var config = {
   apiKey: "AIzaSyA-br4fjgN3TqUQgfE-Y2eGzfdajBuwa_Q",
@@ -154,7 +155,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
   querySnapshot.forEach(function(doc) {
       // doc.data() is never undefined for query doc snapshots
       //obtiene datos de firestore y los pinta en tiempo real
-      console.log(`${doc.id} => ${doc.data()}`);
+      
       table.innerHTML += `
       <tr>
                 <td>${doc.data().email}</td>
@@ -162,7 +163,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
                 <td>${doc.data().user}</td>
                 <td>${doc.data().birthday}</td>
                 <td><button onclick="removeUsers('${doc.id}')">Eliminar</button></td>
-                <td><button onclick="editUsers('${doc.id}', '${doc.data().email})','${doc.data().name}', '${doc.data().user})')'">Editar</button></td>
+                <td><button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button></td>
       </tr>
       `
   });
@@ -176,19 +177,26 @@ db.collection("users").doc(id).delete().then(function() {
   console.error("Error removing document: ", error);
 });
 }
-
 //función para editar documentos 
-function editUsers(id){
- txtEmail.value
- txtName.value
+function editUsers(id, email, name, user, birthday){
+ txtEmail.value = email
+ txtName.value =  name
+ txtUserName.value = user
+ txtBirthday.value = birthday   
 
-var washingtonRef = db.collection("users").doc(id);
+ btnSaveProfile.addEventListener('click', function(){
+  var washingtonRef = db.collection("users").doc(id);
+
+
+ var email = txtEmail.value
+ var name = txtName.value
+ var user = txtUserName.value
+ var birthday = txtBirthday.value
 // Set the "capital" field of the city 'DC'
 return washingtonRef.update({
   email: email,
-  password: password,
   name: name,
-  user: userName,
+  user: user,
   birthday: birthday
 })
 .then(function() {
@@ -198,4 +206,10 @@ return washingtonRef.update({
     // The document probably doesn't exist.
     console.error("Error updating document: ", error);
 });
+
+
+
+ })
+
+
 }
