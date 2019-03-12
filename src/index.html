@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SproutThink</title>
     <!--Import Google Icon Font-->
@@ -15,55 +14,73 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <main>
-            <nav class="top-nav">
-                <ul>
-                    <li><a href="#" data-target="home" class="nav-link"><img class="img_nav" src="images/homeblack.svg" data-target="home" alt="home"></a></li>
-                    <li><a href="#" data-target="list" class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
-                    <li><a href="#" data-target="detail" class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
-                </ul>
-            </nav>
-                <div class="container">
-                <div class="page active" id="home">
-                    <h1>Home</h1>
-                    
-                    <section class="login-registrer">
-                            <h1>SproutThink</h1>
-                            <h2>Registro de usuarios</h2>
-                            <input id="name" placeholder= "Nombre completo" type="text">
-                            <input id="user-name" placeholder= "Nombre de usuario" type="text">
-                            <input id="birthday" placeholder= "Fecha de nacimiento" type="text">
-                            <input id= "txtEmail" placeholder= "Correo electrónico" type="email">
-                            <input id= "txtPassword" placeholder= "Contraseña" type="password">
-                            <button id= "btnSignUp">Registrate</button>
-                
-                            <h2>Ingreso de usuarios</h2>
-                            <input id= "txtEmail2" type="email">
-                            <input id= "txtPassword2" type="password">
-                            <button id = "btnLogin" class= "btn btn-action">Iniciar Sesión</button>
-                        </section>
-                </div>
-                <div class="page" id="list">
-                   
-                    <h1>List</h1>
-                    <!-- <ul>
-                        <li><a href="#" data-target="home" class="nav-link">HOME</a></li>
-                        <li><a href="#" data-target="list" class="nav-link">LIST</a></li>
-                        <li><a href="#" data-target="detail" class="nav-link">DETAIL</a></li>
-                    </ul> -->
+    <main>
             
-                    <section id="container-feed"> 
-                            <p>Escribe tu primera publicación</p>
-                        </section>
+        <div class="page active" id="home">
+                <section class="login-registrer">
+                        <h1>SproutThink</h1>
+                        <h2>Registro de usuarios</h2>
+                        <input id="name" placeholder= "Nombre completo" type="text">
+                        <input id="user-name" placeholder= "Nombre de usuario" type="text">
+                        <input id="birthday" placeholder= "Fecha de nacimiento" type="text">
+                        <input id= "txtEmail" placeholder= "Correo electrónico" type="email">
+                        <input id= "txtPassword" placeholder= "Contraseña" type="password">
+                        <button id= "btnSignUp">Registrate</button>
+                        
+                        <h2>Ingreso de usuarios</h2>
+                        <input id= "txtEmail2" type="email">
+                        <input id= "txtPassword2" type="password">
+                        <button id = "btnLogin" >Iniciar Sesión</button>
+                        <!-- <a href="#" data-target="home2" class="nav-link btn btn-action" id= "btnLogin">Iniciar Sesión</a> -->
+                </section>
+        </div>
+        <div class="container">
+            <div class="page" id="home2">
+                    <nav class="top-nav">
+                            <ul>
+                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/homeblack.svg" data-target="home2" alt="home"></a></li>
+                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
+                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
+                            </ul>
+                        </nav>
+                <h1>Noticias</h1>
+                <section id="container-feed"> 
+                    <p>Escribe tu primera publicación</p>
+                </section>
+            </div>
+            <div class="page" id="list">
+                    <nav class="top-nav">
+                            <ul>
+                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/homeblack.svg" data-target="home2" alt="home"></a></li>
+                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
+                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
+                            </ul>
+                        </nav>
+                <h1>Publicar</h1>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>Publicar</button>
+                <div class="row">
+                <div class="input-field col s12">
+                    <select>
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                    </select>
+                    <label>Materialize Select</label>
                 </div>
+                </div>
+            </div>
                 
-                <div class="page" id="detail">
-                    <h1>Detail</h1>
-                    <!-- <ol>
-                        <li><a href="#" data-target="home" class="nav-link">HOME</a></li>
-                        <li><a href="#" data-target="list" class="nav-link">LIST</a></li>
-                        <li><a href="#" data-target="detail" class="nav-link">DETAIL</a></li>
-                    </ol> -->
+            <div class="page" id="detail">
+                    <nav class="top-nav">
+                            <ul>
+                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/homeblack.svg" data-target="home2" alt="home"></a></li>
+                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
+                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
+                            </ul>
+                        </nav>
+                <h1>perfil</h1>
                     <section id= "profile">
                         <table class= "table">
                             <thead>
@@ -79,20 +96,18 @@
                         </table>
                         <button id="save-profile">Guardar</button>
                     </section>
-                </div>
-            </div>   
-            </main>
+             </div>
+        </div>   
+    </main>
 
     <!---firebase cdn--->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <!---firestore--->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script> -->
-    <!---archivo local--->
-    <!-- <script src= "firebase.js"></script> -->
      <!---materialize--->
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script src= "app.js"></script> 
     <script src= "spa.js"></script>
+    <script src= "interactividad.js"></script>
 </body>
 </html>

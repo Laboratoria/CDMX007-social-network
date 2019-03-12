@@ -122,6 +122,7 @@ const container = document.getElementById('container-feed');
 function loged(user) {
   var user = user;
   if (user.emailVerified) {
+    window.location.href = '#home2'
     // aqui va funcion para SPA
     container.innerHTML =
     `<div><h1>feed ${user.email}</h1>
@@ -136,6 +137,7 @@ function logOut() {
   firebase.auth().signOut()
     .then(function () {
       console.log('saliendo..')
+      window.location.href = '#home'
     })
     .catch(function (error) {
       console.log(error)
