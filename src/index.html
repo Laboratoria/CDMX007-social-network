@@ -15,60 +15,84 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-    <nav>
-        <ul>
-            <li><a href=""><img class="img_nav" src="images/homeblack.svg" alt="home"></a></li>
-            <li><a href=""><img class="img_nav" src="images/addblack.svg" alt="more"></a></li>
-            <li><a href=""><img class="img_nav" src="images/profileblack.svg" alt="profile"></a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <section class="login-registrer">
-            <h1>SproutThink</h1>
-            <h2>Registro de usuarios</h2>
-            <input id="name" placeholder= "Nombre completo" type="text">
-            <input id="user-name" placeholder= "Nombre de usuario" type="text">
-            <input id="birthday" placeholder= "Fecha de nacimiento" type="text">
-            <input id= "txtEmail" placeholder= "Correo electrónico" type="email">
-            <input id= "txtPassword" placeholder= "Contraseña" type="password">
-            <button id= "btnSignUp">Registrate</button>
-
-            <h2>Ingreso de usuarios</h2>
-            <input id= "txtEmail2" type="email">
-            <input id= "txtPassword2" type="password">
-            <button id = "btnLogin" class= "btn btn-action">Iniciar Sesión</button>
-        </section>
-        <section id="container-feed"> 
-            <p>Escribe tu primera publicación</p>
-        </section>
-        <section id= "profile">
-            <table class= "table">
-                <thead>
-                    <tr>
-                        <th>Email</th>
-                        <th>Nombre</th>
-                        <th>Nombre de usuario</th>
-                        <th>Fecha de nacimiento</th>
-                    </tr>
-                </thead>
-                <tbody id = "table2">
-                </tbody>
-            </table>
-            <button id="save-profile">Guardar</button>
-        </section>
-    </div>
-    </main>
+        <main>
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="#" data-target="home" class="nav-link"><img class="img_nav" src="images/homeblack.svg" data-target="home" alt="home"></a></li>
+                    <li><a href="#" data-target="list" class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
+                    <li><a href="#" data-target="detail" class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
+                </ul>
+            </nav>
+                <div class="container">
+                <div class="page active" id="home">
+                    <h1>Home</h1>
+                    
+                    <section class="login-registrer">
+                            <h1>SproutThink</h1>
+                            <h2>Registro de usuarios</h2>
+                            <input id="name" placeholder= "Nombre completo" type="text">
+                            <input id="user-name" placeholder= "Nombre de usuario" type="text">
+                            <input id="birthday" placeholder= "Fecha de nacimiento" type="text">
+                            <input id= "txtEmail" placeholder= "Correo electrónico" type="email">
+                            <input id= "txtPassword" placeholder= "Contraseña" type="password">
+                            <button id= "btnSignUp">Registrate</button>
+                
+                            <h2>Ingreso de usuarios</h2>
+                            <input id= "txtEmail2" type="email">
+                            <input id= "txtPassword2" type="password">
+                            <button id = "btnLogin" class= "btn btn-action">Iniciar Sesión</button>
+                        </section>
+                </div>
+                <div class="page" id="list">
+                   
+                    <h1>List</h1>
+                    <!-- <ul>
+                        <li><a href="#" data-target="home" class="nav-link">HOME</a></li>
+                        <li><a href="#" data-target="list" class="nav-link">LIST</a></li>
+                        <li><a href="#" data-target="detail" class="nav-link">DETAIL</a></li>
+                    </ul> -->
+            
+                    <section id="container-feed"> 
+                            <p>Escribe tu primera publicación</p>
+                        </section>
+                </div>
+                
+                <div class="page" id="detail">
+                    <h1>Detail</h1>
+                    <!-- <ol>
+                        <li><a href="#" data-target="home" class="nav-link">HOME</a></li>
+                        <li><a href="#" data-target="list" class="nav-link">LIST</a></li>
+                        <li><a href="#" data-target="detail" class="nav-link">DETAIL</a></li>
+                    </ol> -->
+                    <section id= "profile">
+                        <table class= "table">
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Nombre</th>
+                                    <th>Nombre de usuario</th>
+                                    <th>Fecha de nacimiento</th>
+                                </tr>
+                            </thead>
+                            <tbody id = "table2">
+                            </tbody>
+                        </table>
+                        <button id="save-profile">Guardar</button>
+                    </section>
+                </div>
+            </div>   
+            </main>
 
     <!---firebase cdn--->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <!---firestore--->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script> -->
     <!---archivo local--->
-    <script src= "firebase.js"></script>
+    <!-- <script src= "firebase.js"></script> -->
      <!---materialize--->
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script src= "app.js"></script> 
+    <script src= "spa.js"></script>
 </body>
 </html>
