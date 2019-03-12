@@ -1,4 +1,7 @@
 
+
+
+
 /*
 // manejador de eventos para loguearse
 document.getElementById('buttonGoogle').addEventListener('click', function() {
