@@ -4,51 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>SproutThink</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--estilos sin framework-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+    <div class="container">
+        <section class="login-registrer">
+            <h1>Social Network</h1>
+            <h2>Registro de usuarios</h2>
+            <input id="name" placeholder= "Nombre completo" type="text">
+            <input id="user-name" placeholder= "Nombre de usuario" type="text">
+            <input id="birthday" placeholder= "Fecha de nacimiento" type="text">
+            <input id= "txtEmail" placeholder= "Correo electrónico" type="email">
+            <input id= "txtPassword" placeholder= "Contraseña" type="password">
+            <button id= "btnSignUp">Registrate</button>
+
+            <h2>Ingreso de usuarios</h2>
+            <input id= "txtEmail2" type="email">
+            <input id= "txtPassword2" type="password">
+            <button id = "btnLogin" class= "btn btn-action">Iniciar Sesión</button>
+        </section>
+        <section id="container-feed"> Escribe tu primera publicación</section>
+        <section id= "profile">
+            <table class = "table">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Nombre</th>
+                        <th>Nombre de usuario</th>
+                        <th>Fecha de nacimiento</th>
+                    </tr>
+                </thead>
+                <tbody id = "table2">
+                </tbody>
+            </table>
+            <button id="save-profile">Guardar</button>
+        </section>
+    </div>
+    </main>
+
     <!---firebase cdn--->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <!---firestore--->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
-    <link rel="stylesheet" href="style.css">
-    
-</head>
-<body>
-    <main>
-    <div class="container">
-    <h1>Social Network</h1>
-    <h2>Registro de usuarios</h2>
-    <input id="name" placeholder= "Nombre completo" type="text">
-    <input id="user-name" placeholder= "Nombre de usuario" type="text">
-    <input id="birthday" placeholder= "Fecha de nacimiento" type="text">
-    <input id= "txtEmail" placeholder= "Correo electrónico" type="email">
-    <input id= "txtPassword" placeholder= "Contraseña" type="password">
-    <button id= "btnSignUp">Registrate</button>
-
-    <h2>Ingreso de usuarios</h2>
-    <input id= "txtEmail2" type="email">
-    <input id= "txtPassword2" type="password">
-    <button id = "btnLogin" class= "btn btn-action">Iniciar Sesión</button>
-    <section id="container-feed"></section>
-    <section id= "profile">
-        
-        <table class = "table">
-        <thead>
-            <tr>
-                <th>Email</th>
-                <th>Nombre</th>
-                <th>Nombre de usuario</th>
-                <th>Fecha de nacimiento</th>
-            </tr>
-        </thead>
-        <tbody id = "table2">
-        </tbody>
-    </table>
-    <button id="save-profile">Guardar</button>
-    </section>
-    </div>
-    </main>
+    <!---archivo local--->
     <script src= "firebase.js"></script>
-    <script src= "app.js"></script>
+     <!---materialize--->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src= "app.js"></script> 
 </body>
 </html>

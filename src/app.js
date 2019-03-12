@@ -6,7 +6,7 @@ const txtName = document.getElementById('name');
 const txtUserName = document.getElementById('user-name');
 const txtBirthday = document.getElementById('birthday');
 const btnSaveProfile = document.getElementById('save-profile');
-
+/*Inicializacion para enlazar el proyecto a firebase */
 var config = {
   apiKey: "AIzaSyA-br4fjgN3TqUQgfE-Y2eGzfdajBuwa_Q",
   authDomain: "red-social-laboratoriamx.firebaseapp.com",
@@ -16,11 +16,9 @@ var config = {
   messagingSenderId: "727465925051"
 };
 firebase.initializeApp(config);
-
+/*nombre a la base de datos*/
 var db = firebase.firestore();
-
-
-
+/*para crear usuario*/
 btnSingUp.addEventListener('click', e => {
   const email = txtEmail.value;
   console.log(email)
@@ -35,7 +33,7 @@ btnSingUp.addEventListener('click', e => {
       var errorMessage = error.message;
     })
 });
-
+/*Guarda la informacion en la bd users*/
 function saveData() {
   var email = txtEmail.value;
   var password = txtPassword.value;
@@ -60,11 +58,9 @@ function saveData() {
       console.error("Error adding document: ", error);
     });
 }
-
-
+/* Verificacion de correo electronico*/
 function verify() {
   var user = firebase.auth().currentUser;
-
   user.sendEmailVerification().then(function () {
     // Email sent.
     console.log('sending email');
@@ -73,7 +69,7 @@ function verify() {
     console.log(error);
   });
 }
-
+/* boton para iniciar sesión*/
 const txtEmail2 = document.getElementById('txtEmail2');
 const textPassword2 = document.getElementById('txtPassword2');
 
@@ -86,8 +82,7 @@ btnLogin.addEventListener('click', e => {
     var errorMessage = error.message;
     console.log(errorCode);
     console.log(errorMessage);
-
-    //inner contraseña o correo invalido
+    //inner contraseña o correo invalido********
   });
 });
 
@@ -118,23 +113,23 @@ function watcher() {
       // ...
       console.log('no existe usuario activo');
       container.innerHTML = ``;
-
     }
   });
 } watcher();
 
 const container = document.getElementById('container-feed');
-// funcion para entar a pagina principal (feed)
+/* funcion para entar a pagina principal (feed)*/
 function loged(user) {
   var user = user;
-
   if (user.emailVerified) {
     // aqui va funcion para SPA
     container.innerHTML =
-      `<div><h1>feed ${user.email}</h1>
-   <button onClick="logOut()"  class= "btn btn-action">Cerrar Sesión</button></div>`;
+    `<div><h1>feed ${user.email}</h1>
+    <button onClick="logOut()"  class= "btn btn-action">Cerrar Sesión</button></div>`;
   }
 }
+
+/* Boton de cerrar sesión*/
 const btnLogout = document.getElementById('btnLogout');
 function logOut() {
   //pop up de confirmación
@@ -147,69 +142,60 @@ function logOut() {
     })
 }
 
-
-//leer documento firestone
+/*leer documento firestone*/
 var table = document.getElementById('table2');
 db.collection("users").onSnapshot((querySnapshot) => {
   table.innerHTML= "";
   querySnapshot.forEach(function(doc) {
       // doc.data() is never undefined for query doc snapshots
       //obtiene datos de firestore y los pinta en tiempo real
-      
       table.innerHTML += `
       <tr>
-                <td>${doc.data().email}</td>
-                <td>${doc.data().name}</td>
-                <td>${doc.data().user}</td>
-                <td>${doc.data().birthday}</td>
-                <td><button onclick="removeUsers('${doc.id}')">Eliminar</button></td>
-                <td><button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button></td>
-      </tr>
-      `
+        <td>${doc.data().email}</td>
+        <td>${doc.data().name}</td>
+        <td>${doc.data().user}</td>
+        <td>${doc.data().birthday}</td>
+        <td><button onclick="removeUsers('${doc.id}')">Eliminar</button></td>
+        <td><button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button></td>
+      </tr>`
   });
 });
 
-//función para borrar documentos 
+/*función para borrar documentos*/ 
 function removeUsers(id){ 
-db.collection("users").doc(id).delete().then(function() {
-  console.log("Document successfully deleted!");
-}).catch(function(error) {
-  console.error("Error removing document: ", error);
-});
+  db.collection("users").doc(id).delete().then(function() {
+    console.log("Document successfully deleted!");
+  }).catch(function(error) {
+    console.error("Error removing document: ", error);
+  });
 }
-//función para editar documentos 
+/*función para editar perfil*/ 
 function editUsers(id, email, name, user, birthday){
- txtEmail.value = email
- txtName.value =  name
- txtUserName.value = user
- txtBirthday.value = birthday   
+  txtEmail.value = email
+  txtName.value =  name
+  txtUserName.value = user
+  txtBirthday.value = birthday   
 
- btnSaveProfile.addEventListener('click', function(){
-  var washingtonRef = db.collection("users").doc(id);
-
-
- var email = txtEmail.value
- var name = txtName.value
- var user = txtUserName.value
- var birthday = txtBirthday.value
-// Set the "capital" field of the city 'DC'
-return washingtonRef.update({
-  email: email,
-  name: name,
-  user: user,
-  birthday: birthday
-})
-.then(function() {
-    console.log("Document successfully updated!");
-})
-.catch(function(error) {
-    // The document probably doesn't exist.
-    console.error("Error updating document: ", error);
-});
-
-
-
- })
-
-
+  btnSaveProfile.addEventListener('click', function(){
+    var washingtonRef = db.collection("users").doc(id);
+    
+    var email = txtEmail.value
+    var name = txtName.value
+    var user = txtUserName.value
+    var birthday = txtBirthday.value
+    // Set the "capital" field of the city 'DC'
+    return washingtonRef.update({
+      email: email,
+      name: name,
+      user: user,
+      birthday: birthday
+    })
+    .then(function() {
+        console.log("Document successfully updated!");
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
+  })
 }
