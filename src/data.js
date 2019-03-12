@@ -1,1 +1,0 @@
-secc1.innerHTML = `Hola ${JSON.parse(localStorage.getItem('user'))
