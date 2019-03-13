@@ -34,6 +34,8 @@ btnSingUp.addEventListener('click', e => {
     })
 });
 /*Guarda la informacion en la bd users*/
+
+
 function saveData() {
   var email = txtEmail.value;
   var password = txtPassword.value;
@@ -122,7 +124,7 @@ const container = document.getElementById('container-feed');
 function loged(user) {
   var user = user;
   if (user.emailVerified) {
-    window.location.href = '#home2'
+     window.location.href = '#home2'
     // aqui va funcion para SPA
     container.innerHTML =
     `<div><h1>feed ${user.email}</h1>
@@ -151,7 +153,8 @@ db.collection("users").onSnapshot((querySnapshot) => {
   querySnapshot.forEach(function(doc) {
       // doc.data() is never undefined for query doc snapshots
       //obtiene datos de firestore y los pinta en tiempo real
-      table.innerHTML += `
+      table.innerHTML += 
+      /*`
       <tr>
         <td>${doc.data().email}</td>
         <td>${doc.data().name}</td>
@@ -159,7 +162,16 @@ db.collection("users").onSnapshot((querySnapshot) => {
         <td>${doc.data().birthday}</td>
         <td><button onclick="removeUsers('${doc.id}')">Eliminar</button></td>
         <td><button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button></td>
-      </tr>`
+      </tr>`*/
+
+      `
+      <input id="nameProfile" placeholder= "Nombre completo" type="text" value="${doc.data().name}">
+      <input id="user-nameProfile" placeholder= "Nombre de usuario" type="text" value="${doc.data().user}">
+      <input id="birthdayProfile" placeholder= "Fecha de nacimiento" type="text" value="${doc.data().birthday}">
+      <input id= "txtEmailProfile" placeholder= "Correo electrónico" type="email" value="${doc.data().email}">
+      <button onclick="removeUsers('${doc.id}')">Eliminar</button>
+      <button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button>
+      `
   });
 });
 
@@ -172,6 +184,12 @@ function removeUsers(id){
   });
 }
 /*función para editar perfil*/ 
+const txtNameProfile = document.getElementById('nameProfile');
+const txtUserNameProfile = document.getElementById('user-nameProfile');
+const txtBirthdayProfile = document.getElementById('birthdayProfile');
+const txtEmailProfile = document.getElementById('txtEmailProfile');
+const txtPasswordProfile = document.getElementById('txtPasswordProfile');
+
 function editUsers(id, email, name, user, birthday){
   txtEmail.value = email
   txtName.value =  name

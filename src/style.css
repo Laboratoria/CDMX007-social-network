@@ -14,6 +14,9 @@
     /* position: fixed;  or absolute if the user needs to scroll for more content */
     
 }
+.hide{
+    display: none;
+}
 .active{
     display: block; 
 }
