@@ -7,7 +7,7 @@ const txtUserName = document.getElementById('user-name');
 const txtBirthday = document.getElementById('birthday');
 const btnSaveProfile = document.getElementById('save-profile');
 
-/*Inicializacion para enlazar el proyecto a firebase */
+//Inicializacion para enlazar el proyecto a firebase //
 var config = {
   apiKey: "AIzaSyA-br4fjgN3TqUQgfE-Y2eGzfdajBuwa_Q",
   authDomain: "red-social-laboratoriamx.firebaseapp.com",
@@ -16,10 +16,13 @@ var config = {
   storageBucket: "red-social-laboratoriamx.appspot.com",
   messagingSenderId: "727465925051"
 };
+
 firebase.initializeApp(config);
-/*nombre a la base de datos*/
+
+// Nombre a la base de datos
 var db = firebase.firestore();
-/*para crear usuario*/
+
+// Para crear usuario
 btnSingUp.addEventListener('click', e => {
   const email = txtEmail.value;
   console.log(email)
