@@ -16,9 +16,9 @@ const app = {
     nav: function(ev){
         ev.preventDefault();
         let currentPage = ev.target.getAttribute('data-target');
+        console.log(currentPage)
         document.querySelector('.active').classList.remove('active');
         document.getElementById(currentPage).classList.add('active');
-        console.log(currentPage)
         history.pushState({}, currentPage, `#${currentPage}`);
         document.getElementById(currentPage).dispatchEvent(app.show);
     },
@@ -38,8 +38,7 @@ const app = {
         console.log(hash)
         //history.pushState({}, currentPage, `#${currentPage}`);
         document.getElementById(hash).dispatchEvent(app.show);
-        
+
     }
 }
-
 document.addEventListener('DOMContentLoaded', app.init);
