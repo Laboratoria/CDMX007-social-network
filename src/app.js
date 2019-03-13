@@ -219,3 +219,37 @@ function editUsers(id, email, name, user, birthday){
     });
   })
 }
+
+//Agregar post
+/*Guarda la informacion en la bd post*/
+const btnPost = document.getElementById('btn-post')
+btnPost.addEventListener('click', saveDataInPostColection => {
+  const txtPost = document.getElementById('txtPost')
+  var post = txtPost.value;
+  db.collection("post").add({
+    post: post
+  })
+    .then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+      txtPost.value = "";
+    })
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
+    });
+})
+
+/*leer documento firestone*/
+var showPost = document.getElementById('showPost');
+db.collection("post").onSnapshot((querySnapshot) => {
+  showPost.innerHTML= "";
+  querySnapshot.forEach(function(doc) {
+      // doc.data() is never undefined for query doc snapshots
+      //obtiene datos de firestore y los pinta en tiempo real
+      showPost.innerHTML += `
+      <div>
+        <p>${doc.data().post}</p>
+        <button onclick="removeUsers('${doc.id}')">Eliminar</button>
+        <button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button>
+      </>`  
+    });
+});
