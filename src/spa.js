@@ -38,6 +38,7 @@ const app = {
         console.log(hash)
         //history.pushState({}, currentPage, `#${currentPage}`);
         document.getElementById(hash).dispatchEvent(app.show);
+        
     }
 }
 

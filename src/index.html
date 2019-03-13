@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SproutThink</title>
     <!--Google Icon Font-->
@@ -16,92 +15,134 @@
 
 <body>
     <main>
-        <!-- Navbar -->
-        <nav class="top-nav">
-            <ul>
-                <li><a href="#" data-target="home" class="nav-link"><img class="img_nav" src="images/homeblack.svg"
-                            data-target="home" alt="home"></a></li>
-                <li><a href="#" data-target="list" class="nav-link"><img class="img_nav" src="images/addblack.svg"
-                            data-target="list" alt="more"></a></li>
-                <li><a href="#" data-target="detail" class="nav-link"><img class="img_nav" src="images/profileblack.svg"
-                            data-target="detail" alt="profile"></a></li>
-            </ul>
-        </nav>
-        <!-- Container -->
+
+        <div class="page active" id="home">
+            <section class="login-registrer">
+                <h1>SproutThink</h1>
+                <h2>Registro de usuarios</h2>
+
+
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="name" type="text" class="validate">
+                                <label for="name">Nombre Completo</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input id="user-name" type="text" class="validate">
+                                <label for="user-name">Nombre de Usuario</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="txtEmail" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="txtPassword" type="password" class="validate">
+                                <label for="password">Contraseña</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="birthday" type="text" class="validate">
+                                <label for="birthday">Fecha de nacimiento</label>
+                            </div>
+                        </div>
+                    </form>
+
+                    <a id="btnSignUp" class="waves-effect waves-light btn">Registrate</a>
+                </div>
+
+
+                <!-- <input id="name" placeholder="Nombre completo" type="text"> -->
+                <!-- <input id="user-name" placeholder="Nombre de usuario" type="text"> -->
+                <!-- <input id="birthday" placeholder="Fecha de nacimiento" type="text"> -->
+                <!-- <input id="txtEmail" placeholder="Correo electrónico" type="email"> -->
+                <!-- <input id="txtPassword" placeholder="Contraseña" type="password"> -->
+                <!-- <button id="btnSignUp">Registrate</button> -->
+
+                <h2>Ingreso de usuarios</h2>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="txtEmail2" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="txtPassword2" type="password" class="validate">
+                                <label for="password">Contraseña</label>
+                            </div>
+                        </div>
+                    </form>
+                    <a id="btnLogin" class="waves-effect waves-light btn">Iniciar Sesión</a>
+                </div>
+            </section>
+        </div>
         <div class="container">
-            <div class="page active" id="home">
-                <h1>Home</h1>
-
-                <section class="login-registrer">
-
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="row">
-
-                                <div class="input-field col s6">
-                                    <input id="name" type="text" class="validate">
-                                    <label for="first_name">Nombre</label>
-                                </div>
-
-                                <div class="input-field col s6">
-                                    <input id="user-name" type="text" class="validate">
-                                    <label for="user_name">Nombre de usuario</label>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input type="text" class="datepicker">
-                                    <label for="birthday">Fecha de nacimiento</label>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="txtEmail" type="email" class="validate">
-                                    <label for="email">Email</label>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="txtPassword" type="password" class="validate">
-                                    <label for="password">Contraseña</label>
-                                </div>
-                            </div>
-
-                        </form>
-                    </div>
-
-                    <h1>SproutThink</h1>
-                    <h2>Registrate</h2>
-                    <!-- <input id="name" placeholder="Nombre completo" type="text"> -->
-                    <!-- <input id="user-name" placeholder="Nombre de usuario" type="text"> -->
-                    <!-- <input id="birthday" placeholder="Fecha de nacimiento" type="text"> -->
-                    <!-- <input id="txtEmail" placeholder="Correo electrónico" type="email">
-                    <input id="txtPassword" placeholder="Contraseña" type="password"> -->
-                    <button id="btnSignUp">Registrate</button>
-
-                    <h2>Ingreso de usuarios</h2>
-                    <input id="txtEmail2" type="email">
-                    <input id="txtPassword2" type="password">
-                    <button id="btnLogin" class="btn btn-action">Iniciar Sesión</button>
-                </section>
-            </div>
-
-            <!-- Pagina del feed -->
-            <div class="page" id="list">
-
-                <h1>List</h1>
-
+            <div class="page" id="home2">
+                <nav class="top-nav">
+                    <ul>
+                        <li><a href="#" class="nav-link"><img class="img_nav" src="images/homeblack.svg" data-target="home2"
+                                    alt="home"></a></li>
+                        <li><a href="#" class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list"
+                                    alt="more"></a></li>
+                        <li><a href="#" class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail"
+                                    alt="profile"></a></li>
+                    </ul>
+                </nav>
+                <h1>Noticias</h1>
                 <section id="container-feed">
                     <p>Escribe tu primera publicación</p>
                 </section>
             </div>
-            <!-- Pagina del Perfirl -->
-            <div class="page" id="detail">
-                <h1>Detail</h1>
+            <div class="page" id="list">
+                <nav class="top-nav">
+                    <ul>
+                        <li><a href="#" class="nav-link"><img class="img_nav" src="images/homeblack.svg" data-target="home2"
+                                    alt="home"></a></li>
+                        <li><a href="#" class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list"
+                                    alt="more"></a></li>
+                        <li><a href="#" class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail"
+                                    alt="profile"></a></li>
+                    </ul>
+                </nav>
+                <h1>Publicar</h1>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>Publicar</button>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select>
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label>Materialize Select</label>
+                    </div>
+                </div>
+            </div>
 
+            <div class="page" id="detail">
+                <nav class="top-nav">
+                    <ul>
+                        <li><a href="#" class="nav-link"><img class="img_nav" src="images/homeblack.svg" data-target="home2"
+                                    alt="home"></a></li>
+                        <li><a href="#" class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list"
+                                    alt="more"></a></li>
+                        <li><a href="#" class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail"
+                                    alt="profile"></a></li>
+                    </ul>
+                </nav>
+                <h1>perfil</h1>
                 <section id="profile">
                     <table class="table">
                         <thead>
@@ -129,6 +170,7 @@
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script src="app.js"></script>
     <script src="spa.js"></script>
+    <script src="interactividad.js"></script>
 </body>
 
 </html>
