@@ -38,27 +38,27 @@
             <div class="page" id="home2">
                     <nav class="top-nav">
                             <ul>
-                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/homeblack.svg" data-target="home2" alt="home"></a></li>
-                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
-                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
+                                    <li data-target="home2"><a href="#"  data-target="home2" class="nav-link"><img class="img_nav" src="images/homeblack.svg"  data-target="home2" alt="home"></a></li>
+                                    <li data-target="list"><a href="#" data-target="list" class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
+                                    <li data-target="detail"><a href="#" data-target="detail"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
                             </ul>
                         </nav>
                 <h1>Noticias</h1>
                 <section id="container-feed"> 
-                    <p>Escribe tu primera publicación</p>
+                    <p>Escribe tu primer post</p>
                 </section>
             </div>
             <div class="page" id="list">
                     <nav class="top-nav">
                             <ul>
-                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/homeblack.svg" data-target="home2" alt="home"></a></li>
-                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
-                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
+                                    <li data-target="home2"><a href="#"  data-target="home2" class="nav-link"><img class="img_nav" src="images/homeblack.svg"  data-target="home2" alt="home"></a></li>
+                                    <li data-target="list"><a href="#" data-target="list" class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
+                                    <li data-target="detail"><a href="#" data-target="detail"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
                             </ul>
                         </nav>
                 <h1>Publicar</h1>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <button>Publicar</button>
+                <textarea name="" id="txtPost" cols="30" rows="10"></textarea>
+                <button id="btn-post">Publicar</button>
                 <div class="row">
                 <div class="input-field col s12">
                     <select>
@@ -70,14 +70,17 @@
                     <label>Materialize Select</label>
                 </div>
                 </div>
+                <div>
+                <p id="showPost"></p>
+            </div>
             </div>
                 
             <div class="page" id="detail">
                     <nav class="top-nav">
                             <ul>
-                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/homeblack.svg" data-target="home2" alt="home"></a></li>
-                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
-                                <li><a href="#"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
+                                <li data-target="home2"><a href="#"  data-target="home2" class="nav-link"><img class="img_nav" src="images/homeblack.svg"  data-target="home2" alt="home"></a></li>
+                                <li data-target="list"><a href="#" data-target="list" class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
+                                <li data-target="detail"><a href="#" data-target="detail"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
                             </ul>
                         </nav>
                 <h1>perfil</h1>
@@ -94,7 +97,7 @@
                             <tbody id = "table2">
                             </tbody>
                         </table>
-                        <button id="save-profile">Guardar</button>
+                        <button id="">Guardar</button>
                     </section>
              </div>
         </div>   
