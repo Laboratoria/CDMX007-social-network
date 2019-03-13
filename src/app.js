@@ -6,6 +6,7 @@ const txtName = document.getElementById('name');
 const txtUserName = document.getElementById('user-name');
 const txtBirthday = document.getElementById('birthday');
 const btnSaveProfile = document.getElementById('save-profile');
+
 /*Inicializacion para enlazar el proyecto a firebase */
 var config = {
   apiKey: "AIzaSyA-br4fjgN3TqUQgfE-Y2eGzfdajBuwa_Q",
@@ -41,12 +42,12 @@ function saveData() {
   var userName = txtUserName.value;
   var birthday = txtBirthday.value;
   db.collection("users").add({
-    email: email,
-    password: password,
-    name: name,
-    user: userName,
-    birthday: birthday
-  })
+      email: email,
+      password: password,
+      name: name,
+      user: userName,
+      birthday: birthday
+    })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
       txtEmail.value = "";
@@ -115,7 +116,8 @@ function watcher() {
       container.innerHTML = ``;
     }
   });
-} watcher();
+}
+watcher();
 
 const container = document.getElementById('container-feed');
 /* funcion para entar a pagina principal (feed)*/
@@ -125,13 +127,14 @@ function loged(user) {
     window.location.href = '#home2'
     // aqui va funcion para SPA
     container.innerHTML =
-    `<div><h1>feed ${user.email}</h1>
+      `<div><h1>feed ${user.email}</h1>
     <button onClick="logOut()"  class= "btn btn-action">Cerrar Sesión</button></div>`;
   }
 }
 
 /* Boton de cerrar sesión*/
 const btnLogout = document.getElementById('btnLogout');
+
 function logOut() {
   //pop up de confirmación
   firebase.auth().signOut()
@@ -147,11 +150,11 @@ function logOut() {
 /*leer documento firestone*/
 var table = document.getElementById('table2');
 db.collection("users").onSnapshot((querySnapshot) => {
-  table.innerHTML= "";
-  querySnapshot.forEach(function(doc) {
-      // doc.data() is never undefined for query doc snapshots
-      //obtiene datos de firestore y los pinta en tiempo real
-      table.innerHTML += `
+  table.innerHTML = "";
+  querySnapshot.forEach(function (doc) {
+    // doc.data() is never undefined for query doc snapshots
+    //obtiene datos de firestore y los pinta en tiempo real
+    table.innerHTML += `
       <tr>
         <td>${doc.data().email}</td>
         <td>${doc.data().name}</td>
@@ -163,41 +166,41 @@ db.collection("users").onSnapshot((querySnapshot) => {
   });
 });
 
-/*función para borrar documentos*/ 
-function removeUsers(id){ 
-  db.collection("users").doc(id).delete().then(function() {
+/*función para borrar documentos*/
+function removeUsers(id) {
+  db.collection("users").doc(id).delete().then(function () {
     console.log("Document successfully deleted!");
-  }).catch(function(error) {
+  }).catch(function (error) {
     console.error("Error removing document: ", error);
   });
 }
-/*función para editar perfil*/ 
-function editUsers(id, email, name, user, birthday){
+/*función para editar perfil*/
+function editUsers(id, email, name, user, birthday) {
   txtEmail.value = email
-  txtName.value =  name
+  txtName.value = name
   txtUserName.value = user
-  txtBirthday.value = birthday   
+  txtBirthday.value = birthday
 
-  btnSaveProfile.addEventListener('click', function(){
+  btnSaveProfile.addEventListener('click', function () {
     var washingtonRef = db.collection("users").doc(id);
-    
+
     var email = txtEmail.value
     var name = txtName.value
     var user = txtUserName.value
     var birthday = txtBirthday.value
     // Set the "capital" field of the city 'DC'
     return washingtonRef.update({
-      email: email,
-      name: name,
-      user: user,
-      birthday: birthday
-    })
-    .then(function() {
+        email: email,
+        name: name,
+        user: user,
+        birthday: birthday
+      })
+      .then(function () {
         console.log("Document successfully updated!");
-    })
-    .catch(function(error) {
+      })
+      .catch(function (error) {
         // The document probably doesn't exist.
         console.error("Error updating document: ", error);
-    });
+      });
   })
 }
