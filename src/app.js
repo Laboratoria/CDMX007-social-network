@@ -154,16 +154,6 @@ db.collection("users").onSnapshot((querySnapshot) => {
       // doc.data() is never undefined for query doc snapshots
       //obtiene datos de firestore y los pinta en tiempo real
       table.innerHTML += 
-      /*`
-      <tr>
-        <td>${doc.data().email}</td>
-        <td>${doc.data().name}</td>
-        <td>${doc.data().user}</td>
-        <td>${doc.data().birthday}</td>
-        <td><button onclick="removeUsers('${doc.id}')">Eliminar</button></td>
-        <td><button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button></td>
-      </tr>`*/
-
       `
       <input id="nameProfile" placeholder= "Nombre completo" type="text" value="${doc.data().name}">
       <input id="user-nameProfile" placeholder= "Nombre de usuario" type="text" value="${doc.data().user}">
@@ -172,6 +162,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
       <button onclick="removeUsers('${doc.id}')">Eliminar</button>
       <button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button>
       `
+      
   });
 });
 
@@ -248,8 +239,40 @@ db.collection("post").onSnapshot((querySnapshot) => {
       showPost.innerHTML += `
       <div>
         <p>${doc.data().post}</p>
-        <button onclick="removeUsers('${doc.id}')">Eliminar</button>
-        <button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button>
+        <button onclick="removePost('${doc.id}')">Eliminar</button>
+        <button onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</button>
       </>`  
     });
 });
+
+/*editar post*/
+const btnEditPost = document.getElementById('save-post');
+const txtPostEdit = document.getElementById('txtPostEdit');
+function editPost(id, post){
+  txtPostEdit.value = post
+  console.log(txtPost.value)
+  btnEditPost.addEventListener('click', function(){
+    var postEdited = db.collection("post").doc(id);
+    var post = txtPostEdit.value
+
+    return postEdited.update({
+      post: post
+    })
+    .then(function() {
+        console.log("Document successfully updated!");
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
+  })
+}
+
+/*elimianr post*/
+function removePost(id){ 
+  db.collection("post").doc(id).delete().then(function() {
+    console.log("Document successfully deleted!");
+  }).catch(function(error) {
+    console.error("Error removing document: ", error);
+  });
+}
