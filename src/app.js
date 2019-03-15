@@ -78,7 +78,14 @@ function saveData() {
     password: password,
     name: name,
     user: userName,
-    birthday: birthday
+    birthday: birthday,
+    posts: [ {
+      id : "",
+      title: "",
+      description: "", 
+      create: ""
+    }]
+    // useractive: {}
   })
     .then(function (docRef) {
       console.log("Document written");
@@ -118,7 +125,6 @@ btnLogin.addEventListener('click', e => {
     //inner contraseña o correo invalido********
   });
 });
-
 
 const container = document.getElementById('container-feed');
 /* funcion para entar a pagina principal (feed)*/
@@ -211,6 +217,12 @@ function editUsers(id, email, name, user, birthday){
     });
   })
 }
+
+
+
+
+
+
 
 //Agregar post
 /*Guarda la informacion en la bd post*/
