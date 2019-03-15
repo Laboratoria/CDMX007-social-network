@@ -18,6 +18,38 @@ var config = {
 firebase.initializeApp(config);
 /*nombre a la base de datos*/
 var db = firebase.firestore();
+/* observador*/
+function watcher() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log('usuario activo');
+      loged(user);
+      // if(user.emailVerified == true) {
+      //   window.location.replace('main.html');
+      //   console.log('main.html')
+      // } 
+      // if(user.emailVerified == false) {
+      // console.log('verifica tu correo') 
+      // }
+      // User is signed in.
+      var displayName = user.displayName;
+      var email = user.email;
+      console.log(user.emailVerified);
+      var emailVerified = user.emailVerified;
+      var photoURL = user.photoURL;
+      var isAnonymous = user.isAnonymous;
+      var uid = user.uid;
+      console.log(uid)
+      var providerData = user.providerData;
+      // ...
+    } else {
+      // User is signed out.
+      // ...
+      console.log('no existe usuario activo');
+      container.innerHTML = ``;
+    }
+  });
+} watcher();
 /*para crear usuario*/
 btnSingUp.addEventListener('click', e => {
   const email = txtEmail.value;
@@ -34,17 +66,14 @@ btnSingUp.addEventListener('click', e => {
     })
 });
 /*Guarda la informacion en la bd users*/
-
-
 function saveData() {
   var email = txtEmail.value;
   var password = txtPassword.value;
   var name = txtName.value;
   var userName = txtUserName.value;
   var birthday = txtBirthday.value;
-
-  // db.collection("users").add({
-    db.collection("users").doc(user.uid).set({
+  const user = firebase.auth().currentUser;
+  db.collection("users").doc(user.uid).set({
     email: email,
     password: password,
     name: name,
@@ -59,7 +88,7 @@ function saveData() {
     // useractive: {}
   })
     .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
+      console.log("Document written");
       txtEmail.value = "";
       txtPassword.value = "";
       txtUserName.value = "";
@@ -96,38 +125,6 @@ btnLogin.addEventListener('click', e => {
     //inner contraseña o correo invalido********
   });
 });
- 
-function watcher() {
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      console.log(user)
-      console.log('usuario activo');
-      loged(user);
-      // if(user.emailVerified == true) {
-      //   window.location.replace('main.html');
-      //   console.log('main.html')
-      // } 
-      // if(user.emailVerified == false) {
-      // console.log('verifica tu correo') 
-      // }
-      // User is signed in.
-      var displayName = user.displayName;
-      var email = user.email;
-      console.log(user.emailVerified);
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
-      // ...
-    } else {
-      // User is signed out.
-      // ...
-      console.log('no existe usuario activo');
-      container.innerHTML = ``;
-    }
-  });
-} watcher();
 
 const container = document.getElementById('container-feed');
 /* funcion para entar a pagina principal (feed)*/
@@ -137,7 +134,7 @@ function loged(user) {
      window.location.href = '#home2'
     // aqui va funcion para SPA
     container.innerHTML =
-    `<div><h1>feed ${user.email}</h1>
+    `<div><h1> Hola ${user.email}</h1>
     <button onClick="logOut()"  class= "btn btn-action">Cerrar Sesión</button></div>`;
   }
 }
@@ -156,25 +153,25 @@ function logOut() {
     })
 }
 
-/*leer documento firestone*/
-var table = document.getElementById('table2');
-db.collection("users").onSnapshot((querySnapshot) => {
-  table.innerHTML= "";
-  querySnapshot.forEach(function(doc) {
-      // doc.data() is never undefined for query doc snapshots
-      //obtiene datos de firestore y los pinta en tiempo real
-      table.innerHTML += 
-      `
-      <input id="nameProfile" placeholder= "Nombre completo" type="text" value="${doc.data().name}">
-      <input id="user-nameProfile" placeholder= "Nombre de usuario" type="text" value="${doc.data().user}">
-      <input id="birthdayProfile" placeholder= "Fecha de nacimiento" type="text" value="${doc.data().birthday}">
-      <input id= "txtEmailProfile" placeholder= "Correo electrónico" type="email" value="${doc.data().email}">
-      <button onclick="removeUsers('${doc.id}')">Eliminar</button>
-      <button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button>
-      `
+// /*leer documento firestone*/
+// var table = document.getElementById('table2');
+// db.collection("users").onSnapshot((querySnapshot) => {
+//   table.innerHTML= "";
+//   querySnapshot.forEach(function(doc) {
+//       // doc.data() is never undefined for query doc snapshots
+//       //obtiene datos de firestore y los pinta en tiempo real
+//       table.innerHTML += 
+//       `
+//       <input id="nameProfile" placeholder= "Nombre completo" type="text" value="${doc.data().name}">
+//       <input id="user-nameProfile" placeholder= "Nombre de usuario" type="text" value="${doc.data().user}">
+//       <input id="birthdayProfile" placeholder= "Fecha de nacimiento" type="text" value="${doc.data().birthday}">
+//       <input id= "txtEmailProfile" placeholder= "Correo electrónico" type="email" value="${doc.data().email}">
+//       <button onclick="removeUsers('${doc.id}')">Eliminar</button>
+//       <button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button>
+//       `
       
-  });
-});
+//   });
+// });
 
 /*función para borrar documentos*/ 
 function removeUsers(id){ 
