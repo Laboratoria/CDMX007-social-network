@@ -42,12 +42,21 @@ function saveData() {
   var name = txtName.value;
   var userName = txtUserName.value;
   var birthday = txtBirthday.value;
-  db.collection("users").add({
+
+  // db.collection("users").add({
+    db.collection("users").doc(user.uid).set({
     email: email,
     password: password,
     name: name,
     user: userName,
-    birthday: birthday
+    birthday: birthday,
+    posts: [ {
+      id : "",
+      title: "",
+      description: "", 
+      create: ""
+    }]
+    // useractive: {}
   })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
@@ -87,10 +96,11 @@ btnLogin.addEventListener('click', e => {
     //inner contraseña o correo invalido********
   });
 });
-
+ 
 function watcher() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
+      console.log(user)
       console.log('usuario activo');
       loged(user);
       // if(user.emailVerified == true) {
@@ -210,6 +220,12 @@ function editUsers(id, email, name, user, birthday){
     });
   })
 }
+
+
+
+
+
+
 
 //Agregar post
 /*Guarda la informacion en la bd post*/
