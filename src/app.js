@@ -23,6 +23,7 @@ function watcher() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       console.log('usuario activo');
+      console.log(user)
       loged(user);
       // if(user.emailVerified == true) {
       //   window.location.replace('main.html');
@@ -39,7 +40,7 @@ function watcher() {
       var photoURL = user.photoURL;
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
-      console.log(uid)
+     localStorage.setItem('useruid' , uid)
       var providerData = user.providerData;
       // ...
     } else {
@@ -78,7 +79,8 @@ function saveData() {
     password: password,
     name: name,
     user: userName,
-    birthday: birthday
+    birthday: birthday,
+    posts: []
   })
     .then(function (docRef) {
       console.log("Document written");
@@ -212,13 +214,21 @@ function editUsers(id, email, name, user, birthday){
   })
 }
 
+
+
 //Agregar post
 /*Guarda la informacion en la bd post*/
 const btnPost = document.getElementById('btn-post')
 btnPost.addEventListener('click', saveDataInPostColection => {
   const txtPost = document.getElementById('txtPost')
   var post = txtPost.value;
-  db.collection("post").add({
+  const authorUid = firebase.auth().currentUser;
+console.log(authorUid);
+  db.collection("posts").add({
+    authoruid: authorUid.uid,
+    nick: authorUid.email,
+    title: "",
+    date: "",     
     post: post
   })
     .then(function (docRef) {
@@ -230,19 +240,27 @@ btnPost.addEventListener('click', saveDataInPostColection => {
     });
 })
 
+
+
 /*leer documento firestone*/
 var showPost = document.getElementById('showPost');
-db.collection("post").onSnapshot((querySnapshot) => {
+db.collection("posts").onSnapshot((querySnapshot) => {
   showPost.innerHTML= "";
+let uidOfUser = localStorage.getItem('useruid')
   querySnapshot.forEach(function(doc) {
-      // doc.data() is never undefined for query doc snapshots
+    // doc.data() is never undefined for query doc snapshots
       //obtiene datos de firestore y los pinta en tiempo real
       showPost.innerHTML += `
       <div>
         <p>${doc.data().post}</p>
+      </div>`  
+      if(uidOfUser == doc.data().authoruid) {
+        showPost.innerHTML += `
+        <div>
         <button onclick="removePost('${doc.id}')">Eliminar</button>
         <button onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</button>
-      </>`  
+      </div>`  
+      }
     });
 });
 
@@ -253,7 +271,7 @@ function editPost(id, post){
   txtPostEdit.value = post
   console.log(txtPost.value)
   btnEditPost.addEventListener('click', function(){
-    var postEdited = db.collection("post").doc(id);
+    var postEdited = db.collection("posts").doc(id);
     var post = txtPostEdit.value
 
     return postEdited.update({
@@ -271,9 +289,10 @@ function editPost(id, post){
 
 /*elimianr post*/
 function removePost(id){ 
-  db.collection("post").doc(id).delete().then(function() {
+  db.collection("posts").doc(id).delete().then(function() {
     console.log("Document successfully deleted!");
   }).catch(function(error) {
     console.error("Error removing document: ", error);
   });
 }
+
