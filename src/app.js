@@ -241,27 +241,57 @@ console.log(authorUid);
 
 
 /*leer documento firestone*/
-var showPost = document.getElementById('showPost');
-db.collection("posts").onSnapshot((querySnapshot) => {
-  showPost.innerHTML= "";
-let uidOfUser = localStorage.getItem('useruid')
-  querySnapshot.forEach(function(doc) {
-    // doc.data() is never undefined for query doc snapshots
-      //obtiene datos de firestore y los pinta en tiempo real
-      showPost.innerHTML += `
-      <div>
-        <p>${doc.data().post}</p>
-      </div>`  
-      if(uidOfUser == doc.data().authoruid) {
-        showPost.innerHTML += `
-        <div>
-        <button onclick="removePost('${doc.id}')">Eliminar</button>
-        <button onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</button>
-      </div>`  
-      }
-    });
-});
+// var showPost = document.getElementById('showPost');
+// db.collection("posts").onSnapshot((querySnapshot) => {
+//   showPost.innerHTML= "";
+// let uidOfUser = localStorage.getItem('useruid')
+//   querySnapshot.forEach(function(doc) {
+//     // doc.data() is never undefined for query doc snapshots
+//       //obtiene datos de firestore y los pinta en tiempo real
+//       showPost.innerHTML += `
+//       <div>
+//         <p>${doc.data().post}</p>
+//       </div>`  
+//       if(uidOfUser == doc.data().authoruid) {
+//         showPost.innerHTML += `
+//         <div>
+//         <button onclick="removePost('${doc.id}')">Eliminar</button>
+//         <button onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</button>
+//       </div>`  
+//       }
+//     });
+// });
 
+var showPost = document.getElementById('container-feed-news');
+db.collection("posts").onSnapshot((querySnapshot) => {
+ showPost.innerHTML= "";
+let uidOfUser = localStorage.getItem('useruid')
+ querySnapshot.forEach(function(doc) {
+   // doc.data() is never undefined for query doc snapshots
+     //obtiene datos de firestore y los pinta en tiempo real
+     if(uidOfUser == doc.data().authoruid) {
+       showPost.innerHTML += `
+       <div class="card">
+       <div class="card-content">
+         <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+         <p>${doc.data().post}</p>
+         <p><a href="#">Like</a></p>
+       </div>
+       <div class="card-reveal">
+       <button onclick="removePost('${doc.id}')">Eliminar</button>
+       <button onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</button>
+       </div>
+     </div>`
+ } else
+     showPost.innerHTML += `
+     <div class="card">
+     <div class="card-content">
+       <span class="card-title activator grey-text text-darken-4">Card Title</span>
+       <p>${doc.data().post}</p>
+     </div>
+   </div>`
+   });
+});
 /*editar post*/
 const btnEditPost = document.getElementById('save-post');
 const txtPostEdit = document.getElementById('txtPostEdit');
