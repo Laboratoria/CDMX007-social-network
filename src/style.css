@@ -1,22 +1,99 @@
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
 /*Estilo container*/
 .container{
     position: relative;
     width: 100%;
 }
-
 /* estilos nav */
-.img_nav{
-    width: 25px;
-} 
 .top-nav{
     background-color: #fff;
-    width: 100%;
 }
 .top-nav>ul>li{
     list-style-type: none;
     width: 33.33%;
     text-align: center;
 }
+.img_nav{
+    width: 25px;
+    height: 25px ;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 25px;
+} 
+.top-nav ul>.menu{
+    padding: 0;
+}
+.top-nav ul>.logo{
+    color: #3da29f;
+    text-align: left ;
+    font-size: 1.3rem;
+}
+
+.nav-link{
+    padding: 0;
+}
+.home{
+    background-image: url('images/homeblack.svg')
+}
+.msg{
+    background-image: url('images/addblack.svg')
+}
+.profile{
+    background-image: url('images/profileblack.svg')
+}
+.home.active{
+    background-image: url('images/homeblue.svg')
+}
+.msg.active{
+    background-image: url('images/addblue.svg')
+}
+.profile.active{
+    background-image: url('images/profileblue.svg')
+}
+
+/*Container inner*/
+.btn-post{
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+.img-privacity{
+    width: 25px;
+    margin-top: 10px;
+}
+
+input.msg-title[type=text] {
+    font-size: 1rem;
+    border: 1px solid #e4e7ed;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+.input-field input.msg-title[type=text]:focus {
+    border: 1px solid #b1b4ba;; 
+    box-shadow: none;  
+}
+.message-large{
+    resize: none;
+    border: 1px solid #e4e7ed;
+    outline: none;
+    height: 350px;
+    border-radius: 5px;
+    padding-left: 5px;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+.message-large:focus{
+    border:1px solid #b1b4ba;
+} 
+.message-large::-webkit-input-placeholder {  font-size: 1.2rem;  } 
+.message-large::-moz-placeholder  {  font-size: 1.2rem;}
+.message-large:-moz-placeholder   { font-size: 1.2rem;}
+.message-large:-ms-input-placeholder  {  font-size: 1.2rem;}
 
 
 /**** PAGES ****/
