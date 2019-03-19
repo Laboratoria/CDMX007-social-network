@@ -80,9 +80,7 @@ function saveData() {
     name: name,
     user: userName,
     birthday: birthday,
-
     posts: []
-
   })
     .then(function (docRef) {
       console.log("Document written");

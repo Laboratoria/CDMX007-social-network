@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SproutThink</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600i" rel="stylesheet">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -14,9 +15,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+        <div class="row">
+    <nav class="top-nav">
+        <ul>
+            <li class="logo col s6 l8">SproutThink</li>
+            <li class="menu col s2 l1" data-target="home2"><a href="#"  data-target="home2" class="nav-link"><span data-target="home2" class="img_nav home" id=""></span></a></li>
+            <li class="menu col s2 l1" data-target="list"><a href="#" data-target="list" class="nav-link"><span data-target="list" class="img_nav msg" id="msg"></span></a></li>
+            <li class="menu col s2 l1" data-target="detail"><a href="#" data-target="detail"  class="nav-link"><span data-target="detail" class="img_nav profile" id="profile"></span></a></li>  
+        </ul>
+    </nav> 
+</div>
     <main>
-        <div class="container"> 
-        <div class="page active" id="home">
+        <div class="container">
+            <div class="page active" id="home">
                 <section class="login-registrer">
                         <h1>SproutThink</h1>
                         <h2>Registro de usuarios</h2>
@@ -33,60 +44,66 @@
                         <button id = "btnLogin" >Iniciar Sesión</button>
                         <!-- <a href="#" data-target="home2" class="nav-link btn btn-action" id= "btnLogin">Iniciar Sesión</a> -->
                 </section>
-        </div>
-            <div class="page" id="home2">
-                    <nav class="top-nav">
-                            <ul>
-                                <li data-target="home2"><a href="#"  data-target="home2" class="nav-link"><img class="img_nav" src="images/homeblack.svg"  data-target="home2" alt="home"></a></li>
-                                <li data-target="list"><a href="#" data-target="list" class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
-                                <li data-target="detail"><a href="#" data-target="detail"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
-                            </ul>
-                        </nav>
-                <h1>Noticias: aquí verás las publicaciones más recientes</h1>
-                <section id="container-feed"> 
-                    <p>Escribe tu primer post</p>
-                </section>
             </div>
-            <div class="page" id="list">
-                    <nav class="top-nav">
+            <div class="page" id="home2">
+                    <!-- <nav class="top-nav">
                             <ul>
                                 <li data-target="home2"><a href="#"  data-target="home2" class="nav-link"><img class="img_nav" src="images/homeblack.svg"  data-target="home2" alt="home"></a></li>
                                 <li data-target="list"><a href="#" data-target="list" class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
                                 <li data-target="detail"><a href="#" data-target="detail"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
-                                
                             </ul>
-                        </nav>
-                <h1>Publicar</h1>
-                <textarea name="" id="txtPost" cols="30" rows="10"></textarea>
-                <button id="btn-post">Publicar</button>
-                <select>
-                        <option value="" disabled selected>Privacidad</option>
-                        <option value="1">Público</option>
-                        <option value="2">Solo amigos</option>
-                </select>
-                <label>Privacidad</label>
-                <textarea name="" id="txtPostEdit" cols="30" rows="10"></textarea>
+                        </nav> -->
+                <h1>Noticias: aquí verás las publicaciones más recientes</h1>
+            </div>
+            <section class="page" id="list">
+                <div class="row container-inner">
+                    <!-- <h1>Publicar</h1> -->
+                    <div class="input-field col s12 l12">
+                        <input id="input_text"  class="msg-title" type="text" data-length="10" placeholder="Titulo">
+                        <!-- <label for="input_text">Titulo</label> -->
+                    </div>
+                    <div class="input-field col s12 l12">
+                        <textarea id="txtPost" class="message-large" placeholder="Escribe tu historia..."  data-length="120"></textarea>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="col s1 l1 center-align">
+                        <img class="img-privacity " src="images/user.svg" alt="">
+                    </div>
+                    <div class="col s7 l3">
+                        <select >
+                            <option class="msg-privacity" value="" disabled selected>Quien puede ver esto</option>
+                            <option value="1">Público</option>
+                            <option value="2">Solo amigos</option>
+                        </select>
+                        <!-- <label>Quien puede ver esto</label> -->
+                    </div>
+                    <div class="col s4 l8 right-align">
+                        <a id="btn-post"  class="btn-post waves-effect waves-light btn-small">Publicar</a>
+                    </div>
+                    <div>
+                    <a href="" class="msg"></a>
+                    </div>
+                </div>
+                <!-- <textarea name="" id="txtPostEdit" cols="30" rows="10"></textarea>
                 <button id="save-post">Guardar</button>
                 <div class="row">
-                <div class="input-field col s12">
-                   
-                </div>
+                <div class="input-field col s12"></div>
                 </div>
                 <div>
-                <p id="showPost"></p>
-            </div>
-            </div>
-                
+                <p id="showPost"></p> -->
+            </section>
             <div class="page" id="detail">
-                    <nav class="top-nav">
+                    <!-- <nav class="top-nav">
                             <ul>
                                 <li data-target="home2"><a href="#"  data-target="home2" class="nav-link"><img class="img_nav" src="images/homeblack.svg"  data-target="home2" alt="home"></a></li>
                                 <li data-target="list"><a href="#" data-target="list" class="nav-link"><img class="img_nav" src="images/addblack.svg" data-target="list" alt="more"></a></li>
                                 <li data-target="detail"><a href="#" data-target="detail"  class="nav-link"><img class="img_nav" src="images/profileblack.svg" data-target="detail" alt="profile"></a></li>
                             </ul>
-                        </nav>
-                <h1>Perfil: aquí podrás editar los datos de tu perfil </h1>
+                        </nav> -->
+                <h1>Perfil</h1>
                     <section id= "profile">
+                            <section id="container-feed"> 
+                            </section>
                         <table class= "table">
                             <thead>
                                 <tr>
@@ -101,10 +118,9 @@
                         </table>
                         <button id="save-profile">Guardar</button>
                     </section>
-             </div>
+            </div>
         </div>   
     </main>
-
     <!---firebase cdn--->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <!---firestore--->
