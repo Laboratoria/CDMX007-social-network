@@ -12,15 +12,67 @@ const interactividad = () => {
 //        var elems = document.querySelectorAll('.modal');
 //        var instances = M.Modal.init(elems);
 //      });
-// const icono = document.querySelector('.home2');
-//     icono.addEventListener('click', () => {
-//     icono.classList.add('active');
-//     });
-//     const icono2 = document.querySelector('.msg');
-//     icono2.addEventListener('click', () => {
-//     icono2.classList.add('active');
-//     });
-
+inter_es = {
+    cancel: 'Cancelar',
+    clear: 'Limpiar',
+    done:    'Ok',
+    previousMonth:    '‹',
+    nextMonth:    '›',
+    months:    [
+        'Enero',
+        'Febrero',
+        'Marzo',
+        'Abril',
+        'Mayo',
+        'Junio',
+        'Julio',
+        'Agosto',
+        'Septiembre',
+        'Octubre',
+        'Noviembre',
+        'Diciembre'
+    ],
+    monthsShort:    [
+        'Ene',
+        'Feb',
+        'Mar',
+        'Abr',
+        'May',
+        'Jun',
+        'Jul',
+        'Ago',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dic'
+    ],
+    weekdays:    [
+        'Domingo',
+        'Lunes',
+        'Martes',
+        'Miércoles',
+        'Jueves',
+        'Viernes',
+        'Sábado'
+    ],
+    weekdaysShort:    [
+        'Dom',
+        'Lun',
+        'Mar',
+        'Mié',
+        'Jue',
+        'Vie',
+        'Sáb'
+    ],
+    weekdaysAbbrev:    ['D', 'L', 'M', 'M', 'J', 'V', 'S']
+};
+var options = {
+    i18n: inter_es,
+};
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, options);
+  });
 
     // <ul id='dropdown-${doc.id}' class='dropdown-content'>
     //   <li><a class="modal-trigger" data-target="idModal" onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</a>
