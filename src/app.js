@@ -25,6 +25,8 @@ function watcher() {
      console.log('usuario activo');
      console.log(user)
      loged(user);
+     window.location.href = '#home2'
+     content.classList.remove('hide');
      // if(user.emailVerified == true) {
      //   window.location.replace('main.html');
      //   console.log('main.html')
@@ -45,7 +47,10 @@ function watcher() {
      // ...
    } else {
      // navMenu.classList.add('hide');
-     // // window.location.href   = '#home';
+     window.location.href = '#home';
+     const content = document.getElementById('content')
+     const navmenu = document.getElementById('navmenu')
+     content.classList.add('hide');
      // //     // User is signed out.
      // ...
      console.log('no existe usuario activo');
@@ -275,7 +280,6 @@ querySnapshot.forEach(function(doc) {
       showPost.innerHTML += `
       <!-- Dropdown Trigger -->
       <button class='dropdown-trigger btn' href='#' data-target='dropdown-${doc.id}'><i class='material-icons right'>more_horiz</i>menu</button>
-
       <!-- Dropdown Structure -->
       <ul id='dropdown-${doc.id}' class='dropdown-content'>
       <li><a class="modal-trigger" data-target="idModal" onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</a>
