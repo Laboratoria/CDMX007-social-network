@@ -164,4 +164,7 @@ h1{
         top:0;
         bottom:auto;
     }
+    main {
+        margin-top:2rem;
+    }
 }
