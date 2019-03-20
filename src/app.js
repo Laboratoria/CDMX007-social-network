@@ -340,7 +340,7 @@ function editPost(id, post){
  })
 }
 
-/*elimianr post*/
+/*eliminar post*/
 
 function removePost(id){
   const btnDeletePost = document.getElementById('delete-post');
