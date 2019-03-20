@@ -27,27 +27,9 @@
 </div>
     <main>
         <div class="container">
-            <!-- <div class="page active" id="home">
-                <section class="login-registrer">
-                        <h1>SproutThink</h1>
-                        <h2>Registro de usuarios</h2>
-                        <input id="name" placeholder= "Nombre completo" type="text">
-                        <input id="user-name" placeholder= "Nombre de usuario" type="text">
-                        <input id="birthday" placeholder= "Fecha de nacimiento" type="text">
-                        <input id= "txtEmail" placeholder= "Correo electrónico" type="email">
-                        <input id= "txtPassword" placeholder= "Contraseña" type="password">
-                        <button id= "btnSignUp">Registrate</button>
-                        
-                        <h2>Ingreso de usuarios</h2>
-                        <input id= "txtEmail2" type="email">
-                        <input id= "txtPassword2" type="password">
-                        <button id = "btnLogin" >Iniciar Sesión</button>
-                </section>
-            </div> -->
+            <!-- Ingreso de usuarios -->
             <div class="page active" id="home">
-                    <div class="container">
-                        <!-- Ingreso de usuarios -->
-                        <div class="row">
+                <div class="row">
                             <div class="col s6">
                                 <section class="login-registrer ">
                                     <h5>Ingreso de usuarios</h5>
@@ -110,69 +92,74 @@
                             </div>
                             <div class="col s6">
                                 <img class="materialboxed imgside" src="https://images.pexels.com/photos/414928/pexels-photo-414928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></div>
+                </div>
+            </div>
+            <!--Termina LOGIN -->
+            <div id="container-sections">
+                <section id="home2" class="page">
+                        <div id="idModal" class="modal">
+                            <div class="modal-content">
+                                <textarea name="" id="txtPostEdit" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <a id="save-post" class="modal-close">Guardar</a>
+                            </div>
+                        </div>
+                        <div id="idModalDelete" class="modal">
+                            <div class="modal-content">
+                                <p>¿Estás seguro que deseas eliminar?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a id="" class="modal-close">Cancelar</a>
+                                <a  class="modal-close">Aceptar</a>
+                            </div>
+                        </div>
+                    <div id="container-feed-news"></div>
+                </section>
+                <section id="list" class="page">
+                    <div class="row container-inner">
+                        <div class="input-field col s12 l12">
+                            <input id="input_text"  class="msg-title" type="text" data-length="10" placeholder="Titulo">
+                        </div>
+                        <div class="input-field col s12 l12">
+                            <textarea id="txtPost" class="message-large" placeholder="Escribe tu historia..."  data-length="120"></textarea>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="col s1 l1 center-align">
+                            <img class="img-privacity " src="images/user.svg" alt="">
+                        </div>
+                        <div class="col s7 l3">
+                            <select >
+                                <option class="msg-privacity" value="" disabled selected>Quien puede ver esto</option>
+                                <option value="1">Público</option>
+                                <option value="2">Solo amigos</option>
+                            </select>
+                        </div>
+                        <div class="col s4 l8 right-align">
+                            <a id="btn-post"  class="btn-post waves-effect waves-light btn-small">Publicar</a>
                         </div>
                     </div>
-                </div>
-                <!--Termina container LOGIN -->
-            <div class="page" id="home2">
-                <h1>Noticias: aquí verás las publicaciones más recientes</h1>
-                <section id="container-feed-news"></section>
-            </div>
-            <section class="page" id="list">
-                <div class="row container-inner">
-                    <!-- <h1>Publicar</h1> -->
-                    <div class="input-field col s12 l12">
-                        <input id="input_text"  class="msg-title" type="text" data-length="10" placeholder="Titulo">
-                        <!-- <label for="input_text">Titulo</label> -->
-                    </div>
-                    <div class="input-field col s12 l12">
-                        <textarea id="txtPost" class="message-large" placeholder="Escribe tu historia..."  data-length="120"></textarea>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="col s1 l1 center-align">
-                        <img class="img-privacity " src="images/user.svg" alt="">
-                    </div>
-                    <div class="col s7 l3">
-                        <select >
-                            <option class="msg-privacity" value="" disabled selected>Quien puede ver esto</option>
-                            <option value="1">Público</option>
-                            <option value="2">Solo amigos</option>
-                        </select>
-                        <!-- <label>Quien puede ver esto</label> -->
-                    </div>
-                    <div class="col s4 l8 right-align">
-                        <a id="btn-post"  class="btn-post waves-effect waves-light btn-small">Publicar</a>
-                    </div>
-                    <div>
-                    <a href="" class="msg"></a>
-                    </div>
-                </div>
-                <textarea name="" id="txtPostEdit" cols="30" rows="10"></textarea>
-                <button id="save-post">Guardar</button>
-                <div class="row">
-                <div class="input-field col s12"></div>
-                </div>
-                <div>
-                <p id="showPost"></p>
-            </section>
-            <div class="page" id="detail">
-                <h1>Perfil</h1>
-                    <section id= "profile">
-                            <section id="container-feed"> 
-                            </section>
-                        <table class= "table">
-                            <thead>
-                                <tr>
-                                    <th>Email</th>
-                                    <th>Nombre</th>
-                                    <th>Nombre de usuario</th>
-                                    <th>Fecha de nacimiento</th>
-                                </tr>
-                            </thead>
-                            <tbody id = "table2">
-                            </tbody>
-                        </table>
-                        <button id="save-profile">Guardar</button>
+                    <p id="showPost"></p>
+                </section>
+                <section id="detail" class="page">
+                    <h1>Perfil</h1>
+                        <div id= "profile">
+                                <section id="container-feed"> 
+                                </section>
+                            <table class= "table">
+                                <thead>
+                                    <tr>
+                                        <th>Email</th>
+                                        <th>Nombre</th>
+                                        <th>Nombre de usuario</th>
+                                         <th>Fecha de nacimiento</th>
+                                    </tr>
+                                </thead>
+                                <tbody id = "table2">
+                                </tbody>
+                            </table>
+                            <button id="save-profile">Guardar</button>
+                        </div>
                     </section>
             </div>
         </div>   

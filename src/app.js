@@ -25,13 +25,13 @@ function watcher() {
       console.log('usuario activo');
       console.log(user)
       loged(user);
-      // if(user.emailVerified == true) {
-      //   window.location.replace('main.html');
-      //   console.log('main.html')
-      // } 
-      // if(user.emailVerified == false) {
-      // console.log('verifica tu correo') 
-      // }
+      if(user.emailVerified == true) {
+        window.location.replace('#home2');
+      } 
+      if(user.emailVerified == false) {
+      console.log('verifica tu correo')
+      mainHome(); 
+      }
       // User is signed in.
       var displayName = user.displayName;
       var email = user.email;
@@ -44,6 +44,7 @@ function watcher() {
       var providerData = user.providerData;
       // ...
     } else {
+      window.location.replace('#home');
       // User is signed out.
       // ...
       console.log('no existe usuario activo');
@@ -149,24 +150,24 @@ function logOut() {
 }
 
 // /*leer documento firestone*/
-// var table = document.getElementById('table2');
-// db.collection("users").onSnapshot((querySnapshot) => {
-//   table.innerHTML= "";
-//   querySnapshot.forEach(function(doc) {
-//       // doc.data() is never undefined for query doc snapshots
-//       //obtiene datos de firestore y los pinta en tiempo real
-//       table.innerHTML += 
-//       `
-//       <input id="nameProfile" placeholder= "Nombre completo" type="text" value="${doc.data().name}">
-//       <input id="user-nameProfile" placeholder= "Nombre de usuario" type="text" value="${doc.data().user}">
-//       <input id="birthdayProfile" placeholder= "Fecha de nacimiento" type="text" value="${doc.data().birthday}">
-//       <input id= "txtEmailProfile" placeholder= "Correo electrónico" type="email" value="${doc.data().email}">
-//       <button onclick="removeUsers('${doc.id}')">Eliminar</button>
-//       <button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button>
-//       `
-      
-//   });
-// });
+var table = document.getElementById('table2');
+db.collection("users").onSnapshot((querySnapshot) => {
+  table.innerHTML= "";
+  querySnapshot.forEach(function(doc, ) {
+   
+      // doc.data() is never undefined for query doc snapshots
+      //obtiene datos de firestore y los pinta en tiempo real
+      table.innerHTML += 
+      `
+      <input id="nameProfile" placeholder= "Nombre completo" type="text" value="${doc.data().name}">
+      <input id="user-nameProfile" placeholder= "Nombre de usuario" type="text" value="${doc.data().user}">
+      <input id="birthdayProfile" placeholder= "Fecha de nacimiento" type="text" value="${doc.data().birthday}">
+      <input id= "txtEmailProfile" placeholder= "Correo electrónico" type="email" value="${doc.data().email}">
+      <button onclick="removeUsers('${doc.id}')">Eliminar</button>
+      <button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button>
+      ` 
+  });
+});
 
 /*función para borrar documentos*/ 
 function removeUsers(id){ 
@@ -232,34 +233,43 @@ console.log(authorUid);
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
       txtPost.value = "";
+      window.location.replace('#home2')
     })
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
 })
 
-
-
-/*leer documento firestone*/
-// var showPost = document.getElementById('showPost');
+/* Muestra en el feed lo publicado*/
+// var showPost = document.getElementById('container-feed-news');
 // db.collection("posts").onSnapshot((querySnapshot) => {
-//   showPost.innerHTML= "";
+//  showPost.innerHTML= "";
 // let uidOfUser = localStorage.getItem('useruid')
-//   querySnapshot.forEach(function(doc) {
-//     // doc.data() is never undefined for query doc snapshots
-//       //obtiene datos de firestore y los pinta en tiempo real
-//       showPost.innerHTML += `
-//       <div>
-//         <p>${doc.data().post}</p>
-//       </div>`  
-//       if(uidOfUser == doc.data().authoruid) {
-//         showPost.innerHTML += `
-//         <div>
-//         <button onclick="removePost('${doc.id}')">Eliminar</button>
-//         <button onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</button>
-//       </div>`  
-//       }
-//     });
+//  querySnapshot.forEach(function(doc) {
+//    // doc.data() is never undefined for query doc snapshots
+//      //obtiene datos de firestore y los pinta en tiempo real
+//      if(uidOfUser == doc.data().authoruid) {
+//        showPost.innerHTML += `
+//        <div class="card">
+//        <div class="card-content">
+//          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+//          <p>${doc.data().post}</p>
+//          <p><a href="#">Like</a></p>
+//        </div>
+//        <div class="card-reveal">
+//        <button onclick="removePost('${doc.id}')">Eliminar</button>
+//        <button onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</button>
+//        </div>
+//      </div>`
+//  } else
+//      showPost.innerHTML += `
+//      <div class="card">
+//      <div class="card-content">
+//        <span class="card-title activator grey-text text-darken-4">Card Title</span>
+//        <p>${doc.data().post}</p>
+//      </div>
+//    </div>`
+//    });
 // });
 
 var showPost = document.getElementById('container-feed-news');
@@ -267,30 +277,39 @@ db.collection("posts").onSnapshot((querySnapshot) => {
  showPost.innerHTML= "";
 let uidOfUser = localStorage.getItem('useruid')
  querySnapshot.forEach(function(doc) {
+
    // doc.data() is never undefined for query doc snapshots
      //obtiene datos de firestore y los pinta en tiempo real
      if(uidOfUser == doc.data().authoruid) {
        showPost.innerHTML += `
+
+       <button class='dropdown-trigger btn' href='#' data-target='dropdown-${doc.id}'><i class="material-icons right">more_horiz</i>menu</button>
+       <!-- Dropdown Structure -->
+       <ul id='dropdown-${doc.id}' class='dropdown-content'>
+         <li><a class="icon-feed delete" onclick="removePost('${doc.id}')"><i class="material-icons right">delete</i>Eliminar</a></li>
+         <li><a class="icon-feed create"onclick="editPost('${doc.id}', '${doc.data().post}')"><i class="material-icons right">create</i>Editar</a><li>
+       </ul>
+
        <div class="card">
        <div class="card-content">
          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
          <p>${doc.data().post}</p>
          <p><a href="#">Like</a></p>
        </div>
-       <div class="card-reveal">
-       <button onclick="removePost('${doc.id}')">Eliminar</button>
-       <button onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</button>
-       </div>
-     </div>`
- } else
-     showPost.innerHTML += `
-     <div class="card">
-     <div class="card-content">
-       <span class="card-title activator grey-text text-darken-4">Card Title</span>
-       <p>${doc.data().post}</p>
+       
      </div>
-   </div>`
-   });
+     `
+     interactividad()
+      } else{
+          showPost.innerHTML += `
+          <div class="card">
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title</span>
+            <p>${doc.data().post}</p>
+          </div>
+        </div>`
+      }
+        });
 });
 /*editar post*/
 const btnEditPost = document.getElementById('save-post');
