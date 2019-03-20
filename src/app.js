@@ -273,19 +273,11 @@ querySnapshot.forEach(function(doc) {
     //obtiene datos de firestore y los pinta en tiempo real
     if(uidOfUser == doc.data().authoruid) {
       showPost.innerHTML += `
-      <!-- Dropdown Trigger -->
       <button class='dropdown-trigger btn' href='#' data-target='dropdown-${doc.id}'><i class='material-icons right'>more_horiz</i>menu</button>
-
       <!-- Dropdown Structure -->
       <ul id='dropdown-${doc.id}' class='dropdown-content'>
       <li><a class="modal-trigger" data-target="idModal" onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</a>
       <li><a class="modal-trigger" data-target="idModalDelete">Eliminar</a>
-        <li><a href='#!'>one</a></li>
-        <li><a href='#!'>two</a></li>
-        <li class='divider' tabindex='-1'></li>
-        <li><a >three</a></li>
-        <li><a href='#!'><i class='material-icons'>view_module</i>four</a></li>
-        <li><a href='#!'><i class='material-icons'>cloud</i>five</a></li>
       </ul>
       <div class="card">
       <div class="card-content">
@@ -299,7 +291,7 @@ querySnapshot.forEach(function(doc) {
       </div>
     </div>`
     interactividad()
-    removePost(doc.id)
+    // removePost(doc.id)
 } else {
     showPost.innerHTML += `
     <div class="card">
