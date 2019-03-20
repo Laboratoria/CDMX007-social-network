@@ -60,6 +60,10 @@ body{
     background-image: url('images/profileblue.svg')
 }
 
+.profile-active{
+    background-image: url('images/profileblue.svg')
+}
+
 /*Container inner*/
 main {
     margin-top:65px;
