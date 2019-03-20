@@ -114,8 +114,26 @@
                     </div>
                 </div>
                 <!--Termina container LOGIN -->
+                <div id="content">
             <div class="page" id="home2">
                 <h1>Noticias: aquí verás las publicaciones más recientes</h1>
+               <div id="idModal" class="modal">
+                   <div class="modal-content">
+                        <textarea name="" id="txtPostEdit" cols="30" rows="10"></textarea>
+                   </div>
+                   <div class="modal-footer">
+                        <a id="save-post" class="modal-close">Guardar</a>
+                   </div>
+               </div>
+               <div id="idModalDelete" class="modal">
+                    <div class="modal-content">
+                        <p>¿Estás seguro de que quieres elimiar esto?</p>
+                    </div>
+                    <div class="modal-footer">
+                         <a id="delete-post" class="modal-close">Aceptar</a>
+                         <a class="modal-close">Cancelar</a>
+                    </div>
+                </div>
                 <section id="container-feed-news"></section>
             </div>
             <section class="page" id="list">
@@ -147,8 +165,6 @@
                     <a href="" class="msg"></a>
                     </div>
                 </div>
-                <textarea name="" id="txtPostEdit" cols="30" rows="10"></textarea>
-                <button id="save-post">Guardar</button>
                 <div class="row">
                 <div class="input-field col s12"></div>
                 </div>
@@ -175,7 +191,8 @@
                         <button id="save-profile">Guardar</button>
                     </section>
             </div>
-        </div>   
+        </div> 
+    </div>  
     </main>
     <!---firebase cdn--->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
