@@ -345,8 +345,7 @@ console.log(postEdited)
  })
 }
 
-/*elimianr post*/
-
+/*eliminar post*/
 function removePost(id){
   const btnDeletePost = document.getElementById('delete-post');
   btnDeletePost.addEventListener('click' , function() {
