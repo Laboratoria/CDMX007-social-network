@@ -225,14 +225,15 @@ function editUsers(id, email, name, user, birthday){
 const btnPost = document.getElementById('btn-post')
 btnPost.addEventListener('click', saveDataInPostColection => {
  const txtPost = document.getElementById('txtPost')
+ const txtTitle = document.getElementById('input_text')
  var post = txtPost.value;
-
+ var title = txtTitle.value;
  const authorUid = firebase.auth().currentUser;
 console.log(authorUid);
  db.collection("posts").add({
    authoruid: authorUid.uid,
    nick: authorUid.email,
-   title: "",
+   title: title,
    date: "",    
    post: post
  })
@@ -279,15 +280,22 @@ querySnapshot.forEach(function(doc) {
     //obtiene datos de firestore y los pinta en tiempo real
     if(uidOfUser == doc.data().authoruid) {
       showPost.innerHTML += `
+      <!-- Dropdown Trigger -->
       <button class='dropdown-trigger btn' href='#' data-target='dropdown-${doc.id}'><i class='material-icons right'>more_horiz</i>menu</button>
       <!-- Dropdown Structure -->
       <ul id='dropdown-${doc.id}' class='dropdown-content'>
       <li><a class="modal-trigger" data-target="idModal" onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</a>
       <li><a class="modal-trigger" data-target="idModalDelete">Eliminar</a>
+        <li><a href='#!'>one</a></li>
+        <li><a href='#!'>two</a></li>
+        <li class='divider' tabindex='-1'></li>
+        <li><a >three</a></li>
+        <li><a href='#!'><i class='material-icons'>view_module</i>four</a></li>
+        <li><a href='#!'><i class='material-icons'>cloud</i>five</a></li>
       </ul>
       <div class="card">
       <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+        <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_vert</i></span>
         <p>${doc.data().post}</p>
       </div>
       <div class="card-reveal">
@@ -297,12 +305,12 @@ querySnapshot.forEach(function(doc) {
       </div>
     </div>`
     interactividad()
-    // removePost(doc.id)
+    removePost(doc.id)
 } else {
     showPost.innerHTML += `
     <div class="card">
     <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">Card Title</span>
+      <span class="card-title activator grey-text text-darken-4">${doc.data().title}</span>
       <p>${doc.data().post}</p>
     </div>
   </div>`
@@ -314,13 +322,16 @@ const btnEditPost = document.getElementById('save-post');
 const txtPostEdit = document.getElementById('txtPostEdit');
 
 function editPost(id, post){
+  console.log("id:", id)
+  console.log("post:", post)
  txtPostEdit.value = post
+ 
  console.log(txtPost.value)
  btnEditPost.addEventListener('click', function(){
 
    var postEdited = db.collection("posts").doc(id);
    var post = txtPostEdit.value
-
+console.log(postEdited)
    return postEdited.update({
      post: post
    })
@@ -334,7 +345,7 @@ function editPost(id, post){
  })
 }
 
-/*eliminar post*/
+/*elimianr post*/
 
 function removePost(id){
   const btnDeletePost = document.getElementById('delete-post');
