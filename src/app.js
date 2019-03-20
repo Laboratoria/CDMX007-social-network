@@ -239,6 +239,7 @@ console.log(authorUid);
    .then(function (docRef) {
      console.log("Document written with ID: ", docRef.id);
      txtPost.value = "";
+     window.location.replace('#home2');
    })
    .catch(function (error) {
      console.error("Error adding document: ", error);
