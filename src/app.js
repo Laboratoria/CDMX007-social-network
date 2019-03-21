@@ -316,33 +316,16 @@ querySnapshot.forEach(function(doc) {
     </div>
   </div>`
  }
-
-//  const btnDeletePost = document.getElementById(doc.id);
-//  function removePost(id){
-  // const btnDeletePost = document.getElementById('delete-post');
-  // btnDeletePost.addEventListener('click' , function() {
-    //   console.log(btnDeletePost.id)
-    //  db.collection("posts").doc(id).delete().then(function() {
-      //    console.log("Document successfully deleted!");
-//  }).catch(function(error) {
-//    console.error("Error removing document: ", error);
-//  })
-// })
-// }
 });
 });
-
 
 /*editar post*/
 const btnEditPost = document.getElementById('save-post');
 const txtPostEdit = document.getElementById('txtPostEdit');
-
 function editPost(id, post){
   console.log("id:", id)
   console.log("post:", post)
  txtPostEdit.value = post
-
- 
  console.log(txtPost.value)
  btnEditPost.addEventListener('click', function(){
 
