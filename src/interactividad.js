@@ -4,7 +4,7 @@ const interactividad = () => {
  
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems);
-    console.log('botón init')
+    // console.log('botón init')
  }
     interactividad()
  

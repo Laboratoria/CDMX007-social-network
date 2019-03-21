@@ -18,18 +18,18 @@ const app = {
         ev.preventDefault();
         let currentPage = ev.target.getAttribute('data-target');
     
-        console.log(currentPage)
+        // console.log(currentPage)
         document.querySelector('.active').classList.remove('active');
         document.getElementById(currentPage).classList.add('active');
         history.pushState({}, currentPage, `#${currentPage}`);
         document.getElementById(currentPage).dispatchEvent(app.show);
     },
     poppin: function(ev){
-        console.log(location.hash, 'popstate event');
+        // console.log(location.hash, 'popstate event');
         let hash = location.hash.replace('#' ,'');
         document.querySelector('.active').classList.remove('active');
         document.getElementById(hash).classList.add('active');
-        console.log(hash)
+        // console.log(hash)
         //history.pushState({}, currentPage, `#${currentPage}`);
         document.getElementById(hash).dispatchEvent(app.show);
 
