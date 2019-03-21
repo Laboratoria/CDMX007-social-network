@@ -27,13 +27,14 @@ function watcher() {
      loged(user);
      window.location.href = '#home2'
      content.classList.remove('hide');
-     // if(user.emailVerified == true) {
-     //   window.location.replace('main.html');
-     //   console.log('main.html')
-     // }
-     // if(user.emailVerified == false) {
-     // console.log('verifica tu correo')
-     // }
+     if(user.emailVerified == true) {
+      //  window.location.replace('main.html');
+      //  console.log('main.html')
+
+     }
+     if(user.emailVerified == false) {
+     console.log('verifica tu correo')
+     }
      // User is signed in.
      var displayName = user.displayName;
      var email = user.email;
@@ -58,6 +59,8 @@ function watcher() {
    }
  });
 } watcher();
+ 
+ 
 /*para crear usuario*/
 btnSingUp.addEventListener('click', e => {
  const email = txtEmail.value;
@@ -114,11 +117,13 @@ function verify() {
 /* boton para iniciar sesión*/
 const txtEmail2 = document.getElementById('txtEmail2');
 const textPassword2 = document.getElementById('txtPassword2');
-
+const navMenu = document.getElementById('top-nav');
 btnLogin.addEventListener('click', e => {
+
  const email2 = txtEmail2.value;
  const pass2 = textPassword2.value;
  console.log(email2, pass2);
+
  firebase.auth().signInWithEmailAndPassword(email2, pass2).catch(function (error) {
    var errorCode = error.code;
    var errorMessage = error.message;
@@ -129,14 +134,29 @@ btnLogin.addEventListener('click', e => {
 });
 
 const container = document.getElementById('container-feed');
+// const nav2 = document.getElementById('top-nav2');
 /* funcion para entar a pagina principal (feed)*/
 function loged(user) {
  var user = user;
  if (user.emailVerified) {
     window.location.href = '#home2'
    // aqui va funcion para SPA
+//    nav2.innerHTML = ` <div class="row">
+//    <nav id="top-nav " onClick="nav()" class="top-nav ">
+//        <ul>
+//            <li id="icon-logo" class="logo col l9">SproutThink</li>
+//            <li class="menu col s4 m4 l1" data-target="home2"><span
+//                        data-target="home2" class="nav-link img_nav home active2" id=""></span></li>
+//            <li class="menu col s4 m4 l1" data-target="list"><a href="#" data-target="list" class="nav-link"><span
+//                        data-target="list" class="nav-link img_nav msg" id=""></span></a></li>
+//            <li class="menu col s4  m4 l1" data-target="detail"><span
+//                        data-target="detail" class="nav-link img_nav profile" id="profile"></span></li>
+//        </ul>
+//    </nav>
+// </div>`
    container.innerHTML =
-   `<div><h1> Hola ${user.email}</h1>
+   `
+   <div><h1> Hola ${user.email}</h1>
    <button onClick="logOut()"  class= "btn btn-action">Cerrar Sesión</button></div>`;
  }
 }
@@ -154,6 +174,18 @@ function logOut() {
      console.log(error)
    })
 }
+
+// function nav() {
+//  //pop up de confirmación
+//  firebase.auth().signOut()
+//    .then(function () {
+//      console.log('saliendo..')
+    
+//    })
+//    .catch(function (error) {
+//      console.log(error)
+//    })
+// }
 
 // /******************* */leer documento firestone***********/
 // var table = document.getElementById('table2');

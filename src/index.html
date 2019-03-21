@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SproutThink</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -15,26 +15,30 @@
     <!--estilos sin framework-->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="row">
-        <nav class="top-nav">
+    <!-- <div id="top-nav2" >   
+    </div> -->
+   
+        <nav id="top-nav" onClick="nav()" class="top-nav">
+        <div class="row">
             <ul>
-                <li id="icon-logo" class="logo col l9">SproutThink</li>
+                <li id="icon-logo" class="logo col l9"><img class="img_logo" src="images/logo.jpg" alt="">
+                    <a class="logo" href="">SproutThink</a></li>
                 <li class="menu col s4 m4 l1" data-target="home2"><span
-                            data-target="home2" class="nav-link img_nav home active2" id=""></span></li>
+                    data-target="home2" class="nav-link img_nav home active2" id=""></span></li>
                 <li class="menu col s4 m4 l1" data-target="list"><a href="#" data-target="list" class="nav-link"><span
-                            data-target="list" class="nav-link img_nav msg" id=""></span></a></li>
-                <li class="menu col s4  m4 l1" data-target="detail"><span
-                            data-target="detail" class="nav-link img_nav profile" id="profile"></span></li>
+                    data-target="list" class="nav-link img_nav msg" id=""></span></a></li>
+                <li class="menu col s4 m4 l1" data-target="detail"><span
+                    data-target="detail" class="nav-link img_nav profile" id="profile"></span></li>
             </ul>
+        </div>
         </nav>
-    </div>
+     
     <main>
         <div class="container">
             <!-- Ingreso de usuarios -->
              <div class="active"></div>
-            <div class="page" id="home">
+            <div class="page " id="home">
                 <div class="row">
                     <div class="col s6">
                         <section class="login-registrer ">
@@ -102,8 +106,11 @@
             </div>
             <!--Termina container LOGIN -->
             <div id="content">
-                <div class="page" id="home2">
-                    <h1>Noticias: aquí verás las publicaciones más recientes</h1>
+                <section class="page" id="home2">
+                    <div class="nav-feed">
+                        <img class="img_logo" src="images/logo.jpg" alt="">
+                        <a class="logo" href="">SproutThink</a>
+                    </div>
                     <div id="idModal" class="modal">
                         <div class="modal-content">
                             <textarea name="" id="txtPostEdit" cols="30" rows="10"></textarea>
@@ -123,8 +130,8 @@
                             <a class="modal-close">Cancelar</a>
                         </div>
                     </div>
-                    <section id="container-feed-news"></section>
-                </div>
+                    <div id="container-feed-news"></div>
+                </section>
                 <section class="page" id="list">
                     <div class="row container-inner">
                         <!-- <h1>Publicar</h1> -->
@@ -140,7 +147,7 @@
                         <div class="col s1 l1 center-align">
                             <img class="img-privacity " src="images/user.svg" alt="">
                         </div>
-                        <div class="col s7 l3">
+                        <div class="col s6 l3">
                             <select>
                                 <option class="msg-privacity" value="" disabled selected>Quien puede ver esto</option>
                                 <option value="1">Público</option>
@@ -148,11 +155,8 @@
                             </select>
                             <!-- <label>Quien puede ver esto</label> -->
                         </div>
-                        <div class="col s4 l8 right-align">
+                        <div class="col s5 l8 right-align">
                             <a id="btn-post" class="btn-post waves-effect waves-light btn-small">Publicar</a>
-                        </div>
-                        <div>
-                            <a href="" class="msg"></a>
                         </div>
                     </div>
                     <div class="row">
