@@ -18,7 +18,8 @@
 <body>
     <!-- <div id="top-nav2" >   
     </div> -->
-        <nav id="top-nav" onClick="nav()" class="top-nav">
+   
+        <nav id="top-nav"  class="top-nav">
         <div class="row">
             <ul>
                 <li id="icon-logo" class="logo col l9"><img class="img_logo" src="images/logo.jpg" alt="">
@@ -32,10 +33,11 @@
             </ul>
         </div>
         </nav>
+     
     <main>
         <div class="container">
             <!-- Ingreso de usuarios -->
-            <div class="active"></div>
+             <div class="active"></div>
             <div class="page " id="home">
                 <div class="row">
                     <div class="col s6">
@@ -109,6 +111,25 @@
                         <img class="img_logo" src="images/logo.jpg" alt="">
                         <a class="logo" href="">SproutThink</a>
                     </div>
+                    <div id="idModal" class="modal">
+                        <div class="modal-content">
+                            <textarea name="" id="txtPostEdit" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <a id="save-post" class="modal-close">Guardar</a>
+                        </div>
+                    </div>
+                    <div id="idModalDelete" class="modal">
+                        <div class="modal-content">
+                            <p>¿Estás seguro de que quieres elimiar esto?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <div id="buttonDelete"  >
+                             <a id="delete-post" class="modal-close">Aceptar</a>
+                            </div>
+                            <a class="modal-close">Cancelar</a>
+                        </div>
+                    </div>
                     <div id="container-feed-news"></div>
                 </section>
                 <section class="page" id="list">
@@ -127,7 +148,7 @@
                             <img class="img-privacity " src="images/user.svg" alt="">
                         </div>
                         <div class="col s6 l3">
-                            <select>
+                            <select id="select-privacy">
                                 <option class="msg-privacity" value="" disabled selected>Quien puede ver esto</option>
                                 <option value="1">Público</option>
                                 <option value="2">Solo amigos</option>
@@ -136,7 +157,7 @@
                         </div>
                         <div class="col s5 l8 right-align">
                             <a id="btn-post" class="btn-post waves-effect waves-light btn-small">Publicar</a>
-                            <a id="btn-edit" class="btn-post waves-effect waves-light btn-small">Guardar</a>
+                            <a id="btn-edit" class="btn-post waves-effect waves-light btn-small">Save</a>
                         </div>
                     </div>
                     <div class="row">
@@ -145,15 +166,11 @@
                     <div>
                         <p id="showPost"></p>
                 </section>
-                <section class="page" id="detail">
-                    <div class="img-portada">
-                        <div class="img-profile">
-                                <p class="name-user">Jonh Smitch</p>
-                        </div>
-                    </div>
-                    <section id="profile" class="row profile">
-                            <div id="container-feed">
-                                </div>
+                <div class="page" id="detail">
+                    <h1>Perfil</h1>
+                    <section id="profile">
+                        <section id="container-feed">
+                        </section>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -167,8 +184,9 @@
                             </tbody>
                         </table>
                         <button id="save-profile">Guardar</button>
+                        <div id="personalWall"></div>
                     </section>
-                </section>
+                </div>
             </div>
         </div>
     </main>
@@ -182,4 +200,5 @@
     <script src="spa.js"></script>
     <script src="interactividad.js"></script>
 </body>
+
 </html>
