@@ -260,8 +260,9 @@ querySnapshot.forEach(function(doc) {
   // doc.data() is never undefined for query doc snapshots
     //obtiene datos de firestore y los pinta en tiempo real
     if(uidOfUser == doc.data().authoruid) {
+      console.log(doc.id)
       showPost.innerHTML += `
-    <div class="card">
+      <div class="card">
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_vert</i></span>
         <p>${doc.data().post}</p>
@@ -270,11 +271,12 @@ querySnapshot.forEach(function(doc) {
       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
       <a class="modal-trigger" data-target="idModalDelete">Eliminar</a>
       <a class="modal-trigger" data-target="idModal" onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</a>
+     <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Aceptar</a>
       </div>
-    </div> 
-    `
+    </div>
+     `
     interactividad()
-    removePost(doc.id)
+    // removePost(doc.id)
 } else {
     showPost.innerHTML += `
     <div class="card">
@@ -284,7 +286,23 @@ querySnapshot.forEach(function(doc) {
     </div>
   </div>`
  }
- });
+
+//  const btnDeletePost = document.getElementById(doc.id);
+//  function removePost(id){
+  // const btnDeletePost = document.getElementById('delete-post');
+  // btnDeletePost.addEventListener('click' , function() {
+    //   console.log(btnDeletePost.id)
+    //  db.collection("posts").doc(id).delete().then(function() {
+      //    console.log("Document successfully deleted!");
+//  }).catch(function(error) {
+//    console.error("Error removing document: ", error);
+//  })
+// })
+// }
+});
+const buttons = document.getElementsByClassName('mi-clase')
+console.log(buttons)
+
 });
 
 
@@ -309,6 +327,7 @@ function editPost(id, post){
    })
    .then(function() {
        console.log("Document successfully updated!");
+       txtPostEdit.value = ""
    })
    .catch(function(error) {
        // The document probably doesn't exist.
@@ -319,12 +338,9 @@ function editPost(id, post){
 
 /*eliminar post*/
 function removePost(id){
-  const btnDeletePost = document.getElementById('delete-post');
-  btnDeletePost.addEventListener('click' , function() {
  db.collection("posts").doc(id).delete().then(function() {
    console.log("Document successfully deleted!");
  }).catch(function(error) {
    console.error("Error removing document: ", error);
  })
-})
-}
+ }
