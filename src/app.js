@@ -156,7 +156,7 @@ function loged(user) {
 // </div>`
    container.innerHTML =
    `
-   <div><h1> Hola ${user.email}</h1>
+   <div class="row user-email"><p> Hola ${user.email}</p>
    <button onClick="logOut()"  class= "btn btn-action">Cerrar Sesión</button></div>`;
  }
 }

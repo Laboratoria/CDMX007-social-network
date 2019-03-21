@@ -18,6 +18,7 @@
 <body>
     <!-- <div id="top-nav2" >   
     </div> -->
+
    
         <nav id="top-nav"  class="top-nav">
         <div class="row">
@@ -33,11 +34,10 @@
             </ul>
         </div>
         </nav>
-     
     <main>
         <div class="container">
             <!-- Ingreso de usuarios -->
-             <div class="active"></div>
+            <div class="active"></div>
             <div class="page " id="home">
                 <div class="row">
                     <div class="col s6">
@@ -147,11 +147,15 @@
                     <div>
                         <p id="showPost"></p>
                 </section>
-                <div class="page" id="detail">
-                    <h1>Perfil</h1>
-                    <section id="profile">
-                        <section id="container-feed">
-                        </section>
+                <section class="page" id="detail">
+                    <div class="img-portada">
+                        <div class="img-profile">
+                                <p class="name-user">Jonh Smitch</p>
+                        </div>
+                    </div>
+                    <section id="profile" class="row profile">
+                            <div id="container-feed">
+                                </div>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -166,7 +170,7 @@
                         </table>
                         <button id="save-profile">Guardar</button>
                     </section>
-                </div>
+                </section>
             </div>
         </div>
     </main>
@@ -180,5 +184,4 @@
     <script src="spa.js"></script>
     <script src="interactividad.js"></script>
 </body>
-
 </html>
