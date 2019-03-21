@@ -155,7 +155,7 @@ function logOut() {
    })
 }
 
-// /*leer documento firestone*/
+// /******************* */leer documento firestone***********/
 // var table = document.getElementById('table2');
 // db.collection("users").onSnapshot((querySnapshot) => {
 //   table.innerHTML= "";
@@ -240,6 +240,7 @@ console.log(authorUid);
    .then(function (docRef) {
      console.log("Document written with ID: ", docRef.id);
      txtPost.value = "";
+     txtTitle.value = "";
      window.location.replace('#home2');
    })
    .catch(function (error) {
@@ -250,50 +251,17 @@ console.log(authorUid);
 
 
 /*leer documento firestone*/
-// var showPost = document.getElementById('showPost');
-// db.collection("posts").onSnapshot((querySnapshot) => {
-//   showPost.innerHTML= "";
-// let uidOfUser = localStorage.getItem('useruid')
-//   querySnapshot.forEach(function(doc) {
-//     // doc.data() is never undefined for query doc snapshots
-//       //obtiene datos de firestore y los pinta en tiempo real
-//       showPost.innerHTML += `
-//       <div>
-//         <p>${doc.data().post}</p>
-//       </div>` 
-//       if(uidOfUser == doc.data().authoruid) {
-//         showPost.innerHTML += `
-//         <div>
-//         <button onclick="removePost('${doc.id}')">Eliminar</button>
-//         <button onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</button>
-//       </div>` 
-//       }
-//     });
-// });
-
 var showPost = document.getElementById('container-feed-news');
 db.collection("posts").onSnapshot((querySnapshot) => {
 showPost.innerHTML= "";
 let uidOfUser = localStorage.getItem('useruid')
 querySnapshot.forEach(function(doc) {
+
   // doc.data() is never undefined for query doc snapshots
     //obtiene datos de firestore y los pinta en tiempo real
     if(uidOfUser == doc.data().authoruid) {
       showPost.innerHTML += `
-      <!-- Dropdown Trigger -->
-      <button class='dropdown-trigger btn' href='#' data-target='dropdown-${doc.id}'><i class='material-icons right'>more_horiz</i>menu</button>
-      <!-- Dropdown Structure -->
-      <ul id='dropdown-${doc.id}' class='dropdown-content'>
-      <li><a class="modal-trigger" data-target="idModal" onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</a>
-      <li><a class="modal-trigger" data-target="idModalDelete">Eliminar</a>
-        <li><a href='#!'>one</a></li>
-        <li><a href='#!'>two</a></li>
-        <li class='divider' tabindex='-1'></li>
-        <li><a >three</a></li>
-        <li><a href='#!'><i class='material-icons'>view_module</i>four</a></li>
-        <li><a href='#!'><i class='material-icons'>cloud</i>five</a></li>
-      </ul>
-      <div class="card">
+    <div class="card">
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_vert</i></span>
         <p>${doc.data().post}</p>
@@ -303,7 +271,8 @@ querySnapshot.forEach(function(doc) {
       <a class="modal-trigger" data-target="idModalDelete">Eliminar</a>
       <a class="modal-trigger" data-target="idModal" onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</a>
       </div>
-    </div>`
+    </div> 
+    `
     interactividad()
     removePost(doc.id)
 } else {
@@ -317,6 +286,8 @@ querySnapshot.forEach(function(doc) {
  }
  });
 });
+
+
 /*editar post*/
 const btnEditPost = document.getElementById('save-post');
 const txtPostEdit = document.getElementById('txtPostEdit');
@@ -325,13 +296,14 @@ function editPost(id, post){
   console.log("id:", id)
   console.log("post:", post)
  txtPostEdit.value = post
+
  
  console.log(txtPost.value)
  btnEditPost.addEventListener('click', function(){
 
    var postEdited = db.collection("posts").doc(id);
    var post = txtPostEdit.value
-console.log(postEdited)
+  console.log(postEdited)
    return postEdited.update({
      post: post
    })
