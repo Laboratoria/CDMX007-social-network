@@ -301,8 +301,6 @@ function editUsers(id, email, name, user, birthday){
     });
  })
 
-
-
 /*leer documento firestone*/
 var showPost = document.getElementById('container-feed-news');
 db.collection("posts").onSnapshot((querySnapshot) => {
