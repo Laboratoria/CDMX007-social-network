@@ -1,19 +1,32 @@
 body{
     font-family: 'Nunito Sans', sans-serif;
 }
+.input-field>label{
+ z-index: 1;
+}
+.input-field>input{
+    position: relative;
+    z-index: 2;
+   }
 /*login*/
 .img_login{
     width: 100%;
 }
+
 /*Estilo container*/
 .container{
     position: relative;
     width: 100%;
 }
 /* estilos nav */
+.row .top-nav{
+    margin: 0;
+}
 .top-nav{
     position: fixed;
-    top : 0;
+    bottom : 0;
+    right: 0;
+    left: 0;
     background-color: #fff;
     z-index: 1000;
 }
@@ -22,54 +35,92 @@ body{
     width: 33.33%;
     text-align: center;
 }
+.top-nav ul>.menu{
+    padding: 0;
+    text-align: center;
+}
+.top-nav ul>.logo{
+    display: none;
+    text-align: left;
+    color: #3da29f;
+    font-size: 1.3rem;
+
+}
 .img_nav{
     width: 25px;
     height: 25px ;
     display: inline-block;
     vertical-align: middle;
     background-size: 25px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: #fff;
+    background-position: center center;
+    background-size: 30px 30px; 
+    background-repeat: no-repeat;
+    position: relative;
 } 
-.top-nav ul>.menu{
-    padding: 0;
-}
-.top-nav ul>.logo{
-    text-align: left;
-    color: #3da29f;
-    font-size: 1.3rem;
-}
-
 .nav-link{
     padding: 0;
+    background-color: #fff;
 }
-.home{
+.nav-link:hover{
+    background-color: #fff;
+}
+.img_nav.home{
     background-image: url('images/homeblack.svg')
 }
-.msg{
+.img_nav.msg{
     background-image: url('images/addblack.svg')
 }
-.profile{
+.img_nav.profile{
     background-image: url('images/profileblack.svg')
 }
-.home.active{
+.img_nav.home.active2{
     background-image: url('images/homeblue.svg')
 }
-.msg.active{
+.img_nav.msg.active2{
     background-image: url('images/addblue.svg')
 }
-.profile.active{
+.img_nav.profile.active2{
     background-image: url('images/profileblue.svg')
 }
-
-/*Container inner*/
-main {
-    margin-top:65px;
+.img_nav.active2:after{
+    content:"";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #1f8eaf;
+    left:0;
+    right: 0;
+    top: -5px;
+    margin: auto;
+  }
+/*Feed*/
+.nav-feed{
+    text-align: center;
 }
+.logo{
+    font-size: 1.6rem;
+    vertical-align: middle;
+    font-family: 'Dancing Script', cursive;
+}
+.img_logo{
+    width: 50px;
+    vertical-align: middle;
+}
+/*Container inner*/
 .btn-post{
+    background-color: #3da29f;
+    width: 100px;
     margin-top: 10px;
-    text-transform: capitalize;
+    border-radius: 4px;
+    font-weight: 300;
 }
 .img-privacity{
-    width: 25px;
+    width: 20px;
     margin-top: 10px;
 }
 
@@ -78,9 +129,7 @@ input.msg-title[type=text] {
     border: 1px solid #e4e7ed;
     border-radius: 5px;
     font-size: 1.2rem;
-    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    
 }
 .input-field input.msg-title[type=text]:focus {
     border: 1px solid #b1b4ba;; 
@@ -93,9 +142,6 @@ input.msg-title[type=text] {
     height: 350px;
     border-radius: 5px;
     padding-left: 5px;
-    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 .message-large:focus{
     border:1px solid #b1b4ba;
@@ -104,6 +150,21 @@ input.msg-title[type=text] {
 .message-large::-moz-placeholder  {  font-size: 1.2rem;}
 .message-large:-moz-placeholder   { font-size: 1.2rem;}
 .message-large:-ms-input-placeholder  {  font-size: 1.2rem;}
+
+.select-wrapper input.select-dropdown{
+    color: #b1b4ba;
+    font-size: .8rem;
+    padding-left: 5px;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -133,3 +194,32 @@ h1{
     font-size: 5rem;
     font-weight: 900;
 } 
+.hide{
+    display: none;
+}
+@media screen and (min-width:990px){
+    .top-nav{
+        top:0;
+        bottom:auto;
+    }
+    main {
+        margin-top:4.3rem;
+    }
+    .top-nav ul>.logo{
+        display: block;
+        text-align: left;
+        color: #3da29f;
+        font-size: 1.3rem;
+    
+    }
+    .nav-feed{
+        display: none;
+    }
+    .logo{
+        display: inline-block;
+        font-size: 1.6rem;
+        vertical-align: middle;
+        color: #1f8efa;
+        font-family: 'Dancing Script', cursive;
+    }    
+}
