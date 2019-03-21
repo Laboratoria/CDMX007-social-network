@@ -279,20 +279,8 @@ querySnapshot.forEach(function(doc) {
   // doc.data() is never undefined for query doc snapshots
     //obtiene datos de firestore y los pinta en tiempo real
     if(uidOfUser == doc.data().authoruid) {
+      console.log(doc.id)
       showPost.innerHTML += `
-      <!-- Dropdown Trigger -->
-      <button class='dropdown-trigger btn' href='#' data-target='dropdown-${doc.id}'><i class='material-icons right'>more_horiz</i>menu</button>
-      <!-- Dropdown Structure -->
-      <ul id='dropdown-${doc.id}' class='dropdown-content'>
-      <li><a class="modal-trigger" data-target="idModal" onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</a>
-      <li><a class="modal-trigger" data-target="idModalDelete">Eliminar</a>
-        <li><a href='#!'>one</a></li>
-        <li><a href='#!'>two</a></li>
-        <li class='divider' tabindex='-1'></li>
-        <li><a >three</a></li>
-        <li><a href='#!'><i class='material-icons'>view_module</i>four</a></li>
-        <li><a href='#!'><i class='material-icons'>cloud</i>five</a></li>
-      </ul>
       <div class="card">
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_vert</i></span>
@@ -302,10 +290,12 @@ querySnapshot.forEach(function(doc) {
       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
       <a class="modal-trigger" data-target="idModalDelete">Eliminar</a>
       <a class="modal-trigger" data-target="idModal" onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</a>
+     <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Aceptar</a>
       </div>
-    </div>`
+    </div>
+     `
     interactividad()
-    removePost(doc.id)
+    // removePost(doc.id)
 } else {
     showPost.innerHTML += `
     <div class="card">
@@ -315,7 +305,23 @@ querySnapshot.forEach(function(doc) {
     </div>
   </div>`
  }
- });
+
+//  const btnDeletePost = document.getElementById(doc.id);
+//  function removePost(id){
+  // const btnDeletePost = document.getElementById('delete-post');
+  // btnDeletePost.addEventListener('click' , function() {
+    //   console.log(btnDeletePost.id)
+    //  db.collection("posts").doc(id).delete().then(function() {
+      //    console.log("Document successfully deleted!");
+//  }).catch(function(error) {
+//    console.error("Error removing document: ", error);
+//  })
+// })
+// }
+});
+const buttons = document.getElementsByClassName('mi-clase')
+console.log(buttons)
+
 });
 /*editar post*/
 const btnEditPost = document.getElementById('save-post');
@@ -337,6 +343,7 @@ console.log(postEdited)
    })
    .then(function() {
        console.log("Document successfully updated!");
+       txtPostEdit.value = ""
    })
    .catch(function(error) {
        // The document probably doesn't exist.
@@ -347,12 +354,9 @@ console.log(postEdited)
 
 /*eliminar post*/
 function removePost(id){
-  const btnDeletePost = document.getElementById('delete-post');
-  btnDeletePost.addEventListener('click' , function() {
  db.collection("posts").doc(id).delete().then(function() {
    console.log("Document successfully deleted!");
  }).catch(function(error) {
    console.error("Error removing document: ", error);
  })
-})
-}
+ }
