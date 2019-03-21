@@ -85,10 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 
-  /* ocultar menu el desktop */
-//   const navMenu = document.getElementById('top-nav');
-//   navMenu.addEventListener('click', () => {
-//     navMenu.classList.add('hide');
-//   });
+
 
    

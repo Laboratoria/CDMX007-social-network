@@ -280,8 +280,6 @@ console.log(authorUid);
    });
 })
 
-
-
 /*leer documento firestone*/
 var showPost = document.getElementById('container-feed-news');
 db.collection("posts").onSnapshot((querySnapshot) => {
@@ -332,9 +330,6 @@ querySnapshot.forEach(function(doc) {
 // })
 // }
 });
-const buttons = document.getElementsByClassName('mi-clase')
-console.log(buttons)
-
 });
 
 
