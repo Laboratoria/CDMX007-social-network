@@ -155,7 +155,7 @@ function logOut() {
    })
 }
 
-// /*leer documento firestone*/
+// /******************* */leer documento firestone***********/
 // var table = document.getElementById('table2');
 // db.collection("users").onSnapshot((querySnapshot) => {
 //   table.innerHTML= "";
@@ -240,6 +240,7 @@ console.log(authorUid);
    .then(function (docRef) {
      console.log("Document written with ID: ", docRef.id);
      txtPost.value = "";
+     txtTitle.value = "";
      window.location.replace('#home2');
    })
    .catch(function (error) {
@@ -250,32 +251,12 @@ console.log(authorUid);
 
 
 /*leer documento firestone*/
-// var showPost = document.getElementById('showPost');
-// db.collection("posts").onSnapshot((querySnapshot) => {
-//   showPost.innerHTML= "";
-// let uidOfUser = localStorage.getItem('useruid')
-//   querySnapshot.forEach(function(doc) {
-//     // doc.data() is never undefined for query doc snapshots
-//       //obtiene datos de firestore y los pinta en tiempo real
-//       showPost.innerHTML += `
-//       <div>
-//         <p>${doc.data().post}</p>
-//       </div>` 
-//       if(uidOfUser == doc.data().authoruid) {
-//         showPost.innerHTML += `
-//         <div>
-//         <button onclick="removePost('${doc.id}')">Eliminar</button>
-//         <button onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</button>
-//       </div>` 
-//       }
-//     });
-// });
-
 var showPost = document.getElementById('container-feed-news');
 db.collection("posts").onSnapshot((querySnapshot) => {
 showPost.innerHTML= "";
 let uidOfUser = localStorage.getItem('useruid')
 querySnapshot.forEach(function(doc) {
+
   // doc.data() is never undefined for query doc snapshots
     //obtiene datos de firestore y los pinta en tiempo real
     if(uidOfUser == doc.data().authoruid) {
@@ -323,6 +304,8 @@ const buttons = document.getElementsByClassName('mi-clase')
 console.log(buttons)
 
 });
+
+
 /*editar post*/
 const btnEditPost = document.getElementById('save-post');
 const txtPostEdit = document.getElementById('txtPostEdit');
@@ -331,13 +314,14 @@ function editPost(id, post){
   console.log("id:", id)
   console.log("post:", post)
  txtPostEdit.value = post
+
  
  console.log(txtPost.value)
  btnEditPost.addEventListener('click', function(){
 
    var postEdited = db.collection("posts").doc(id);
    var post = txtPostEdit.value
-console.log(postEdited)
+  console.log(postEdited)
    return postEdited.update({
      post: post
    })

@@ -156,16 +156,13 @@ h1{
     font-size: 5rem;
     font-weight: 900;
 } 
-
-
-
 @media screen and (min-width:1024px){
     .top-nav{
         top:0;
         bottom:auto;
     }
     main {
-        margin-top:2rem;
+        margin-top:4.3rem;
     }
 }
 
