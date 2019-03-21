@@ -74,7 +74,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Datepicker.init(elems, options);
   });
 
-    // <ul id='dropdown-${doc.id}' class='dropdown-content'>
-    //   <li><a class="modal-trigger" data-target="idModal" onclick="editPost('${doc.id}', '${doc.data().post}')">Editar</a>
+  /*Cambio de iconos en el nav*/
+  let elementsArray = document.querySelectorAll(".img_nav");
+  elementsArray.forEach(function(elem) {
+      elem.addEventListener("click", ()=> {
+        elementsArray.forEach(function(elemento) {
+          elemento.classList.remove('active2');
+        });
+         elem.classList.add('active2');
+      });
+  });
+
+
 
    
