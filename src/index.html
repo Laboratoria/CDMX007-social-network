@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SproutThink</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--estilos sin framework-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="top-nav" class="top-nav hide">
+        <div class="row">
+            <ul>
+                <li id="icon-logo" class="logo col l9"><img class="img_logo" src="images/logo.jpg" alt=""><a
+                        class="logo">SproutThink</a></li>
+                <li class="menu col s4 m4 l1" data-target="home2"><span data-target="home2"
+                        class="nav-link img_nav home active2"></span></li>
+                <li id="btn-mas" class="menu col s4 m4 l1" data-target="list"><span data-target="list"
+                        class="nav-link img_nav msg" id="more"></span></li>
+                <li class="menu col s4 m4 l1" data-target="detail"><span data-target="detail"
+                        class="nav-link img_nav profile" id="profile"></span></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="page active"></div>
+            <div id="home" class="page">
+                <div class="row">
+                    <div class="col s6">
+                        <section class="login-registrer ">
+                            <h5>Ingreso de usuarios</h5>
+                            <div class="row">
+                                <form class="col s12 m12 l12">
+                                    <div class="row">
+                                        <div class="input-field col s12 m12 l10">
+                                            <input id="txtEmail2" type="email" class="validate">
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12 m12 l10">
+                                            <input id="txtPassword2" type="password" class="validate">
+                                            <label for="password">Password</label>
+                                        </div>
+                                    </div>
+                                    <a id="btnLogin" class="waves-effect waves-light btn">Inicia Sesión</a>
+                                </form>
+                            </div>
+                            <!-- Registro -->
+                            <h5>Registro de usuarios</h5>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12 m12 l10">
+                                            <input id="name" type="text" class="validate">
+                                            <label for="name">Tu nombre</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12 m12 l10">
+                                            <input id="user-name" type="text" class="validate">
+                                            <label for="user-name">Nombre de Usuario</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12 m12 l10">
+                                            <input id="birthday" type="text" class="datepicker validate"
+                                                placeholder="Fecha de nacimiento">
+                                            <label for="birthday"></label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12 m12 l10">
+                                            <input id="txtEmail" type="email" class="validate">
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12 m12 l10">
+                                            <input id="txtPassword" type="password" class="validate">
+                                            <label for="password">Password</label>
+                                        </div>
+                                    </div>
+                                    <a id="btnSignUp" class="waves-effect waves-light btn">Registrate</a>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col s6">
+                        <img class="img_login materialboxed imgside"
+                            src="https://images.pexels.com/photos/414928/pexels-photo-414928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOME DOS -->
+            <div id="content">
+                <section id="home2" class="page">
+                    <header class="nav-feed">
+                        <img class="img_logo" src="images/logo.jpg" alt="">
+                        <a class="logo">SproutThink</a>
+                    </header>
+                    <button id='likebttn' class="like" data-like='like'>0 like</button>
+                    <div id="container-feed-news">
+                    </div>
+                </section>
+                <!-- LIST -->
+                <section id="list" class="page">
+                    <div class="row container-inner">
+                        <div class="input-field col s12 l12">
+                            <input id="input_text" class="msg-title" type="text" data-length="10" placeholder="Titulo">
+                        </div>
+                        <div class="input-field col s12 l12">
+                            <textarea id="txtPost" class="message-large" placeholder="Escribe tu historia..."
+                                data-length="120"></textarea>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="col s1 l1 center-align">
+                            <img class="img-privacity " src="images/user.svg" alt="">
+                        </div>
+                        <div class="col s6 l3">
+                            <select id="select-privacy">
+                                <option class="msg-privacity" value="" disabled selected>Quien puede ver esto</option>
+                                <option value="1">Público</option>
+                                <option value="2">Privado</option>
+                            </select>
+                        </div>
+                        <div class="col s5 l8 right-align">
+                            <a id="btn-post" class="mi-hide btn-post waves-effect waves-light btn-small ">Publicar</a>
+                            <a id="btn-edit" class="mi-hide btn-post waves-effect waves-light btn-small ">Guardar</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- DETAIL -->
+                <section id="detail" class="page">
+                    <div class="img-portada">
+                        <div class="img-profile">
+                            <p class="name-user">Jonh Smitch</p>
+                        </div>
+                    </div>
+                    <section id="profile" class="row profile">
+                        <div id="container-feed"></div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Nombre</th>
+                                    <th>Nombre de usuario</th>
+                                    <th>Fecha de nacimiento</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table2">
+                            </tbody>
+                        </table>
+                        <button id="save-profile">Guardar</button>
+                        <div id="personalWall"></div>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </main>
+    <!---firebase cdn--->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <!---firestore--->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <!---materialize--->
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+    <script src="spa.js"></script>
+    <script src="interactividad.js"></script>
+</body>
+
+</html>
