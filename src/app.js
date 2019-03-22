@@ -212,26 +212,40 @@ function editUsers(id, email, name, user, birthday){
     });
   })
 }
-
+/*oculta boton */
 const btnMas = document.getElementById('btn-mas');
-
 btnMas.addEventListener('click', () => {
   btnEdit.classList.add('mi-hide');
   btnPost.classList.remove('mi-hide');
 })
 
+function validarFormulario(){
+  if(txtTitle == null || txtTitle.length == 0 || /^\s+$/.test(txtTitle)){
+    alert('ERROR: Debe ingresar un titulo');
+    return false;
+  }
+  if(txtPost == null || txtPost.length == 0 || isNaN(txtPost)){
+    alert('ERROR: Debe ingresar un post');
+    return false;
+  } 
+  return true;
+}
 /*Guardar la informacion en la bd post PUBLICAR*/
-const btnPost = document.getElementById('btn-post')
+  const txtTitle = document.getElementById('input_text')
+  const txtPost = document.getElementById('txtPost')
+  const btnPost = document.getElementById('btn-post')
 btnPost.addEventListener('click', saveDataInPostColection => {
   const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado2
   console.log(privacy)
-  const txtPost = document.getElementById('txtPost')
-  const txtTitle = document.getElementById('input_text')
+  // const txtTitle = document.getElementById('input_text')
+  // const txtPost = document.getElementById('txtPost')
   var post = txtPost.value;
   var title = txtTitle.value;
   const authorUid = firebase.auth().currentUser;
   console.log(authorUid);
-  if(privacy == 1 ){ //condicional si es 1 el campo public será true y eso se imprimirá en el feed
+
+  if(privacy == 1){ 
+    //condicional si es 1 el campo public será true y eso se imprimirá en el feed
       db.collection("posts").add({
       authoruid: authorUid.uid,
       nick: authorUid.email,
@@ -251,6 +265,7 @@ btnPost.addEventListener('click', saveDataInPostColection => {
       console.error("Error adding document: ", error);
     });
   } else { //si no es true el campo public es false
+      
       db.collection("posts").add({
       authoruid: authorUid.uid,
       nick: authorUid.email,
@@ -269,7 +284,7 @@ btnPost.addEventListener('click', saveDataInPostColection => {
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
-  }
+  } 
 })
 
 /*leer documento firestone*/
