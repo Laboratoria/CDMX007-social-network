@@ -14,6 +14,7 @@ const app = {
         window.addEventListener('popstate', app.poppin);
     },
     nav: function(ev){
+
         // const home2 = document.getElementById('home2')
         ev.preventDefault();
         let currentPage = ev.target.getAttribute('data-target');
