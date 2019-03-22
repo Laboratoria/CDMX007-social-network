@@ -44,6 +44,7 @@
                                         <div class="input-field col s12 m12 l10">
                                             <input id="txtPassword2" type="password" class="validate">
                                             <label for="password">Password</label>
+                                            <div id="errorMessage"></div>
                                         </div>
                                     </div>
                                     <a id="btnLogin" class="waves-effect waves-light btn">Inicia Sesión</a>
@@ -127,19 +128,7 @@
                     </div>
                     <section id="profile" class="row profile">
                         <div id="container-feed"></div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Email</th>
-                                    <th>Nombre</th>
-                                    <th>Nombre de usuario</th>
-                                    <th>Fecha de nacimiento</th>
-                                </tr>
-                            </thead>
-                            <tbody id="table2">
-                            </tbody>
-                        </table>
-                        <button id="save-profile">Guardar</button>
+                            <div id="table2"></div>
                         <div id="personalWall"></div>
                     </section>
                 </section>
