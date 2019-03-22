@@ -6,6 +6,8 @@ const txtName = document.getElementById('name');
 const txtUserName = document.getElementById('user-name');
 const txtBirthday = document.getElementById('birthday');
 const btnSaveProfile = document.getElementById('save-profile');
+const nav = document.getElementById('top-nav')
+
 /*Inicializacion para enlazar el proyecto a firebase */
 var config = {
  apiKey: "AIzaSyA-br4fjgN3TqUQgfE-Y2eGzfdajBuwa_Q",
@@ -30,8 +32,8 @@ function watcher() {
      if(user.emailVerified == true) {
       //  window.location.replace('main.html');
       //  console.log('main.html')
-
-     }
+      nav.classList.remove('hide');
+    }
      if(user.emailVerified == false) {
     //  console.log('verifica tu correo')
      }
@@ -47,6 +49,7 @@ function watcher() {
      var providerData = user.providerData;
      // ...
    } else {
+
      // navMenu.classList.add('hide');
      window.location.href = '#home';
      const content = document.getElementById('content')
@@ -54,6 +57,7 @@ function watcher() {
      content.classList.add('hide');
      // //     // User is signed out.
      // ...
+     nav.classList.add('hide');
      console.log('no existe usuario activo');
      //container.innerHTML = ``;
    }
@@ -164,11 +168,12 @@ function loged(user) {
 /* Boton de cerrar sesión*/
 const btnLogout = document.getElementById('btnLogout');
 function logOut() {
- //pop up de confirmación
- firebase.auth().signOut()
-   .then(function () {
+  //pop up de confirmación
+  firebase.auth().signOut()
+  .then(function () {
     //  console.log('saliendo..')
-     window.location.href = '#home'
+    window.location.href = '#home'
+    watcher()
    })
    .catch(function (error) {
     //  console.log(error)
@@ -271,10 +276,15 @@ function editUsers(id, email, name, user, birthday){
 // console.log(buttons)
 
 
+const btnMas = document.getElementById('btn-mas')
+
+btnMas.addEventListener('click', () => {
+  btnEdit.classList.add('mi-hide');
+  btnPost.classList.remove('mi-hide');
+})
 
 
-
-/*Guarda la informacion en la bd post*/
+/*Guardar la informacion en la bd post PUBLICAR*/
  const btnPost = document.getElementById('btn-post')
  btnPost.addEventListener('click', saveDataInPostColection => {
    const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado2
@@ -326,7 +336,6 @@ function editUsers(id, email, name, user, birthday){
   }
   })
 
-
 /*leer documento firestone*/
 var showPost = document.getElementById('container-feed-news');
 db.collection("posts").onSnapshot((querySnapshot) => {
@@ -345,7 +354,7 @@ querySnapshot.forEach(function(doc) {
       </div>
       <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-      <a onclick="edit('${doc.id}', '${doc.data().title}', '${doc.data().post}')">Editar</a>
+      <a  onclick="edit('${doc.id}', '${doc.data().title}', '${doc.data().post}')">Editar</a>
      <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Aceptar</a>
       </div>
     </div>
@@ -363,17 +372,17 @@ querySnapshot.forEach(function(doc) {
  }
 });
 });
-
-
-
-
+/*EDITAR POST "GUARDAR"*/
+const btnEdit = document.getElementById('btn-edit');
 function edit(id, title, post) {
+  alert('ok');
+  btnPost.classList.add('mi-hide');
+  btnEdit.classList.remove('mi-hide');
   window.location.replace('#list');
-document.getElementById('txtPost').value = post
-document.getElementById('input_text').value = title
-let btnEdit = document.getElementById('btn-edit')
-
+  document.getElementById('txtPost').value = post
+  document.getElementById('input_text').value = title
   btnEdit.onclick = function () {
+    
       var updatePost = db.collection('posts').doc(id);
       var newTitle = document.getElementById('input_text').value;
       var newPost = document.getElementById('txtPost').value;
@@ -433,3 +442,4 @@ querySnapshot.forEach(function(doc) {
 }
 });
 });
+ 
