@@ -287,29 +287,54 @@ btnMas.addEventListener('click', () => {
 /*Guardar la informacion en la bd post PUBLICAR*/
  const btnPost = document.getElementById('btn-post')
  btnPost.addEventListener('click', saveDataInPostColection => {
+   const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado2
+   console.log(privacy)
   const txtPost = document.getElementById('txtPost')
   const txtTitle = document.getElementById('input_text')
   var post = txtPost.value;
   var title = txtTitle.value;
   const authorUid = firebase.auth().currentUser;
  console.log(authorUid);
+ if(privacy == 1 ){ //condicional si es 1 el campo public será true y eso se imprimirá en el feed
   db.collection("posts").add({
     authoruid: authorUid.uid,
     nick: authorUid.email,
     title: title,
     date: "",    
-    post: post
+    post: post,
+    public: true
   })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
       txtPost.value = "";
       txtTitle.value = "";
+      privacy.value = "";
       window.location.replace('#home2');
     })
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
- })
+  } else { //si no es true el campo public es false
+    db.collection("posts").add({
+      authoruid: authorUid.uid,
+      nick: authorUid.email,
+      title: title,
+      date: "",    
+      post: post,
+      public: false
+    })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        txtPost.value = "";
+        txtTitle.value = "";
+        privacy.value = "";
+        window.location.replace('#detail');
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+  }
+  })
 
 /*leer documento firestone*/
 var showPost = document.getElementById('container-feed-news');
@@ -317,10 +342,9 @@ db.collection("posts").onSnapshot((querySnapshot) => {
 showPost.innerHTML= "";
 let uidOfUser = localStorage.getItem('useruid')
 querySnapshot.forEach(function(doc) {
-
   // doc.data() is never undefined for query doc snapshots
     //obtiene datos de firestore y los pinta en tiempo real
-    if(uidOfUser == doc.data().authoruid) {
+    if(doc.data().public == true && uidOfUser == doc.data().authoruid) { //condicional busca los public y los que tienen el mismo iud para imprimirlos con permisos para editar y eliminar
       // console.log(doc.id)
       showPost.innerHTML += `
       <div class="card">
@@ -337,7 +361,7 @@ querySnapshot.forEach(function(doc) {
      `
     interactividad()
     // removePost(doc.id)
-} else {
+} else if (doc.data().public == true) { //otro condiconal para solo imprimir los publicos sin permisos
     showPost.innerHTML += `
     <div class="card">
     <div class="card-content">
@@ -348,7 +372,7 @@ querySnapshot.forEach(function(doc) {
  }
 });
 });
-/*EDITAR POST "GUARDAR"*/
+/*EDITAR PUBLICACION "GUARDAR"*/
 const btnEdit = document.getElementById('btn-edit');
 function edit(id, title, post) {
   alert('ok');
@@ -369,7 +393,6 @@ function edit(id, title, post) {
           console.log('Registro actualizado correctamente');
           document.getElementById('txtPost').value = '',
               document.getElementById('input_text').value = '',
-              console.log('Registro actualizado correctamente');
               window.location.replace('#home2')
       }).catch(function (error) {
           var errorCode = error.code;
@@ -389,4 +412,34 @@ function removePost(id){
  })
  }
 
+ //IMPRIMIR PUBLICACIONES PRIVADAS EN EL PERFIL DEL USUARIO//
+
+var personalWall = document.getElementById('personalWall');
+db.collection("posts").onSnapshot((querySnapshot) => {
+personalWall.innerHTML= "";
+let uidOfUser = localStorage.getItem('useruid')
+querySnapshot.forEach(function(doc) {
+
+  // doc.data() is never undefined for query doc snapshots
+    //obtiene datos de firestore y los pinta en tiempo real
+    if(doc.data().public == false && uidOfUser == doc.data().authoruid) {
+      // console.log(doc.id)
+      personalWall.innerHTML += `
+      <div class="card">
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_vert</i></span>
+        <p>${doc.data().post}</p>
+      </div>
+      <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+      <a onclick="edit('${doc.id}', '${doc.data().title}', '${doc.data().post}')">Editar</a>
+     <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Aceptar</a>
+      </div>
+    </div>
+     `
+    interactividad()
+    // removePost(doc.id)
+}
+});
+});
  
