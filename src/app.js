@@ -8,8 +8,8 @@ const txtBirthday = document.getElementById('birthday');
 const btnSaveProfile = document.getElementById('save-profile');
 const nav = document.getElementById('top-nav')
 
-/*Inicializacion para enlazar el proyecto a firebase */
-var config = {
+/*Inicializacion para enlazar el proyecto a firebase*/
+let config = {
  apiKey: "AIzaSyA-br4fjgN3TqUQgfE-Y2eGzfdajBuwa_Q",
  authDomain: "red-social-laboratoriamx.firebaseapp.com",
  databaseURL: "https://red-social-laboratoriamx.firebaseio.com",
@@ -19,65 +19,52 @@ var config = {
 };
 firebase.initializeApp(config);
 /*nombre a la base de datos*/
-var db = firebase.firestore();
+let db = firebase.firestore();
 /* observador*/
 function watcher() {
  firebase.auth().onAuthStateChanged(function (user) {
    if (user) {
-     console.log('usuario activo');
-    //  console.log(user)
-     loged(user);
-     window.location.href = '#home2'
-     content.classList.remove('hide');
+    console.log('inicia sesion verificando tu correo');
+    //  loged(user);
+    //  content.classList.remove('hide');
+    window.location.replace('#home2');
      if(user.emailVerified == true) {
-      //  window.location.replace('main.html');
-      //  console.log('main.html')
       nav.classList.remove('hide');
     }
      if(user.emailVerified == false) {
-    //  console.log('verifica tu correo')
+      window.location.replace('#home');
      }
-     // User is signed in.
-     var displayName = user.displayName;
-     var email = user.email;
-    //  console.log(user.emailVerified);
-     var emailVerified = user.emailVerified;
-     var photoURL = user.photoURL;
-     var isAnonymous = user.isAnonymous;
-     var uid = user.uid;
-    localStorage.setItem('useruid' , uid)
-     var providerData = user.providerData;
-     // ...
+     let displayName = user.displayName;
+     let email = user.email;
+     let emailVerified = user.emailVerified;
+     let photoURL = user.photoURL;
+     let isAnonymous = user.isAnonymous;
+     let uid = user.uid;
+     localStorage.setItem('useruid', uid)
+     let providerData = user.providerData;
    } else {
-
-     // navMenu.classList.add('hide');
      window.location.href = '#home';
      const content = document.getElementById('content')
      const navmenu = document.getElementById('navmenu')
      content.classList.add('hide');
-     // //     // User is signed out.
-     // ...
      nav.classList.add('hide');
      console.log('no existe usuario activo');
-     //container.innerHTML = ``;
    }
  });
 } watcher();
  
- 
 /*para crear usuario*/
 btnSingUp.addEventListener('click', e => {
  const email = txtEmail.value;
-//  console.log(email)
  const pass = txtPassword.value;
  firebase.auth().createUserWithEmailAndPassword(email, pass)
-   .then(function () {
+   .then( () => {
      verify()
      saveData()
    })
-   .catch(function (error) {
-     var errorCode = error.code;
-     var errorMessage = error.message;
+   .catch( (error) => {
+     let errorCode = error.code;
+     let errorMessage = error.message;
    })
 });
 /*Guarda la informacion en la bd users*/
@@ -111,7 +98,6 @@ function saveData() {
 function verify() {
  var user = firebase.auth().currentUser;
  user.sendEmailVerification().then(function () {
-   // Email sent.
   //  console.log('sending email');
  }).catch(function (error) {
    // An error happened.

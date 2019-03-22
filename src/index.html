@@ -19,23 +19,17 @@
     <nav id="top-nav" class="top-nav hide">
         <div class="row">
             <ul>
-                <li id="icon-logo" class="logo col l9"><img class="img_logo" src="images/logo.jpg" alt="">
-                    <a class="logo" >SproutThink</a></li>
-                <li class="menu col s4 m4 l1" data-target="home2"><span data-target="home2"
-                        class="nav-link img_nav home active2" ></span></li>
-                <li id="btn-mas" class="menu col s4 m4 l1" data-target="list"><a data-target="list"
-                        class="nav-link"><span data-target="list" class="nav-link img_nav msg" id="more"></span></a>
-                </li>
-                <li class="menu col s4 m4 l1" data-target="detail"><span data-target="detail"
-                        class="nav-link img_nav profile" id="profile"></span></li>
+                <li id="icon-logo" class="logo col l9"><img class="img_logo" src="images/logo.jpg" alt=""><a class="logo">SproutThink</a></li>
+                <li class="menu col s4 m4 l1" data-target="home2"><span data-target="home2" class="nav-link img_nav home active2" ></span></li>
+                <li id="btn-mas" class="menu col s4 m4 l1" data-target="list"><span data-target="list" class="nav-link img_nav msg" id="more"></span></li>
+                <li class="menu col s4 m4 l1" data-target="detail"><span data-target="detail" class="nav-link img_nav profile" id="profile"></span></li>
             </ul>
         </div>
     </nav>
-    <main>
+    <main class="hide">
         <div class="container">
-            <!-- Ingreso de usuarios -->
-            <div class="page active" id= "vacio"></div>
-            <div class="page  " id="home">
+            <div class="page active"></div>
+            <div id="home" class="page">
                 <div class="row">
                     <div class="col s6">
                         <section class="login-registrer ">
@@ -103,44 +97,21 @@
                     </div>
                 </div>
             </div>
-            <!--Termina container LOGIN -->
             <div id="content">
-                <section class="page" id="home2">
-                    <div class="nav-feed">
+                <section id="home2" class="page">
+                    <header class="nav-feed">
                         <img class="img_logo" src="images/logo.jpg" alt="">
-                        <a class="logo" >SproutThink</a>
-                    </div>
-                    <div id="idModal" class="modal">
-                        <div class="modal-content">
-                            <textarea name="" id="txtPostEdit" cols="30" rows="10"></textarea>
-                        </div>
-                        <div class="modal-footer">
-                            <a id="save-post" class="modal-close">Guardar</a>
-                        </div>
-                    </div>
-                    <div id="idModalDelete" class="modal">
-                        <div class="modal-content">
-                            <p>¿Estás seguro de que quieres elimiar esto?</p>
-                        </div>
-                        <div class="modal-footer">
-                            <div id="buttonDelete"  >
-                             <a id="delete-post" class="modal-close">Aceptar</a>
-                            </div>
-                            <a class="modal-close">Cancelar</a>
-                        </div>
-                    </div>
-                    <div id="container-feed-news"></div>
+                        <a class="logo">SproutThink</a>
+                    </header>
+                <div id="container-feed-news"></div>
                 </section>
-                <section class="page" id="list">
+                <section id="list" class="page">
                     <div class="row container-inner">
-                        <!-- <h1>Publicar</h1> -->
                         <div class="input-field col s12 l12">
                             <input id="input_text" class="msg-title" type="text" data-length="10" placeholder="Titulo">
-                            <!-- <label for="input_text">Titulo</label> -->
                         </div>
                         <div class="input-field col s12 l12">
-                            <textarea id="txtPost" class="message-large" placeholder="Escribe tu historia..."
-                                data-length="120"></textarea>
+                            <textarea id="txtPost" class="message-large" placeholder="Escribe tu historia..." data-length="120"></textarea>
                         </div>
                         <div class="divider"></div>
                         <div class="col s1 l1 center-align">
@@ -150,32 +121,23 @@
                             <select id="select-privacy">
                                 <option class="msg-privacity" value="" disabled selected>Quien puede ver esto</option>
                                 <option value="1">Público</option>
-                                <option value="2">Solo amigos</option>
+                                <option value="2">Privado</option>
                             </select>
-                            <!-- <label>Quien puede ver esto</label> -->
                         </div>
                         <div class="col s5 l8 right-align">
-                            <!-- <a id="btn-post" class="btn-post waves-effect waves-light btn-small ">Publicar</a>
-                            <a id="btn-edit" class="btn-post waves-effect waves-light btn-small ">Guardar</a> -->
-                            <a id="btn-post" class="mi-hide ">Publicar</a>
-                            <a id="btn-edit" class="mi-hide">Guardar</a>
+                            <a id="btn-post" class="mi-hide btn-post waves-effect waves-light btn-small ">Publicar</a>
+                            <a id="btn-edit" class="mi-hide btn-post waves-effect waves-light btn-small ">Guardar</a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12"></div>
-                    </div>
-                    <div>
-                        <p id="showPost"></p>
                 </section>
-                <section class="page" id="detail">
+                <section id="detail" class="page">
                     <div class="img-portada">
                         <div class="img-profile">
                             <p class="name-user">Jonh Smitch</p>
                         </div>
                     </div>
                     <section id="profile" class="row profile">
-                        <div id="container-feed">
-                        </div>
+                        <div id="container-feed"></div>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -191,7 +153,7 @@
                         <button id="save-profile">Guardar</button>
                         <div id="personalWall"></div>
                     </section>
-                </div>
+                </section>
             </div>
         </div>
     </main>
@@ -205,5 +167,4 @@
     <script src="spa.js"></script>
     <script src="interactividad.js"></script>
 </body>
-
 </html>
