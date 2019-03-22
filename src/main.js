@@ -1,2 +1,3 @@
-var firebase = require('firebase');
-var firebaseui = require('firebaseui');
+var firebase = require("firebase/app");
+require("firebase/auth");
+require("firebase/firestore");
