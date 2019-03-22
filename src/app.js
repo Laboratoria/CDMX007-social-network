@@ -277,7 +277,7 @@ function editUsers(id, email, name, user, birthday){
 /*Guarda la informacion en la bd post*/
  const btnPost = document.getElementById('btn-post')
  btnPost.addEventListener('click', saveDataInPostColection => {
-   const privacy = document.getElementById("select-privacy").value
+   const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado2
    console.log(privacy)
   const txtPost = document.getElementById('txtPost')
   const txtTitle = document.getElementById('input_text')
@@ -285,7 +285,7 @@ function editUsers(id, email, name, user, birthday){
   var title = txtTitle.value;
   const authorUid = firebase.auth().currentUser;
  console.log(authorUid);
- if(privacy == 1 ){
+ if(privacy == 1 ){ //condicional si es 1 el campo public será true y eso se imprimirá en el feed
   db.collection("posts").add({
     authoruid: authorUid.uid,
     nick: authorUid.email,
@@ -304,7 +304,7 @@ function editUsers(id, email, name, user, birthday){
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
-  } else {
+  } else { //si no es true el campo public es false
     db.collection("posts").add({
       authoruid: authorUid.uid,
       nick: authorUid.email,
@@ -335,7 +335,7 @@ let uidOfUser = localStorage.getItem('useruid')
 querySnapshot.forEach(function(doc) {
   // doc.data() is never undefined for query doc snapshots
     //obtiene datos de firestore y los pinta en tiempo real
-    if(doc.data().public == true && uidOfUser == doc.data().authoruid) {
+    if(doc.data().public == true && uidOfUser == doc.data().authoruid) { //condicional busca los public y los que tienen el mismo iud para imprimirlos con permisos para editar y eliminar
       // console.log(doc.id)
       showPost.innerHTML += `
       <div class="card">
@@ -352,7 +352,7 @@ querySnapshot.forEach(function(doc) {
      `
     interactividad()
     // removePost(doc.id)
-} else if (doc.data().public == true) {
+} else if (doc.data().public == true) { //otro condiconal para solo imprimir los publicos sin permisos
     showPost.innerHTML += `
     <div class="card">
     <div class="card-content">
