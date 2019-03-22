@@ -25,13 +25,12 @@ function watcher() {
  firebase.auth().onAuthStateChanged(function (user) {
    if (user) {
      console.log('usuario activo');
+     window.location.href = '#home';
     //  console.log(user)
-     loged(user);
-     window.location.href = '#home2'
-     content.classList.remove('hide');
-     if(user.emailVerified == true) {
-      //  window.location.replace('main.html');
-      //  console.log('main.html')
+    if(user.emailVerified == true) {
+      loged(user);
+      window.location.href = '#home2'
+      content.classList.remove('hide');
       nav.classList.remove('hide');
     }
      if(user.emailVerified == false) {
