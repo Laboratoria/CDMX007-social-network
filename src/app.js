@@ -176,7 +176,7 @@ function removeUsers(id){
   db.collection("users").doc(id).delete().then(function() {
    console.log("Document successfully deleted!");
   }).catch(function(error) {
-  console.error("Error removing document: ", error);
+    console.error("Error removing document: ", error);
   });
 }
 /*función para editar perfil*/
