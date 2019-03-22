@@ -372,7 +372,7 @@ querySnapshot.forEach(function(doc) {
  }
 });
 });
-/*EDITAR POST "GUARDAR"*/
+/*EDITAR PUBLICACION "GUARDAR"*/
 const btnEdit = document.getElementById('btn-edit');
 function edit(id, title, post) {
   alert('ok');
