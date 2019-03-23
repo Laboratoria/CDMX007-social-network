@@ -31,6 +31,8 @@ Los principales usuarios de SproutThink son Hombres y mujeres de 27 a 40 años c
 ### Cómo descubrimos las necesidades de los usuarios
 Realizamos dos encuestas, la primera para conocer lo que más gustaba y no de las redes sociales que ya existen, posteriormente realizamos una investigación en línea para conocer espacios digitales dedicados a la innovación social y energías renovables, descubrimos que la mayoría de estos espacios son grupos de facebook y dentro de dichos grupos realizamos la segunda encuesta, está vez enfocada a conocer sus medios principales para consumo de información, si los usuarios eran miembros de comunidades digitales especializadas y la edad promedio. 
 
+![Login]()
+
 ### Las necesidades de los usuarios
 * Los grupos de facebook no promueven la interacción entre los miembros del grupo.
 * Existe gran información en internet y requiere mucho tiempo condensarla.
