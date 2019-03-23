@@ -50,8 +50,14 @@ SproutThink brinda un espacio para compartir con otros miembros contenido de val
 * Eliminar su perfil.
 
 ### Cuáles son las principales funcionalidades del producto y cuál es su prioridad
+* Acceso a una comunidad exclusiva.
+* Red social Unica.
 ### Cómo verificaste que el producto les está resolviendo sus problemas
+* Test con usuarios. 
+* Encuestas.
+
 ### Cómo te asegurarás que estos usuarios usen este producto
+* Difusión en grupos de redes sociales.
 
 ## Checklist
 
