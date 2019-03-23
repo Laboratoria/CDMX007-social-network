@@ -85,8 +85,10 @@ SproutThink brinda un espacio para compartir con otros miembros contenido de val
 ##PROTOTIPADO:
 
 Realizamos un prototipo de baja fidelidad en papel y posteriormente lo realizamos en [MarvelAPP](https://marvelapp.com)
-Puedes testearlo [Aquí](https://marvelapp.com/4dhi859/screen/54084656) 
-
+Puedes testearlo [Aquí](https://marvelapp.com/4dhi859/screen/54084656)
+![Prototipo de Baja](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/Screenshot_2019-03-23%20jg.png)
+![FlowMap](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/flowmap.png)
+![Prototipo de Alta]()
 
 ## Checklist
 
