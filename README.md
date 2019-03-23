@@ -74,7 +74,7 @@ SproutThink brinda un espacio para compartir con otros miembros contenido de val
 
 # Desarollo 🛠
 
-##Creado con:
+## Creado con:
 * Vanilla Javascript
 * Firebase 🔥
 * Cloud Firestore ☁️🔥
@@ -82,7 +82,7 @@ SproutThink brinda un espacio para compartir con otros miembros contenido de val
 * CSS3 🎨
 * HTML5 📄 
 
-##PROTOTIPADO:
+## PROTOTIPADO:
 
 Realizamos un prototipo de baja fidelidad en papel y posteriormente lo realizamos en [MarvelAPP](https://marvelapp.com)
 Puedes testearlo [Aquí](https://marvelapp.com/4dhi859/screen/54084656)
