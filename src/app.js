@@ -42,6 +42,7 @@ if (user) {
   var isAnonymous = user.isAnonymous;
   var uid = user.uid;
   localStorage.setItem('useruid' , uid)
+  localStorage.setItem('email' , email)
   var providerData = user.providerData;
 } else {
   // navMenu.classList.add('hide');
@@ -120,6 +121,10 @@ btnLogin.addEventListener('click', e => {
   //  console.log(errorCode);
   //  console.log(errorMessage);
   console.log('contraseña y/o correo invalido')
+  document.getElementById("errorMessage").innerHTML = "Contraseña o correo inválidos";
+    setTimeout(function(){ 
+        document.getElementById("errorMessage").innerHTML = "";
+    }, 2000);
   });
 });
 
@@ -151,25 +156,22 @@ function logOut() {
   })
 }
 
-// /* /leer documento firestone**/
-// var table = document.getElementById('table2');
-// db.collection("users").onSnapshot((querySnapshot) => {
-//   table.innerHTML= "";
-//   querySnapshot.forEach(function(doc) {
-//       // doc.data() is never undefined for query doc snapshots
-//       //obtiene datos de firestore y los pinta en tiempo real
-//       table.innerHTML +=
-//       `
-//       <input id="nameProfile" placeholder= "Nombre completo" type="text" value="${doc.data().name}">
-//       <input id="user-nameProfile" placeholder= "Nombre de usuario" type="text" value="${doc.data().user}">
-//       <input id="birthdayProfile" placeholder= "Fecha de nacimiento" type="text" value="${doc.data().birthday}">
-//       <input id= "txtEmailProfile" placeholder= "Correo electrónico" type="email" value="${doc.data().email}">
-//       <button onclick="removeUsers('${doc.id}')">Eliminar</button>
-//       <button onclick="editUsers('${doc.id}', '${doc.data().email}','${doc.data().name}', '${doc.data().user}', '${doc.data().birthday}')">Editar</button>
-//       `
 
-//   });
-// });
+
+// /* /leer documento firestone para perfil de usuario**/
+let uidOfUser = localStorage.getItem('useruid')
+var table = document.getElementById('table2');
+db.collection("users").doc(uidOfUser).onSnapshot(function(doc) {
+  table.innerHTML= "";
+      table.innerHTML +=
+      `
+      <p id="nameProfile">${doc.data().name}</p>
+      <p id="user-nameProfile">${doc.data().user}</p>
+      <p id="birthdayProfile">${doc.data().birthday}</p>
+      <p id= "txtEmailProfile">${doc.data().email}</p>
+      `
+  });
+
 
 /*función para borrar documentos*/
 function removeUsers(id){
@@ -235,7 +237,9 @@ function validarFormulario(){
   const txtPost = document.getElementById('txtPost')
   const btnPost = document.getElementById('btn-post')
 btnPost.addEventListener('click', saveDataInPostColection => {
+
   const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado2
+
   console.log(privacy)
   // const txtTitle = document.getElementById('input_text')
   // const txtPost = document.getElementById('txtPost')
@@ -243,7 +247,6 @@ btnPost.addEventListener('click', saveDataInPostColection => {
   var title = txtTitle.value;
   const authorUid = firebase.auth().currentUser;
   console.log(authorUid);
-
   if(privacy == 1){ 
     //condicional si es 1 el campo public será true y eso se imprimirá en el feed
       db.collection("posts").add({
@@ -252,7 +255,8 @@ btnPost.addEventListener('click', saveDataInPostColection => {
       title: title,
       date: "",
       post: post,
-      public: true
+      public: true,
+      like: 0
     })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
@@ -272,7 +276,8 @@ btnPost.addEventListener('click', saveDataInPostColection => {
       title: title,
       date: "",
       post: post,
-      public: false
+      public: false,
+      like: 0
     })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
@@ -299,6 +304,7 @@ db.collection("posts").onSnapshot((querySnapshot) => {
       <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_vert</i></span>
       <p>${doc.data().post}</p>
+      <button id='${doc.id}' onclick="likeCounter('${doc.id}', '${doc.data().post}')"  class="likeBtn" >like</button>
       </div>
       <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
@@ -315,12 +321,23 @@ db.collection("posts").onSnapshot((querySnapshot) => {
       <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">${doc.data().title}</span>
       <p>${doc.data().post}</p>
+      <button id='${doc.id}' class="likeBtn" onclick="likeCounter('${doc.id}', '${doc.data().post}')" data-like=${doc.data().like}'>like</button>
       </div>
       </div>`
     }
   });
 });
 
+
+let likes = 0
+function likeCounter(id, likes) {
+  let x = document.getElementById(id)
+  console.log(x)
+  x.addEventListener('click' , () => {
+
+  alert('ptm')
+})
+}
 /*Editar una publicaicon "GUARDAR"*/
 const btnEdit = document.getElementById('btn-edit');
 function edit(id, title, post) {
