@@ -1,4 +1,4 @@
-# SproutThink
+# SproutThink 🌱
 La mayoría de la energía que utilizamos hoy en día provienen de fuentes no renovables y emiten dióxido de carbono (CO2) al medio ambiente, las energías renovables provienen de fuentes naturales e inagotables, en México la generación de energías limpias son necesarias para promover el crecimiento de esta industria global. 
 
 A pesar de los esfuerzos por hacer de la investigación un área de oportunidad a nivel nacional, todavía hay rezagos latentes, una muestra de ello es que en el país hay un promedio de 420 investigadores por cada millón de habitantes, dato que contrasta con países como Brasil, Argentina y España.
@@ -16,38 +16,39 @@ En 1929 Karinthy Frigyes desarrolló la teoría de "6 grados de separación" en 
 ![Plataformas Sociales](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/social_plataform.png)
 ![Entorno Social](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/digital_arround.png)
 
-## Caracteristicas Principales.
+## Caracteristicas Principales. 💡
 * Tiene como finalidad poner en contacto a personas mediante una plataforma online. 
 * No son estáticas, permiten y fomenta la interacción entre los usuarios en tiempo real.
 * Permite la difusión de contenidos.
 
-### Quiénes son los principales usuarios de Redes Sociales.
+### Quiénes son los principales usuarios de Redes Sociales. 📊
 Según el informe detallado de [WeAreSocial y Hootsuite](https://wearesocial.com/global-digital-report-2019)
 En enero de 2019 Facebook contó con cerca de 2.271 millones de usuarios activos al mes, Instagram más de 1.000 millones y Twitter 326 millones de usuarios activos.
 
 [Otros estudios de WeAreSocial](https://wearesocial.com/blog/2019/01/digital-2019-global-internet-use-accelerates)
 [Digital in 2019](https://wearesocial.com/global-digital-report-2019)
 
-### Quiénes son los principales usuarios de SproutThink.
+### Quiénes son los principales usuarios de SproutThink. 👩🏾‍🌾👨🏾‍🔧 👩🏾‍🔬👩🏾‍🎓 👷🏾‍♀️
 Los principales usuarios de SproutThink son Hombres y mujeres de 27 a 40 años con interes en la ecología, sustentabilidad y energías renovables ya sea por profesión o hobbie. 
 
-### Cómo descubrimos las necesidades de los usuarios
+### Cómo descubrimos las necesidades de los usuarios 🔍
 Realizamos dos encuestas, la primera para conocer lo que más gustaba y no de las redes sociales que ya existen, posteriormente realizamos una investigación en línea para conocer espacios digitales dedicados a la innovación social y energías renovables, descubrimos que la mayoría de estos espacios son grupos de facebook y dentro de dichos grupos realizamos la segunda encuesta, está vez enfocada a conocer sus medios principales para consumo de información, si los usuarios eran miembros de comunidades digitales especializadas y la edad promedio. 
 
-![Plataformas Sociales](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/social_plataform.png)
-![Entorno Social](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/digital_arround.png)
+![Edad de los Usuarios](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/Edad.png)
+![Red Social](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/Red_social_para_innovadores.png)
+![Uso de redes](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/uso_redes.png)
 
-## Las necesidades de los usuarios
+## Las necesidades de los usuarios 📚
 * Los grupos de facebook no promueven la interacción entre los miembros del grupo.
 * Existe gran información en internet y requiere mucho tiempo condensarla.
 * Los usuarios buscan ofertas laborales.
 * Los usuarios buscan resolver dudas propias y de compañer@s
 * Los usuarios necesitan ponerse en contacto con otros miembros.   
 
-### Qué problema resuelve SproutThink para estos usuarios
+### Qué problema resuelve SproutThink para estos usuarios 🖊 
 SproutThink brinda un espacio para compartir con otros miembros contenido de valor, conocer usuarios que comparten intereses, dar y recibir feedback en un medio social.
 
-## HISTORIAS DE USUARIO: ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
+## HISTORIAS DE USUARIO: ¿Cuáles son los objetivos de estos usuarios en relación con el producto?  🗺️
 * Yo como usuario quiero **crear un perfil** en SproutThink.
 * Yo como usuario quiero **escribir un post**.
 * Yo como usuario quiero **elegir la privacidad** de mi post.
@@ -56,7 +57,7 @@ SproutThink brinda un espacio para compartir con otros miembros contenido de val
 * Yo como usuario quiero **leer los post de otros usuarios**.
 * Yo como usuario quiero dar **like a otros post**.
 
-### Cuáles son las principales funcionalidades del producto y cuál es su prioridad
+### Cuáles son las principales funcionalidades del producto y cuál es su prioridad  📌
 * Acceso a una comunidad exclusiva.
 * Red social Unica.
 * Crear post públicos y Privados.
@@ -64,12 +65,27 @@ SproutThink brinda un espacio para compartir con otros miembros contenido de val
 * Ver mi perfil con mis post privados.
 * Interactuar con otros usuarios en tiempo real.
 
-### Cómo verificaste que el producto les está resolviendo sus problemas
+### Cómo verificaste que el producto les está resolviendo sus problemas 📑 
 * Test con usuarios. 
 * Encuestas.
 
-### Cómo te asegurarás que estos usuarios usen este producto
+### Cómo te asegurarás que estos usuarios usen este producto 📣
 * Difusión en grupos de redes sociales.
+
+# Desarollo 🛠
+
+##Creado con:
+* Vanilla Javascript
+* Firebase 🔥
+* Cloud Firestore ☁️🔥
+* Materialize 💖
+* CSS3 🎨
+* HTML5 📄 
+
+##PROTOTIPADO:
+
+Realizamos un prototipo de baja fidelidad en papel y posteriormente lo realizamos en [MarvelAPP](https://marvelapp.com)
+Puedes testearlo [Aquí](https://marvelapp.com/4dhi859/screen/54084656) 
 
 ## Checklist
 
