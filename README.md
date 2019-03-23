@@ -3,11 +3,13 @@ La mayoría de la energía que utilizamos hoy en día provienen de fuentes no re
 
 A pesar de los esfuerzos por hacer de la investigación un área de oportunidad a nivel nacional, todavía hay rezagos latentes, una muestra de ello es que en el país hay un promedio de 420 investigadores por cada millón de habitantes, dato que contrasta con países como Brasil, Argentina y España.
 
-Ante dicho panorama, el Rector de la UNAM, Enrique Graue Wiechers, señaló que si México quiere competir realmente en el ámbito internacional, “debe impulsar cada vez más la investigación científica, el desarrollo de nuevos conocimientos y fortalecer la carrera académica”. Con NUESTRAREDSOCIAL buscamos ser un espacio para que los investigadores fortalezcan vínculos, creen redes y crezcan profesionalmente conectándose con otros investigadores, emprendedores o buscadores de talento tanto en México como en otros países.
+Ante dicho panorama, el Rector de la UNAM, Enrique Graue Wiechers, señaló que si México quiere competir realmente en el ámbito internacional, “debe impulsar cada vez más la investigación científica, el desarrollo de nuevos conocimientos y fortalecer la carrera académica”. Con **SproutThink** buscamos ser un espacio para que los investigadores fortalezcan vínculos, creen redes y crezcan profesionalmente conectándose con otros investigadores, emprendedores o buscadores de talento tanto en México como en otros países.
 
 [Minimalismo para redes sociales](https://bit.ly/2TrJSH8)
 
 [Redes sociales para el desarrollo científico](https://medium.com/@jrm19723/redes-sociales-para-el-desarrollo-cient%C3%ADfico-noticias-de-la-ciencia-y-la-tecnolog%C3%ADa-amazings-2dc60a3a8b)
+
+## Qué son las redes sociales: 
 
 Las redes sociales son un servicio online que gira en torno al usuario y sus necesidades, permitiendole crear un perfil en el cual compartir información, generar contenidos y estar en contacto con otros usuarios.
 
