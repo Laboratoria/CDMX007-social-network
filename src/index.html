@@ -25,7 +25,7 @@
                 <li class="menu col s4 m4 l1" data-target="detail"><span data-target="detail" class="nav-link img_nav profile" ></span></li>
             </ul>
         </div>
-    </nav>
+        </nav>
     <main>
         <div class="container">
             <div class="page active"></div>
@@ -44,6 +44,7 @@
                                         <div class="input-field col s12 m12 l10">
                                             <input id="txtPassword2" type="password" class="validate">
                                             <label for="password">Password</label>
+                                            <div id="errorMessage"></div>
                                         </div>
                                     </div>
                                     <a id="btnLogin" class="waves-effect waves-light btn">Inicia Sesión</a>
@@ -96,50 +97,41 @@
                 </section>
                 <section id="list" class="page">
                     <div class="row container-inner">
-                        <div class="input-field col s12 l12">
-                            <input id="input_text" class="msg-title" type="text" data-length="10" placeholder="Titulo">
-                        </div>
-                        <div class="input-field col s12 l12">
-                            <textarea id="txtPost" class="message-large" placeholder="Escribe tu historia..." data-length="120"></textarea>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="col s1 l1 center-align">
-                            <img class="img-privacity " src="images/user.svg" alt="">
-                        </div>
-                        <div class="col s6 l3">
-                            <select id="select-privacy">
-                                <option class="msg-privacity" value="" disabled selected>Quien puede ver esto</option>
-                                <option value="1">Público</option>
-                                <option value="2">Privado</option>
-                            </select>
-                        </div>
+                        <form action="" onsubmit="return validarFormulario()">
+                            <div class="input-field col s12 l12">
+                                <input id="input_text" class="msg-title" type="text" data-length="10" placeholder="Titulo" required>
+                            </div>
+                            <div class="input-field col s12 l12">
+                                <textarea  id="txtPost" class="message-large" placeholder="Escribe tu historia..." data-length="120" required></textarea>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="col s1 l1 center-align">
+                                <img class="img-privacity " src="images/user.svg" alt="">
+                            </div>
+                            <div class="col s6 l3">
+                                <select id="select-privacy">
+                                    <option value="0" class="msg-privacity" value="" disabled selected>Quien puede ver esto</option>
+                                    <option value="1">Público</option>
+                                    <option value="2">Privado</option>
+                                </select>
+                            </div>
+                        
                         <div class="col s5 l8 right-align">
-                            <a id="btn-post" class="mi-hide btn-post waves-effect waves-light btn-small ">Publicar</a>
+                            <button  id="btn-post" class="mi-hide btn-post waves-effect waves-light btn-small" type="submit" value="Submit">Publicar</button>
                             <a id="btn-edit" class="mi-hide btn-post waves-effect waves-light btn-small ">Guardar</a>
                         </div>
+                        </form>
                     </div>
                 </section>
                 <section id="detail" class="page">
                     <div class="img-portada">
                         <div class="img-profile">
-                            <p class="name-user">Jonh Smitch</p>
+                                <p class="name-user">Jonh Smitch</p>
                         </div>
                     </div>
                     <section id="profile" class="row profile">
                         <div id="container-feed"></div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Email</th>
-                                    <th>Nombre</th>
-                                    <th>Nombre de usuario</th>
-                                    <th>Fecha de nacimiento</th>
-                                </tr>
-                            </thead>
-                            <tbody id="table2">
-                            </tbody>
-                        </table>
-                        <button id="save-profile">Guardar</button>
+                            <div id="table2"></div>
                         <div id="personalWall"></div>
                     </section>
                 </section>
@@ -155,5 +147,6 @@
     <script src="app.js"></script>
     <script src="spa.js"></script>
     <script src="interactividad.js"></script>
+    <script src="validacion.js"></script>
 </body>
 </html>
