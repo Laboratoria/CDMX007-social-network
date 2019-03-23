@@ -1,4 +1,4 @@
-## SproutThink
+# SproutThink
 La mayoría de la energía que utilizamos hoy en día provienen de fuentes no renovables y emiten dióxido de carbono (CO2) al medio ambiente, las energías renovables provienen de fuentes naturales e inagotables, en México la generación de energías limpias son necesarias para promover el crecimiento de esta industria global. 
 
 A pesar de los esfuerzos por hacer de la investigación un área de oportunidad a nivel nacional, todavía hay rezagos latentes, una muestra de ello es que en el país hay un promedio de 420 investigadores por cada millón de habitantes, dato que contrasta con países como Brasil, Argentina y España.
@@ -8,6 +8,106 @@ Ante dicho panorama, el Rector de la UNAM, Enrique Graue Wiechers, señaló que 
 [Minimalismo para redes sociales](https://bit.ly/2TrJSH8)
 
 [Redes sociales para el desarrollo científico](https://medium.com/@jrm19723/redes-sociales-para-el-desarrollo-cient%C3%ADfico-noticias-de-la-ciencia-y-la-tecnolog%C3%ADa-amazings-2dc60a3a8b)
+
+Las redes sociales son un servicio online que gira en torno al usuario y sus necesidades, permitiendole crear un perfil en el cual compartir información, generar contenidos y estar en contacto con otros usuarios.
+
+En 1929 Karinthy Frigyes desarrolló la teoría de "6 grados de separación" en la que afirma que cualquier persona esta conectada con otra a través de una cadena de no más de seis personas, está teoría es una en las que se basan las redes sociales.
+
+### Caracteristicas Principales.
+* Tiene como finalidad poner en contacto a personas mediante una plataforma online. 
+* No son estáticas, permiten y fomenta la interacción entre los usuarios en tiempo real.
+* Permite la difusión de contenidos.
+
+### Quiénes son los principales usuarios de Redes Sociales.
+Según el informe detallado de [WeAreSocial y Hootsuite](https://wearesocial.com/global-digital-report-2019)
+En enero de 2019 Facebook contó con cerca de 2.271 millones de usuarios activos al mes, Instagram más de 1.000 millones y Twitter 326 millones de usuarios activos.
+
+[Otros estudios de WeAreSocial](https://wearesocial.com/blog/2019/01/digital-2019-global-internet-use-accelerates)
+[Digital in 2019](https://wearesocial.com/global-digital-report-2019)
+
+### Quiénes son los principales usuarios de SproutThink.
+Los principales usuarios de SproutThink son Hombres y mujeres de 27 a 40 años con interes en la ecología, sustentabilidad y energías renovables ya sea por profesión o hobbie. 
+
+### Cómo descubrimos las necesidades de los usuarios
+Realizamos dos encuestas, la primera para conocer lo que más gustaba y no de las redes sociales que ya existen, posteriormente realizamos una investigación en línea para conocer espacios digitales dedicados a la innovación social y energías renovables, descubrimos que la mayoría de estos espacios son grupos de facebook y dentro de dichos grupos realizamos la segunda encuesta, está vez enfocada a conocer sus medios principales para consumo de información, si los usuarios eran miembros de comunidades digitales especializadas y la edad promedio. 
+
+### Las necesidades de los usuarios
+* Los grupos de facebook no promueven la interacción entre los miembros del grupo.
+* Existe gran información en internet y requiere mucho tiempo condensarla.
+* Los usuarios buscan ofertas laborales.
+* Los usuarios buscan resolver dudas propias y de compañer@s
+* Los usuarios necesitan ponerse en contacto con otros miembros.   
+
+### Qué problema resuelve SproutThink para estos usuarios
+SproutThink brinda un espacio para compartir con otros miembros contenido de valor, conocer usuarios que comparten intereses, dar y recibir feedback en un medio social.
+
+### Cuáles son los objetivos de estos usuarios en relación con el producto
+* Crear un perfil.
+* Escribir un comentarios y elegir su privacidad.
+* Editar o eliminar el comentario.
+* Eliminar su perfil.
+
+### Cuáles son las principales funcionalidades del producto y cuál es su prioridad
+### Cómo verificaste que el producto les está resolviendo sus problemas
+### Cómo te asegurarás que estos usuarios usen este producto
+
+## Checklist
+
+### General
+
+* [ ] Producto final sigue los lineamientos del diseño.
+
+### `README.md`
+
+* [ ] Definición del producto
+* [ ] Resumen de entrevistas con usuarios.
+* [ ] Link/screenshots prototipo de baja fidelidad.
+* [ ] Conclusiones de pruebas con el producto en HTML.
+
+### Pruebas / tests
+
+* [ ] Pruebas unitarios cubren un mínimo del 70% de statements, functions,
+  lines, y branches.
+* [ ] Pasa tests (y linters) (`npm test`).
+
+### Creación de cuenta (sign up)
+
+* [ ] Permite crear cuenta.
+* [ ] Valida email.
+* [ ] Valida password.
+* [ ] Muestra mensajes de error.
+
+### Inicio de sesión (sign in)
+
+* [ ] Permite iniciar sesión.
+* [ ] Valida email.
+* [ ] Valida password.
+* [ ] Muestra mensajes de error.
+
+### Muro (wall/feed)
+
+* [ ] Muestra _muro_, o lista de publicaciones.
+* [ ] Permite hacer nuevas publicaciones.
+* [ ] Permite eliminar publicaciones.
+* [ ] Pide confirmación antes de borrar publicación.
+* [ ] Permite editar publicación en el mismo lugar (in place).
+* [ ] Permite filtrar publicaciones por público/privado.
+* [ ] Permite marcar publicaciones como _gustados_ (like, corazón, estrella,
+  etc...).
+* [ ] Permite ver cuántas marcas, likes, estrellas, corazones o lo que se haya
+  elegido, ha recibido una publicación.
+
+### Hacker Edition
+
+* [ ] Permite agregar amigos.
+* [ ] Permite eliminar amigos.
+* [ ] Permite compartir publicación (en twitter esto es retwittear, en facebook
+  es compartir).
+* [ ] Permite comentar o responder una publicación.
+* [ ] Permite editar perfil.
+* [ ] Permite ver perfil o resumen desde el _muro_ o lista de publicaciones.
+* [ ] Permite ver cuántas marcas, likes, estrellas, corazones o lo que se haya
+  elegido, ha recibido una publicación.
 
 
 
