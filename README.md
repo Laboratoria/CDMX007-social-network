@@ -87,6 +87,7 @@ SproutThink brinda un espacio para compartir con otros miembros contenido de val
 Realizamos un prototipo de baja fidelidad en papel y posteriormente lo realizamos en [MarvelAPP](https://marvelapp.com)
 Puedes testearlo [Aquí](https://marvelapp.com/4dhi859/screen/54084656) 
 
+
 ## Checklist
 
 ### General
