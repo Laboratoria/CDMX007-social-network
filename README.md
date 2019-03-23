@@ -13,7 +13,10 @@ Las redes sociales son un servicio online que gira en torno al usuario y sus nec
 
 En 1929 Karinthy Frigyes desarrolló la teoría de "6 grados de separación" en la que afirma que cualquier persona esta conectada con otra a través de una cadena de no más de seis personas, está teoría es una en las que se basan las redes sociales.
 
-### Caracteristicas Principales.
+![Plataformas Sociales](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/social_plataform.png)
+![Entorno Social](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/digital_arround.png)
+
+## Caracteristicas Principales.
 * Tiene como finalidad poner en contacto a personas mediante una plataforma online. 
 * No son estáticas, permiten y fomenta la interacción entre los usuarios en tiempo real.
 * Permite la difusión de contenidos.
@@ -31,9 +34,10 @@ Los principales usuarios de SproutThink son Hombres y mujeres de 27 a 40 años c
 ### Cómo descubrimos las necesidades de los usuarios
 Realizamos dos encuestas, la primera para conocer lo que más gustaba y no de las redes sociales que ya existen, posteriormente realizamos una investigación en línea para conocer espacios digitales dedicados a la innovación social y energías renovables, descubrimos que la mayoría de estos espacios son grupos de facebook y dentro de dichos grupos realizamos la segunda encuesta, está vez enfocada a conocer sus medios principales para consumo de información, si los usuarios eran miembros de comunidades digitales especializadas y la edad promedio. 
 
-![Login]()
+![Plataformas Sociales](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/social_plataform.png)
+![Entorno Social](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/digital_arround.png)
 
-### Las necesidades de los usuarios
+## Las necesidades de los usuarios
 * Los grupos de facebook no promueven la interacción entre los miembros del grupo.
 * Existe gran información en internet y requiere mucho tiempo condensarla.
 * Los usuarios buscan ofertas laborales.
@@ -43,15 +47,23 @@ Realizamos dos encuestas, la primera para conocer lo que más gustaba y no de la
 ### Qué problema resuelve SproutThink para estos usuarios
 SproutThink brinda un espacio para compartir con otros miembros contenido de valor, conocer usuarios que comparten intereses, dar y recibir feedback en un medio social.
 
-### Cuáles son los objetivos de estos usuarios en relación con el producto
-* Crear un perfil.
-* Escribir un comentarios y elegir su privacidad.
-* Editar o eliminar el comentario.
-* Eliminar su perfil.
+## HISTORIAS DE USUARIO: ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
+* Yo como usuario quiero **crear un perfil** en SproutThink.
+* Yo como usuario quiero **escribir un post**.
+* Yo como usuario quiero **elegir la privacidad** de mi post.
+* Yo como usuario quiero **editar mi post**.
+* Yo como usuario quiero **eliminar mi post**.
+* Yo como usuario quiero **leer los post de otros usuarios**.
+* Yo como usuario quiero dar **like a otros post**.
 
 ### Cuáles son las principales funcionalidades del producto y cuál es su prioridad
 * Acceso a una comunidad exclusiva.
 * Red social Unica.
+* Crear post públicos y Privados.
+* Eliminar y editar Post.
+* Ver mi perfil con mis post privados.
+* Interactuar con otros usuarios en tiempo real.
+
 ### Cómo verificaste que el producto les está resolviendo sus problemas
 * Test con usuarios. 
 * Encuestas.
