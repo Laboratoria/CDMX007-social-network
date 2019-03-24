@@ -246,6 +246,7 @@ txtPost.addEventListener('keyup', (event) =>{
 /*Guardar la informacion en la bd post PUBLICAR*/
 // btnPost.addEventListener('click', saveDataInPostColection => {
 btnPost.addEventListener('click', (event) =>{
+  
   event.preventDefault()
   if(validarFormulario() == false){
     // aqui no pasa la validacion
@@ -259,7 +260,7 @@ btnPost.addEventListener('click', (event) =>{
     var title = txtTitle.value;
     const authorUid = firebase.auth().currentUser;
     console.log(authorUid);
-    if(privacy == 1){ 
+    if(privacy == 2){ 
       //condicional si es 1 el campo public será true y eso se imprimirá en el feed
         db.collection("posts").add({
         authoruid: authorUid.uid,
@@ -351,6 +352,7 @@ db.collection("posts").onSnapshot((querySnapshot) => {
 /*Editar una publicaicon "GUARDAR"*/
 const btnEdit = document.getElementById('btn-edit');
 function edit(id, title, post) {
+
       alert('ok');
       btnPost.classList.add('mi-hide');
       btnEdit.classList.remove('mi-hide');
@@ -358,6 +360,11 @@ function edit(id, title, post) {
       document.getElementById('txtPost').value = post
       document.getElementById('input_text').value = title
   btnEdit.onclick = function () {
+    if(validarFormulario() == false){
+      // aqui no pasa la validacion
+      console.log(' campo vacio')
+      return;
+    }else{
     var updatePost = db.collection('posts').doc(id);
     var newTitle = document.getElementById('input_text').value;
     var newPost = document.getElementById('txtPost').value;
@@ -375,6 +382,8 @@ function edit(id, title, post) {
       alert('Error de codigo:\n ' + errorCode + ' Mensaje de Error:\n ' + errorMessage);
     })
   }
+  }
+
 }
 
 /*eliminar post*/
