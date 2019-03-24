@@ -20,6 +20,7 @@ body {
 .container {
     position: relative;
     width: 100%;
+    max-width: 1500px;
 }
 
 /* estilos nav */
@@ -154,6 +155,9 @@ body {
     width: 20px;
     margin-top: 10px;
 }
+.input-field input.msg-title[type=text].error{     
+    border:1px solid red; 
+}
 
 input.msg-title[type=text] {
     font-size: 1rem;
@@ -176,6 +180,17 @@ input.msg-title[type=text] {
     height: 350px;
     border-radius: 5px;
     padding-left: 5px;
+}
+
+.message-large:focus{
+    border:1px solid #b1b4ba;
+} 
+.input-field input.msg-title[type=text]:focus.error,
+input.msg-title[type=text].error{
+    border-color:red;
+}
+textarea.message-large.error{
+    border-color:red;
 }
 
 .message-large:focus {
@@ -217,8 +232,7 @@ input.msg-title[type=text] {
     text-align: center;
     vertical-align: bottom;
     margin: 0;
-    color: #fff;
-
+    color: #fff; 
 }
 
 .row.profile {
@@ -232,8 +246,6 @@ input.msg-title[type=text] {
     padding-top: 140px;
     font-size: 1.3rem;
     background-position: bottom;
-
-
 }
 
 .user-email {
@@ -268,12 +280,17 @@ input.msg-title[type=text] {
         bottom: auto;
     }
 
-    main {
-        margin-top: 4.3rem;
+    /* main {
+        margin-top:4.3rem;
+    } */
+    .content{
+        padding-top: 4.3rem;
+        margin: auto;
+        width: 70% /* position: fixed; or absolute if the user needs to scroll for more content */;
     }
-
-    .container {
-        width: 90%;
+    .container{
+        width: 100%;
+        margin: 0
     }
 
     .top-nav ul>.logo {
@@ -287,9 +304,9 @@ input.msg-title[type=text] {
         display: none;
     }
 
-    .logo {
+    .logo{
+        padding: 0;
         display: inline-block;
-        font-size: 1.6rem;
         vertical-align: middle;
         color: #1f8efa;
         font-family: 'Dancing Script', cursive;
