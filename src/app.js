@@ -7,6 +7,9 @@ const txtUserName = document.getElementById('user-name');
 const txtBirthday = document.getElementById('birthday');
 const btnSaveProfile = document.getElementById('save-profile');
 const nav = document.getElementById('top-nav');
+const txtTitle = document.getElementById('input_text')
+const txtPost = document.getElementById('txtPost')
+const btnPost = document.getElementById('btn-post')
 
 /*Inicializacion para enlazar el proyecto a firebase */
 let config = {
@@ -129,15 +132,19 @@ btnLogin.addEventListener('click', e => {
 });
 
 /* funcion para entar a pagina principal (feed)*/
-const container = document.getElementById('container-feed');
+const container = document.getElementById('name-use');
+const lObtn = document.getElementById('logout');
+let userNickname = localStorage.getItem('nickname')
 function loged(user) {
   var user = user;
   if (user.emailVerified) {
     window.location.href = '#home2'
     container.innerHTML =
     `
-    <div class="row user-email"><p> Hola ${user.email}</p>
-    <button onClick="logOut()"  class= "btn btn-action">Cerrar Sesión</button></div>`;
+    <div class="row user-email"><p> Hola ${userNickname}</p></div>
+    `;
+    lObtn.innerHTML = `
+<span onClick="logOut()"  class= "logout">Cerrar</span>`;    
   }
 }
 
@@ -156,13 +163,11 @@ function logOut() {
   })
 }
 
-
-
 // /* /leer documento firestone para perfil de usuario**/
 let uidOfUser = localStorage.getItem('useruid')
-let table = document.getElementById('table2');
-let nameProfile = document.getElementById('nameProfile');
+var table = document.getElementById('table2');
 db.collection("users").doc(uidOfUser).onSnapshot(function(doc) {
+  let userNickname = localStorage.setItem('nickname', doc.data().user)
   table.innerHTML= "";
       table.innerHTML +=
       `
@@ -171,11 +176,6 @@ db.collection("users").doc(uidOfUser).onSnapshot(function(doc) {
       <p id="birthdayProfile">${doc.data().birthday}</p>
       <p id= "txtEmailProfile">${doc.data().email}</p>
       `
-      nameProfile.innerHTML ="";
-       nameProfile.innerHTML += 
-       `
-       <p id="nameProfile">${doc.data().user}</p>
-       `
   });
 
 
@@ -226,76 +226,90 @@ btnMas.addEventListener('click', () => {
   btnEdit.classList.add('mi-hide');
   btnPost.classList.remove('mi-hide');
 })
-
+/*validar formulario de post*/
 function validarFormulario(){
-  if(txtTitle == null || txtTitle.length == 0 || /^\s+$/.test(txtTitle)){
-    alert('ERROR: Debe ingresar un titulo');
+  console.log('validando')
+  if(txtTitle.value == "" || txtPost.value == ""){
+    console.log('Campo de titulo vacio')
+    txtTitle.classList.add('error')
+    txtPost.classList.add('error')
     return false;
+  }else {
+    return true;
   }
-  if(txtPost == null || txtPost.length == 0 || isNaN(txtPost)){
-    alert('ERROR: Debe ingresar un post');
-    return false;
-  } 
-  return true;
 }
+txtTitle.addEventListener('keyup', (event) =>{
+  if(txtTitle.classList.contains('error')){
+    txtTitle.classList.remove('error')
+  }
+});
+txtPost.addEventListener('keyup', (event) =>{
+  if(txtPost.classList.contains('error')){
+    txtPost.classList.remove('error')
+  }
+});
 /*Guardar la informacion en la bd post PUBLICAR*/
-  const txtTitle = document.getElementById('input_text')
-  const txtPost = document.getElementById('txtPost')
-  const btnPost = document.getElementById('btn-post')
-btnPost.addEventListener('click', saveDataInPostColection => {
+// btnPost.addEventListener('click', saveDataInPostColection => {
+btnPost.addEventListener('click', (event) =>{
+  
+  event.preventDefault()
+  if(validarFormulario() == false){
+    // aqui no pasa la validacion
+    console.log(' campo vacio')
+    return;
+  }else{
+    // si pasa la validacion ejecuta esto
+    const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado2
+    //console.log(privacy)
+    var post = txtPost.value;
+    var title = txtTitle.value;
+    const authorUid = firebase.auth().currentUser;
+    console.log(authorUid);
+    if(privacy == 2){ 
+      //condicional si es 1 el campo public será true y eso se imprimirá en el feed
+        db.collection("posts").add({
+        authoruid: authorUid.uid,
+        nick: authorUid.email,
+        title: title,
+        date: "",
+        post: post,
+        public: true,
+        like: 0
+      })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        txtPost.value = "";
+        txtTitle.value = "";
+        privacy.value = "";
+        window.location.replace('#home2');
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+    } else { //si no es true el campo public es false
+        
+        db.collection("posts").add({
+        authoruid: authorUid.uid,
+        nick: authorUid.email,
+        title: title,
+        date: "",
+        post: post,
+        public: false,
+        like: 0
+      })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        txtPost.value = "";
+        txtTitle.value = "";
+        privacy.value = "";
+        window.location.replace('#detail');
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+    } 
+  }
 
-  const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado2
-
-  console.log(privacy)
-  // const txtTitle = document.getElementById('input_text')
-  // const txtPost = document.getElementById('txtPost')
-  var post = txtPost.value;
-  var title = txtTitle.value;
-  const authorUid = firebase.auth().currentUser;
-  console.log(authorUid);
-  if(privacy == 1){ 
-    //condicional si es 1 el campo public será true y eso se imprimirá en el feed
-      db.collection("posts").add({
-      authoruid: authorUid.uid,
-      nick: authorUid.email,
-      title: title,
-      date: "",
-      post: post,
-      public: true,
-      like: 0
-    })
-    .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      txtPost.value = "";
-      txtTitle.value = "";
-      privacy.value = "";
-      window.location.replace('#home2');
-    })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
-    });
-  } else { //si no es true el campo public es false
-      
-      db.collection("posts").add({
-      authoruid: authorUid.uid,
-      nick: authorUid.email,
-      title: title,
-      date: "",
-      post: post,
-      public: false,
-      like: 0
-    })
-    .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      txtPost.value = "";
-      txtTitle.value = "";
-      privacy.value = "";
-      window.location.replace('#detail');
-    })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
-    });
-  } 
 })
 
 /*leer documento firestone*/
@@ -310,7 +324,7 @@ db.collection("posts").onSnapshot((querySnapshot) => {
       <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_vert</i></span>
       <p>${doc.data().post}</p>
-      <button id='${doc.id}' onclick="likeCounter('${doc.id}', '${doc.data().post}')"  class="likeBtn" >like</button>
+      <button id='${doc.id}' onclick="this.innerHTML = 'Buena Idea'" class="likeBtn" >like</button>
       </div>
       <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
@@ -327,22 +341,35 @@ db.collection("posts").onSnapshot((querySnapshot) => {
       <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">${doc.data().title}</span>
       <p>${doc.data().post}</p>
-      <button id='${doc.id}' class="likeBtn" onclick="likeCounter('${doc.id}', '${doc.data().post}')" data-like=${doc.data().like}'>like</button>
+      <button id='${doc.id}' onclick="this.innerHTML = 'Buena Idea'" class="likeBtn" >like</button>
       </div>
       </div>`
     }
   });
 });
 
+// /*Like post*/
+// function likePost(){
+//   let btn = document.querySelector(".like");
+//   alert("Hello World!")
+// }
+
 /*Editar una publicaicon "GUARDAR"*/
 const btnEdit = document.getElementById('btn-edit');
 function edit(id, title, post) {
+
+      alert('ok');
       btnPost.classList.add('mi-hide');
       btnEdit.classList.remove('mi-hide');
       window.location.replace('#list');
       document.getElementById('txtPost').value = post
       document.getElementById('input_text').value = title
   btnEdit.onclick = function () {
+    if(validarFormulario() == false){
+      // aqui no pasa la validacion
+      console.log(' campo vacio')
+      return;
+    }else{
     var updatePost = db.collection('posts').doc(id);
     var newTitle = document.getElementById('input_text').value;
     var newPost = document.getElementById('txtPost').value;
@@ -360,17 +387,19 @@ function edit(id, title, post) {
       alert('Error de codigo:\n ' + errorCode + ' Mensaje de Error:\n ' + errorMessage);
     })
   }
+  }
+
 }
 
 /*eliminar post*/
 function removePost(id){
-    let remove = confirm('¿Quieres eliminar esta publicación?') 
-    if(remove == true) {
-  db.collection("posts").doc(id).delete().then(function() {
-    console.log("Document successfully deleted!");
-  }).catch(function(error) {
-    console.error("Error removing document: ", error);
-  })
+  let remove = confirm('¿Quieres eliminar esta publicación?') 
+  if(remove == true) {
+db.collection("posts").doc(id).delete().then(function() {
+  console.log("Document successfully deleted!");
+}).catch(function(error) {
+  console.error("Error removing document: ", error);
+})
 }
 }
 
