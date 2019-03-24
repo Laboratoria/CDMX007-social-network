@@ -201,7 +201,7 @@ textarea.message-large.error{
 }
 /*perfil*/
 .img-portada {
-    background-image: url('images/background.png');
+    background-image: url('images/solar.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 200px;
@@ -242,10 +242,6 @@ textarea.message-large.error{
 .active {
     display: block;
 }
-#detail{
-    background:#F2F4F4;
-}
-
 
 @media screen and (min-width:990px) {
     .form-login, .form-registrer {
