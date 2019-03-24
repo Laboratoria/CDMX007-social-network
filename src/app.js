@@ -304,7 +304,7 @@ db.collection("posts").onSnapshot((querySnapshot) => {
       <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_vert</i></span>
       <p>${doc.data().post}</p>
-      <button id='${doc.id}' onclick="likeCounter('${doc.id}', '${doc.data().post}')"  class="likeBtn" >like</button>
+      <button id='${doc.id}' onclick="this.innerHTML = 'Buena Idea'" class="likeBtn" >like</button>
       </div>
       <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
@@ -321,23 +321,19 @@ db.collection("posts").onSnapshot((querySnapshot) => {
       <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">${doc.data().title}</span>
       <p>${doc.data().post}</p>
-      <button id='${doc.id}' class="likeBtn" onclick="likeCounter('${doc.id}', '${doc.data().post}')" data-like=${doc.data().like}'>like</button>
+      <button id='${doc.id}' onclick="this.innerHTML = 'Buena Idea'" class="likeBtn" >like</button>
       </div>
       </div>`
     }
   });
 });
 
-
-let likes = 0
-function likeCounter(id, likes) {
-  let x = document.getElementById(id)
-  console.log(x)
-  x.addEventListener('click' , () => {
-
-  alert('ptm')
-})
+/*Like post*/
+function likePost(){
+  let btn = document.querySelector(".like");
+  alert("Hello World!")
 }
+
 /*Editar una publicaicon "GUARDAR"*/
 const btnEdit = document.getElementById('btn-edit');
 function edit(id, title, post) {
