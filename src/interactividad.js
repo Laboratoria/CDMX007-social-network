@@ -90,3 +90,4 @@ elementsArray.forEach(function(elem) {
       elem.classList.add('active2');
    });
 });
+

@@ -1,4 +1,3 @@
-
 const app = {
     pages: [],
     show: new Event('show'),
