@@ -328,11 +328,11 @@ db.collection("posts").onSnapshot((querySnapshot) => {
   });
 });
 
-/*Like post*/
-function likePost(){
-  let btn = document.querySelector(".like");
-  alert("Hello World!")
-}
+// /*Like post*/
+// function likePost(){
+//   let btn = document.querySelector(".like");
+//   alert("Hello World!")
+// }
 
 /*Editar una publicaicon "GUARDAR"*/
 const btnEdit = document.getElementById('btn-edit');
