@@ -7,6 +7,9 @@ const txtUserName = document.getElementById('user-name');
 const txtBirthday = document.getElementById('birthday');
 const btnSaveProfile = document.getElementById('save-profile');
 const nav = document.getElementById('top-nav');
+const txtTitle = document.getElementById('input_text')
+const txtPost = document.getElementById('txtPost')
+const btnPost = document.getElementById('btn-post')
 
 /*Inicializacion para enlazar el proyecto a firebase */
 let config = {
@@ -156,8 +159,6 @@ function logOut() {
   })
 }
 
-
-
 // /* /leer documento firestone para perfil de usuario**/
 let uidOfUser = localStorage.getItem('useruid')
 var table = document.getElementById('table2');
@@ -220,76 +221,89 @@ btnMas.addEventListener('click', () => {
   btnEdit.classList.add('mi-hide');
   btnPost.classList.remove('mi-hide');
 })
-
+/*validar formulario de post*/
 function validarFormulario(){
-  if(txtTitle == null || txtTitle.length == 0 || /^\s+$/.test(txtTitle)){
-    alert('ERROR: Debe ingresar un titulo');
+  console.log('validando')
+  if(txtTitle.value == "" || txtPost.value == ""){
+    console.log('Campo de titulo vacio')
+    txtTitle.classList.add('error')
+    txtPost.classList.add('error')
     return false;
+  }else {
+    return true;
   }
-  if(txtPost == null || txtPost.length == 0 || isNaN(txtPost)){
-    alert('ERROR: Debe ingresar un post');
-    return false;
-  } 
-  return true;
 }
+txtTitle.addEventListener('keyup', (event) =>{
+  if(txtTitle.classList.contains('error')){
+    txtTitle.classList.remove('error')
+  }
+});
+txtPost.addEventListener('keyup', (event) =>{
+  if(txtPost.classList.contains('error')){
+    txtPost.classList.remove('error')
+  }
+});
 /*Guardar la informacion en la bd post PUBLICAR*/
-  const txtTitle = document.getElementById('input_text')
-  const txtPost = document.getElementById('txtPost')
-  const btnPost = document.getElementById('btn-post')
-btnPost.addEventListener('click', saveDataInPostColection => {
+// btnPost.addEventListener('click', saveDataInPostColection => {
+btnPost.addEventListener('click', (event) =>{
+  event.preventDefault()
+  if(validarFormulario() == false){
+    // aqui no pasa la validacion
+    console.log(' campo vacio')
+    return;
+  }else{
+    // si pasa la validacion ejecuta esto
+    const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado2
+    //console.log(privacy)
+    var post = txtPost.value;
+    var title = txtTitle.value;
+    const authorUid = firebase.auth().currentUser;
+    console.log(authorUid);
+    if(privacy == 1){ 
+      //condicional si es 1 el campo public será true y eso se imprimirá en el feed
+        db.collection("posts").add({
+        authoruid: authorUid.uid,
+        nick: authorUid.email,
+        title: title,
+        date: "",
+        post: post,
+        public: true,
+        like: 0
+      })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        txtPost.value = "";
+        txtTitle.value = "";
+        privacy.value = "";
+        window.location.replace('#home2');
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+    } else { //si no es true el campo public es false
+        
+        db.collection("posts").add({
+        authoruid: authorUid.uid,
+        nick: authorUid.email,
+        title: title,
+        date: "",
+        post: post,
+        public: false,
+        like: 0
+      })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        txtPost.value = "";
+        txtTitle.value = "";
+        privacy.value = "";
+        window.location.replace('#detail');
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+    } 
+  }
 
-  const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado2
-
-  console.log(privacy)
-  // const txtTitle = document.getElementById('input_text')
-  // const txtPost = document.getElementById('txtPost')
-  var post = txtPost.value;
-  var title = txtTitle.value;
-  const authorUid = firebase.auth().currentUser;
-  console.log(authorUid);
-  if(privacy == 1){ 
-    //condicional si es 1 el campo public será true y eso se imprimirá en el feed
-      db.collection("posts").add({
-      authoruid: authorUid.uid,
-      nick: authorUid.email,
-      title: title,
-      date: "",
-      post: post,
-      public: true,
-      like: 0
-    })
-    .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      txtPost.value = "";
-      txtTitle.value = "";
-      privacy.value = "";
-      window.location.replace('#home2');
-    })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
-    });
-  } else { //si no es true el campo public es false
-      
-      db.collection("posts").add({
-      authoruid: authorUid.uid,
-      nick: authorUid.email,
-      title: title,
-      date: "",
-      post: post,
-      public: false,
-      like: 0
-    })
-    .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      txtPost.value = "";
-      txtTitle.value = "";
-      privacy.value = "";
-      window.location.replace('#detail');
-    })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
-    });
-  } 
 })
 
 /*leer documento firestone*/
