@@ -160,7 +160,8 @@ function logOut() {
 
 // /* /leer documento firestone para perfil de usuario**/
 let uidOfUser = localStorage.getItem('useruid')
-var table = document.getElementById('table2');
+let table = document.getElementById('table2');
+let nameProfile = document.getElementById('nameProfile');
 db.collection("users").doc(uidOfUser).onSnapshot(function(doc) {
   table.innerHTML= "";
       table.innerHTML +=
@@ -170,6 +171,11 @@ db.collection("users").doc(uidOfUser).onSnapshot(function(doc) {
       <p id="birthdayProfile">${doc.data().birthday}</p>
       <p id= "txtEmailProfile">${doc.data().email}</p>
       `
+      nameProfile.innerHTML ="";
+       nameProfile.innerHTML += 
+       `
+       <p id="nameProfile">${doc.data().user}</p>
+       `
   });
 
 
@@ -292,7 +298,7 @@ db.collection("posts").onSnapshot((querySnapshot) => {
       <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
       <a  onclick="edit('${doc.id}', '${doc.data().title}', '${doc.data().post}')">Editar</a>
-      <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Aceptar</a>
+      <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Eliminar</a>
       </div>
       </div>
       `
@@ -311,20 +317,9 @@ db.collection("posts").onSnapshot((querySnapshot) => {
   });
 });
 
-
-let likes = 0
-function likeCounter(id, likes) {
-  let x = document.getElementById(id)
-  console.log(x)
-  x.addEventListener('click' , () => {
-
-  alert('ptm')
-})
-}
 /*Editar una publicaicon "GUARDAR"*/
 const btnEdit = document.getElementById('btn-edit');
 function edit(id, title, post) {
-      alert('ok');
       btnPost.classList.add('mi-hide');
       btnEdit.classList.remove('mi-hide');
       window.location.replace('#list');
@@ -352,12 +347,14 @@ function edit(id, title, post) {
 
 /*eliminar post*/
 function removePost(id){
-    confirm('¿Quieres eliminar esta publicación?')
+    let remove = confirm('¿Quieres eliminar esta publicación?') 
+    if(remove == true) {
   db.collection("posts").doc(id).delete().then(function() {
     console.log("Document successfully deleted!");
   }).catch(function(error) {
     console.error("Error removing document: ", error);
   })
+}
 }
 
 /*IMPRIMIR PUBLICACIONES PRIVADAS EN EL PERFIL DEL USUARIO*/
@@ -376,7 +373,7 @@ db.collection("posts").onSnapshot((querySnapshot) => {
       <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
       <a onclick="edit('${doc.id}', '${doc.data().title}', '${doc.data().post}')">Editar</a>
-      <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Aceptar</a>
+      <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Eliminar</a>
       </div>
       </div>
       `
