@@ -1,5 +1,5 @@
 # SproutThink 🌱
-La mayoría de la energía que utilizamos hoy en día provienen de fuentes no renovables y emiten dióxido de carbono (CO2) al medio ambiente, las energías renovables provienen de fuentes naturales e inagotables, en México la generación de energías limpias son necesarias para promover el crecimiento de esta industria global. 
+La mayoría de la energía que utilizamos hoy en día provienen de fuentes no renovables y emiten dióxido de carbono (CO2) al medio ambiente, las energías renovables provienen de fuentes naturales e inagotables, en México la generación de energías limpias son necesarias para promover el crecimiento de esta industria global.
 
 A pesar de los esfuerzos por hacer de la investigación un área de oportunidad a nivel nacional, todavía hay rezagos latentes, una muestra de ello es que en el país hay un promedio de 420 investigadores por cada millón de habitantes, dato que contrasta con países como Brasil, Argentina y España.
 
@@ -9,17 +9,17 @@ Ante dicho panorama, el Rector de la UNAM, Enrique Graue Wiechers, señaló que 
 
 [Redes sociales para el desarrollo científico](https://medium.com/@jrm19723/redes-sociales-para-el-desarrollo-cient%C3%ADfico-noticias-de-la-ciencia-y-la-tecnolog%C3%ADa-amazings-2dc60a3a8b)
 
-## Qué son las redes sociales: 
+## Qué son las redes sociales:
 
-Las redes sociales son un servicio online que gira en torno al usuario y sus necesidades, permitiendole crear un perfil en el cual compartir información, generar contenidos y estar en contacto con otros usuarios.
+Las redes sociales son un servicio online que gira en torno al usuario y sus necesidades, permitiéndole crear un perfil en el cual compartir información, generar contenidos y estar en contacto con otros usuarios.
 
-En 1929 Karinthy Frigyes desarrolló la teoría de "6 grados de separación" en la que afirma que cualquier persona esta conectada con otra a través de una cadena de no más de seis personas, está teoría es una en las que se basan las redes sociales.
+En 1929 Karinthy Frigyes desarrolló la teoría de "6 grados de separación" en la que afirma que cualquier persona está conectada con otra a través de una cadena de no más de seis personas, esta teoría es una en las que se basan las redes sociales.
 
 ![Plataformas Sociales](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/social_plataform.png)
 ![Entorno Social](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/digital_arround.png)
 
-## Caracteristicas Principales. 💡
-* Tiene como finalidad poner en contacto a personas mediante una plataforma online. 
+## Características Principales. 💡
+* Tiene como finalidad poner en contacto a personas mediante una plataforma online.
 * No son estáticas, permiten y fomenta la interacción entre los usuarios en tiempo real.
 * Permite la difusión de contenidos.
 
@@ -31,10 +31,10 @@ En enero de 2019 Facebook contó con cerca de 2.271 millones de usuarios activos
 [Digital in 2019](https://wearesocial.com/global-digital-report-2019)
 
 ### Quiénes son los principales usuarios de SproutThink. 👩🏾‍🌾👨🏾‍🔧 👩🏾‍🔬👩🏾‍🎓 👷🏾‍♀️
-Los principales usuarios de SproutThink son Hombres y mujeres de 27 a 40 años con interes en la ecología, sustentabilidad y energías renovables ya sea por profesión o hobbie. 
+Los principales usuarios de SproutThink son Hombres y mujeres de 27 a 40 años con interés en la ecología, sustentabilidad y energías renovables ya sea por profesión o hobby.
 
 ### Cómo descubrimos las necesidades de los usuarios 🔍
-Realizamos dos encuestas, la primera para conocer lo que más gustaba y no de las redes sociales que ya existen, posteriormente realizamos una investigación en línea para conocer espacios digitales dedicados a la innovación social y energías renovables, descubrimos que la mayoría de estos espacios son grupos de facebook y dentro de dichos grupos realizamos la segunda encuesta, está vez enfocada a conocer sus medios principales para consumo de información, si los usuarios eran miembros de comunidades digitales especializadas y la edad promedio. 
+Realizamos dos encuestas, la primera para conocer lo que más gustaba y no de las redes sociales que ya existen, posteriormente realizamos una investigación en línea para conocer espacios digitales dedicados a la innovación social y energías renovables, descubrimos que la mayoría de estos espacios son grupos de facebook y dentro de dichos grupos realizamos la segunda encuesta, esta vez enfocada a conocer sus medios principales para consumo de información, si los usuarios eran miembros de comunidades digitales especializadas y la edad promedio.
 
 ![Edad de los Usuarios](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/Edad.png)
 ![Red Social](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/Red_social_para_innovadores.png)
@@ -45,36 +45,38 @@ Realizamos dos encuestas, la primera para conocer lo que más gustaba y no de la
 * Existe gran información en internet y requiere mucho tiempo condensarla.
 * Los usuarios buscan ofertas laborales.
 * Los usuarios buscan resolver dudas propias y de compañer@s
-* Los usuarios necesitan ponerse en contacto con otros miembros.   
+* Los usuarios necesitan ponerse en contacto con otros miembros.  
 
-### Qué problema resuelve SproutThink para estos usuarios 🖊 
+### Qué problema resuelve SproutThink para estos usuarios 🖊
 SproutThink brinda un espacio para compartir con otros miembros contenido de valor, conocer usuarios que comparten intereses, dar y recibir feedback en un medio social.
 
-## HISTORIAS DE USUARIO: ¿Cuáles son los objetivos de estos usuarios en relación con el producto?  🗺️
-* Yo como usuario quiero **crear un perfil** en SproutThink.
-* Yo como usuario quiero **escribir un post**.
-* Yo como usuario quiero **elegir la privacidad** de mi post.
-* Yo como usuario quiero **editar mi post**.
-* Yo como usuario quiero **eliminar mi post**.
-* Yo como usuario quiero **leer los post de otros usuarios**.
-* Yo como usuario quiero dar **like a otros post**.
+## HISTORIAS DE USUARIO: 🗺️
 
-### Cuáles son las principales funcionalidades del producto y cuál es su prioridad  📌
-* Acceso a una comunidad exclusiva.
-* Red social Unica.
+### ¿Cuáles son los objetivos de estos usuarios en relación con el producto? 
+* Yo como usuario quiero **crear un perfil** en SproutThink para acceder a funciones exclusivas.
+* Yo como usuario quiero **escribir un post** para compartir una idea.
+* Yo como usuario quiero **elegir la privacidad** de mi post entre público y privado.
+* Yo como usuario quiero **editar mi post** para agregar más información.
+* Yo como usuario quiero **eliminar mi post** que ya no sea vigente.
+* Yo como usuario quiero **leer los post de otros usuarios** para conocer sus ideas.
+* Yo como usuario quiero dar **like a otros post** para apoyar a otros usuarios.
+
+### ¿Cuáles son las principales funcionalidades del producto y cuál es su prioridad? 📌
+* Acceso a una comunidad exclusiva de innovadores sociales.
+* Red social Única para consulta y compartir contenido.
 * Crear post públicos y Privados.
 * Eliminar y editar Post.
 * Ver mi perfil con mis post privados.
 * Interactuar con otros usuarios en tiempo real.
 
-### Cómo verificaste que el producto les está resolviendo sus problemas 📑 
-* Test con usuarios. 
+### Cómo verificaste que el producto les está resolviendo sus problemas 📑
+* Test con usuarios.
 * Encuestas.
 
 ### Cómo te asegurarás que estos usuarios usen este producto 📣
 * Difusión en grupos de redes sociales.
 
-# Desarollo 🛠
+# Desarrollo 🛠
 
 ## Creado con:
 * Vanilla Javascript
@@ -82,7 +84,7 @@ SproutThink brinda un espacio para compartir con otros miembros contenido de val
 * Cloud Firestore ☁️🔥
 * Materialize 💖
 * CSS3 🎨
-* HTML5 📄 
+* HTML5 📄
 
 ## PROTOTIPADO:
 
@@ -96,6 +98,13 @@ Puedes testearlo [Aquí](https://marvelapp.com/4dhi859/screen/54084656)
 ![Prototipo de Alta](https://raw.githubusercontent.com/AcheZeta/CDMX007-social-network/rama-readme/src/images/Prototipo_alta.png)
 
 [Consulta el Prototipo de Alta Completo](https://github.com/AcheZeta/CDMX007-social-network/blob/rama-readme/src/PROTOTIPO_SOCIAL.pdf)
+
+## Autores 📝 
+
+[Claudia Ivonne Ramírez Rodríguez](https://github.com/claudiaramirez/CDMX007-social-network)
+[Diana Karen Martínez Marce](https://github.com/Karen-Mtz/CDMX007-social-network)
+[Hameyalli Mariana Elizalde Acevedo](https://github.com/AcheZeta/CDMX007-social-network)
+
 
 ## Checklist
 
@@ -431,51 +440,51 @@ puedas haber encontrado en el camino.
 
 ### Tech
 
-| Habilidad |  |
-|-----------|----------------|
-| **JavaScript** | |
-| Estilo | 
-| Nomenclatura/semántica | 
-| Funciones/modularidad | 
-| Estructuras de datos | 
-| Tests | 
-| **HTML** | |
-| Validación | 
-| Estilo | 
-| Semántica | 
-| SEO | N/A
-| **CSS** | |
-| DRY | 
-| Responsive | 
-| **SCM** | |
-| Git | 
-| GitHub | 
-| **CS** | 
-| Lógica | 
-| Arquitectura | 
+| Habilidad              |     |
+|------------------------|-----|
+| **JavaScript**         |     |
+| Estilo                 |     |
+| Nomenclatura/semántica |     |
+| Funciones/modularidad  |     |
+| Estructuras de datos   |     |
+| Tests                  |     |
+| **HTML**               |     |
+| Validación             |     |
+| Estilo                 |     |
+| Semántica              |     |
+| SEO                    | N/A |
+| **CSS**                |     |
+| DRY                    |     |
+| Responsive             |     |
+| **SCM**                |     |
+| Git                    |     |
+| GitHub                 |     |
+| **CS**                 |     |
+| Lógica                 |     |
+| Arquitectura           |     |
 
 ### UX
 
-| Habilidad | |
-|-----------|----------------|
-| User Centricity | 
-| Visual Desing | 
+| Habilidad       |  |
+|-----------------|--|
+| User Centricity |  |
+| Visual Desing   |  |
 
 ### Habilidades Blandas
 
 Para este proyecto esperamos que ya hayas alcanzado el nivel 3 en todas tus
 habilidades blandas. Te aconsejamos revisar la rúbrica:
 
-| Habilidad | |
-|-----------|----------------|
-| Planificación y organización | 
-| Autoaprendizaje | 
-| Solución de Problemas | 
-| Dar y recibir feedback | 
-| Adaptabilidad | 
-| Trabajo en equipo (trabajo colaborativo y responsabilidad) | 
-| Comunicación eficaz | 
-| Presentaciones | 
+| Habilidad                                                  |  |
+|------------------------------------------------------------|--|
+| Planificación y organización                               |  |
+| Autoaprendizaje                                            |  |
+| Solución de Problemas                                      |  |
+| Dar y recibir feedback                                     |  |
+| Adaptabilidad                                              |  |
+| Trabajo en equipo (trabajo colaborativo y responsabilidad) |  |
+| Comunicación eficaz                                        |  |
+| Presentaciones                                             |  |
 
 ***
 
