@@ -30,61 +30,60 @@
         <div class="container">
             <div class="page active"></div>
             <div id="home" class="page">
-                <div class="row">
-                    <div class="col s12 l6">
-                        <section class="login-registrer ">
-                            <h5>Ingreso de usuarios</h5>
-                            <div class="row">
+                <div class="row login-registrer">
+                    <div class="forms">
+                            <img class="img_logo" src="images/logo.jpg" alt="">
+                            <a class="logo">SproutThink</a>
+                        <section class="form-login">
+                            <h5 class="title-login">Iniciar sesión</h5>
+                                <div class="row">
                                 <form class="col s12 m12 l12">
                                     <div class="row">
-                                        <div class="input-field col s12 m12 l10">
+                                        <div class="input-field center-inpunts col s12 m12 l12">
                                             <input id="txtEmail2" type="email" class="validate">
-                                            <label for="email">Email</label>
+                                            <label for="email">Correo electronico</label>
                                         </div>
-                                        <div class="input-field col s12 m12 l10">
+                                        <div class="input-field col s12 m12 l12">
                                             <input id="txtPassword2" type="password" class="validate">
-                                            <label for="password">Password</label>
+                                            <label for="password">Contarseña</label>
                                             <div id="errorMessage"></div>
                                         </div>
                                     </div>
-                                    <a id="btnLogin" class="waves-effect waves-light btn">Inicia Sesión</a>
+                                    <a id="btnLogin" class="waves-effect waves-light btn btnLogin">Entrar</a>
                                 </form>
-                            </div>
-                            <h5>Registro de usuarios</h5>
-                            <div class="row">
+                                </div>
+                        </section>
+                        <section class="form-registrer">
+                            <h5 class="title-login">Registrarse</h5>
                                 <form class="col s12">
                                     <div class="row">
-                                        <div class="input-field col s12 m12 l10">
+                                        <div class="input-field col s12 m12 l12">
                                             <input id="name" type="text" class="validate">
-                                            <label for="name">Tu nombre</label>
+                                            <label for="name">Nombre</label>
                                         </div>
-                                        <div class="input-field col s12 m12 l10">
+                                        <div class="input-field col s12 m12 l12">
                                             <input id="user-name" type="text" class="validate">
                                             <label for="user-name">Nombre de Usuario</label>
                                         </div>
-                                        <div class="input-field col s12 m12 l10">
+                                        <div class="input-field col s12 m12 l12">
                                             <input id="birthday" type="text" class="datepicker validate"
                                                 placeholder="Fecha de nacimiento">
                                             <label for="birthday"></label>
                                         </div>
-                                        <div class="input-field col s12 m12 l10">
+                                        <div class="input-field col s12 m12 l12">
                                             <input id="txtEmail" type="email" class="validate">
-                                            <label for="email">Email</label>
+                                            <label for="email">Correo electronico </label>
                                         </div>
-                                        <div class="input-field col s12 m12 l10">
+                                        <div class="input-field col s12 m12 l12">
                                             <input id="txtPassword" type="password" class="validate">
-                                            <label for="password">Password</label>
+                                            <label for="password">Contraseña</label>
                                         </div>
                                     </div>
-                                    <a id="btnSignUp" class="waves-effect waves-light btn">Registrate</a>
+                                    <a id="btnSignUp" class="waves-effect waves-light btn btnSignUp">Registrate</a>
                                 </form>
-                            </div>
                         </section>
                     </div>
-                    <div class="col s6">
-                        <img class="img_login materialboxed imgside"
-                            src="https://images.pexels.com/photos/414928/pexels-photo-414928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                    </div>
+                        <div class="img-side"></div>
                 </div>
             </div>
             <div id="content" class="content">
