@@ -374,11 +374,15 @@ textarea.message-large.error{
         background-size: 200% 100%;
        }
        .img_logo {
-        padding-top: 50px;
+       
         margin: 0;
         width: 300px;
+    }
+    .img_logo.login{
+        padding-top: 50px;
     }
     .logOutButton {
         padding: 30px; 
     }
+
 }
