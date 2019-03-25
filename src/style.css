@@ -149,6 +149,7 @@ body {
 /*Feed*/
 .nav-feed {
     text-align: center;
+  background-color: #F9FAFD;
 }
 .logo {
     font-size: 1.6rem;
@@ -156,8 +157,12 @@ body {
     font-family: 'Dancing Script', cursive;
 }
 .img_logo {
-    width: 50px;
+    width: 45%;
     vertical-align: middle;
+    margin-top: 2%;
+}
+#container-feed-news {
+background-color: #E0E6F8
 }
 /*Container inner publicar*/
 .btn-post {
@@ -217,7 +222,7 @@ textarea.message-large.error{
 .message-large::-webkit-input-placeholder, 
 .message-large::-moz-placeholder,
 .message-large:-moz-placeholder ,
-.message-large:-ms-input-placeholder,{
+.message-large:-ms-input-placeholder{
     font-size: 1.2rem;
 }
 .select-wrapper input.select-dropdown {
@@ -226,8 +231,11 @@ textarea.message-large.error{
     padding-left: 5px;
 }
 /*perfil*/
+#detail {
+    background-color: #F9FAFD;
+}
 .img-portada {
-    background-image: url('images/solar.png');
+    background-image: url('images/background.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 200px;
@@ -242,7 +250,7 @@ textarea.message-large.error{
     padding: 20px;
 }
 .img-profile {
-    background-image: url('images/img-peerDelete.png');
+    background-image: url('images/usericon.png');
     height: 40px;
     background-repeat: no-repeat;
     padding-top: 140px;
@@ -260,6 +268,33 @@ textarea.message-large.error{
 }
 .show {
     display: block ;
+}
+.logOutButton {
+    float: left;
+    margin-left: 3%;
+    margin-top: -3%;
+}
+.info {
+    float: right;
+    margin-right: 3%;
+    margin-top: 3%;
+}
+.btn-floating {
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    background-color: #4E5C73;
+    border-radius: 50%;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    cursor: pointer;
+    vertical-align: middle;
 }
 /**** PAGES ****/
 .page {
@@ -322,5 +357,12 @@ textarea.message-large.error{
         background-repeat: no-repeat;
         background-size: 200% 100%;
        }
+       .img_logo {
+        width: 30%;
+        margin-top: 2%;
+        margin-left: 2%;
+    
+
+    }
 }
 
