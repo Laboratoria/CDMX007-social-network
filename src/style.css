@@ -9,6 +9,10 @@ body {
     z-index: 2;
 }
 /*login*/
+.img_logo2{
+    width: 50px;
+    vertical-align: middle;
+}
 .logo-sesion{
     padding-left: 30px
 
