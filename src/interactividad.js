@@ -109,4 +109,5 @@ registrer.addEventListener("click", () =>{
 sesion.addEventListener("click", () =>{  
     formRegistrer.classList.add('hide');
     formLogin.classList.remove('hide');
+    location.reload();
   })
