@@ -1,8 +1,29 @@
+body{
+    
+  width: 100%;
+  height: 100%;
+    background-image: url(http://thetravelasia.com/wp-content/uploads/2018/12/Delhi-Girl.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    top: 30%;
+}
+
+h3{
+    color: white;
+    text-align: center;
+    top: 15%;
+}
 
 .form{
     display: block;
-    top: 10%;
-    left: 40%;
+    top: 20%;
+    left: 10%;
 }
 
 .formregistro{
@@ -10,4 +31,8 @@
     top: 90%;
     left: 40%;
 
+}
+
+.login{
+    top:80%
 }
