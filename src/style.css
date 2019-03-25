@@ -33,6 +33,14 @@ color: #236476;
 .img-side{
     display: none;
 }
+.sub-registrer{
+    text-align: right;
+    font-size: 1rem;
+    padding-right: 15px;
+}
+.subtitle-register{
+    color: #1f8eaf;
+}
 /*Estilo container*/
 .container {
     position: relative;
