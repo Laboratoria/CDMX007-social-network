@@ -91,6 +91,7 @@ function saveData() {
   posts: []
 })
 .then(function (docRef) {
+    name.value = "";
     txtEmail.value = "";
     txtPassword.value = "";
     txtUserName.value = "";
@@ -98,6 +99,11 @@ function saveData() {
   })
   .catch(function (error) {
    console.error("Error adding document: ", error);
+   name.value = "";
+    txtEmail.value = "";
+    txtPassword.value = "";
+    txtUserName.value = "";
+    txtBirthday.value = "";
   });
 }
 
@@ -123,6 +129,8 @@ btnLogin.addEventListener('click', e => {
   var errorMessage = error.message;
   //  console.log(errorCode);
   //  console.log(errorMessage);
+  txtEmail2.value = "";
+  textPassword2.value = "";
   console.log('contraseña y/o correo invalido')
   document.getElementById("errorMessage").innerHTML = "Contraseña o correo inválidos";
     setTimeout(function(){ 
