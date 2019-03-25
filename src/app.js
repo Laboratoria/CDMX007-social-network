@@ -131,9 +131,11 @@ btnLogin.addEventListener('click', e => {
   });
 });
 
-/* funcion para entar a pagina principal (feed)*/
+/* funcion para entrar a pagina principal (feed)*/
 const container = document.getElementById('name-user');
-let userNickname = localStorage.getItem('nickname')
+let userNickname = localStorage.getItem('nickname');
+// const logOutButton = document.getElementById('log-out-button'); 
+const footer = document.getElementById('footer'); 
 function loged(user) {
   var user = user;
   if (user.emailVerified) {
@@ -141,8 +143,11 @@ function loged(user) {
     container.innerHTML =
     `
     <div class="row name-user"><p> Hola ${userNickname}</p>
-    <button onClick="logOut()"  class= "btn btn-action">Cerrar Sesión</button></div>`;
-  }
+    `
+    footer.innerHTML = `
+    <a onClick="logOut()"  class= "logOutButton">Cerrar Sesión</a>
+    `
+  } interactividad();
 }
 
 /* Boton de cerrar sesión*/
@@ -168,10 +173,10 @@ db.collection("users").doc(uidOfUser).onSnapshot(function(doc) {
   table.innerHTML= "";
       table.innerHTML +=
       `
-      <p id="nameProfile">${doc.data().name}</p>
-      <p id="user-nameProfile">${doc.data().user}</p>
-      <p id="birthdayProfile">${doc.data().birthday}</p>
-      <p id= "txtEmailProfile">${doc.data().email}</p>
+      <p id="user-nameProfile">Nombre de usuario: ${doc.data().user}</p>
+      <p id="nameProfile">Nombre: ${doc.data().name}</p>
+      <p id="birthdayProfile">Cumpleaños: ${doc.data().birthday}</p>
+      <p id= "txtEmailProfile">Email: ${doc.data().email}</p>
       `
   });
 
@@ -390,12 +395,14 @@ function edit(id, title, post) {
 
 /*eliminar post*/
 function removePost(id){
-    confirm('¿Quieres eliminar esta publicación?')
-  db.collection("posts").doc(id).delete().then(function() {
-    console.log("Document successfully deleted!");
-  }).catch(function(error) {
-    console.error("Error removing document: ", error);
-  })
+  let remove = confirm('¿Quieres eliminar esta publicación?') 
+  if(remove == true) {
+ db.collection("posts").doc(id).delete().then(function() {
+  console.log("Document successfully deleted!");
+ }).catch(function(error) {
+  console.error("Error removing document: ", error);
+ })
+}
 }
 
 /*IMPRIMIR PUBLICACIONES PRIVADAS EN EL PERFIL DEL USUARIO*/

@@ -4,14 +4,16 @@ const interactividad = () => {
 
   var elems = document.querySelectorAll('.dropdown-trigger');
   var instances = M.Dropdown.init(elems);
+ 
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+
 
 } 
 interactividad()
 
- document.addEventListener('DOMContentLoaded', function() {
-     var elems = document.querySelectorAll('.modal');
-     var instances = M.Modal.init(elems);
-   });
 
    document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('select');
@@ -90,4 +92,12 @@ elementsArray.forEach(function(elem) {
       elem.classList.add('active2');
    });
 });
+
+
+/*ocultar inicio de sesion y registro */
+// const registrer = document.getElementById('registrer');
+// const sesion = document.getElementById('sesion');
+//     registrer.addEventListener('click'){
+//       alert('hsadjkhsdak');
+//     }
 
