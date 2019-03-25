@@ -174,8 +174,6 @@ db.collection("users").doc(uidOfUser).onSnapshot(function(doc) {
       <p id= "txtEmailProfile">${doc.data().email}</p>
       `
   });
-
-
 /*función para borrar documentos*/
 function removeUsers(id){
   db.collection("users").doc(id).delete().then(function() {
@@ -256,8 +254,7 @@ btnPost.addEventListener('click', (event) =>{
     return;
   }else{
     // si pasa la validacion ejecuta esto
-    const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado2
-    //console.log(privacy)
+    const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado
     var post = txtPost.value;
     var title = txtTitle.value;
     const authorUid = firebase.auth().currentUser;
@@ -284,7 +281,6 @@ btnPost.addEventListener('click', (event) =>{
         console.error("Error adding document: ", error);
       });
     } else { //si no es true el campo public es false
-        
         db.collection("posts").add({
         authoruid: authorUid.uid,
         nick: authorUid.email,

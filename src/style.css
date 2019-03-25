@@ -9,16 +9,34 @@ body {
     z-index: 2;
 }
 /*login*/
+.logo-sesion{
+    padding-left: 30px
+
+}
 .login-registrer{
-    font-size: 0;
+    font-size: 0; 
    }
+.forms{
+    position: relative;
+    height: 100vh;
+}
 .form-login,
 .form-registrer{
-    padding: 30px;
+    padding: 0 30px ;
+    max-height: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.form-registrer{
+    max-height: 500px;
 }
 .title-login{
-padding-left: 8px;
-color: #236476;
+    padding: 0 0 0 8px;
+    color: #236476;
 }
 .btnLogin,
 .btnSignUp{
@@ -37,6 +55,7 @@ color: #236476;
     text-align: right;
     font-size: 1rem;
     padding-right: 15px;
+    margin: 0;
 }
 .subtitle-register{
     color: #1f8eaf;
@@ -234,13 +253,13 @@ textarea.message-large.error{
     text-align: right;
 }
 .hide {
-    display: none !important;
+    display: none;
 }
 .mi-hide {
     display: none !important;
 }
 .show {
-    display: block !important;
+    display: block ;
 }
 /**** PAGES ****/
 .page {
@@ -251,14 +270,16 @@ textarea.message-large.error{
 }
 
 @media screen and (min-width:990px) {
+    .logo-sesion {
+        padding-left: 100px;
+    }
     .form-login, .form-registrer {
-        padding: 70px 150px;
+        padding: 0 100px;
     }
     .top-nav {
         top: 0;
         bottom: auto;
     }
-
     .content{
         padding-top: 4.3rem;
         margin: auto;
@@ -268,19 +289,15 @@ textarea.message-large.error{
         width: 100%;
         margin: 0
     }
-
     .top-nav ul>.logo {
         display: block;
         text-align: left;
         color: #3da29f;
         font-size: 1.3rem;
     }
-   
-
     .nav-feed {
         display: none;
     }
-
     .logo{
         padding: 0;
         display: inline-block;
