@@ -131,35 +131,29 @@
                         </form>
                     </div>
                 </section>
-                <div id="modal1" class="modal">
-                        <div class="modal-content">
-                          <h4>Información general de la cuenta</h4><br>
-                          <p id="table2"></p>
-                        </div>
-                        <div id="footer" class="modal-footer">
-                          <a  class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                        </div>
-                      </div>
                 <section id="detail" class="page">
-                        <div id="log-out-button">
-                                <a data-target="modal1" class="modal-trigger btn-floating info"><i class="material-icons">info</i></a>
-                                <!-- <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>    -->
-                                              
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h5>Información general de la cuenta</h5>
+                                <p id="table2"></p>
+                            </div>
                         </div>
-                    <div  class="img-portada">
-                        <div class="img-profile">
+                        <div id="log-out-button"></div>
+                       <div><a data-target="modal1" class="modal-trigger btn-floating info"><i class="material-icons">info</i></a></div>
+                        <div class="img-portada">
+                            <div class="img-profile">
                                 <p id="name-user" class="name-user"></p>
+                            </div>
                         </div>
-                    </div>
-                    <section id="profile" class="row profile">
-                        <div id="container-feed"></div>
+                        <section id="profile" class="row profile">
+                            <div id="container-feed"></div>
                             <!-- <div id="table2"></div> -->
-                        <div id="personalWall"></div>
+                            <div id="personalWall"></div>
+                        </section>
                     </section>
-                </section>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
     <!---firebase cdn--->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <!---firestore--->

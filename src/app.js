@@ -19,14 +19,14 @@ let config = {
   projectId: "red-social-laboratoriamx",
   storageBucket: "red-social-laboratoriamx.appspot.com",
   messagingSenderId: "727465925051"
-};
-firebase.initializeApp(config);
-/*nombre a la base de datos*/
-let db = firebase.firestore();
-/* observador*/
-function watcher() {
-firebase.auth().onAuthStateChanged(function (user) {
-if (user) {
+ };
+ firebase.initializeApp(config);
+ /*nombre a la base de datos*/
+ let db = firebase.firestore();
+ /* observador*/
+ function watcher() {
+ firebase.auth().onAuthStateChanged(function (user) {
+ if (user) {
   console.log('usuario activo');
   window.location.href = '#home';
   if(user.emailVerified == true) {
@@ -47,7 +47,7 @@ if (user) {
   localStorage.setItem('useruid' , uid)
   localStorage.setItem('email' , email)
   var providerData = user.providerData;
-} else {
+ } else {
   // navMenu.classList.add('hide');
   window.location.href = '#home';
   const content = document.getElementById('content')
@@ -55,23 +55,24 @@ if (user) {
   content.classList.add('hide');
   nav.classList.add('hide');
   console.log('no existe usuario activo');
-}
-});
-} watcher();
+ }
+ });
+ } watcher();
 
 /*para crear usuario*/
 btnSingUp.addEventListener('click', e => {
-    const email = txtEmail.value;
-    const pass = txtPassword.value;
-    firebase.auth().createUserWithEmailAndPassword(email, pass)
-  .then(function () {
-    verify()
-    saveData()
-  })
-  .catch(function (error) {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-  })
+  const email = txtEmail.value;
+  const pass = txtPassword.value;
+  firebase.auth().createUserWithEmailAndPassword(email, pass)
+.then(function () {
+  verify()
+  saveData()
+  alert('En breve recibirás un correo electrónico para verificar tu cuenta')
+})
+.catch(function (error) {
+  var errorCode = error.code;
+  var errorMessage = error.message;
+})
 });
 
 /*Guarda la informacion en la bd users*/
@@ -89,9 +90,8 @@ function saveData() {
   user: userName,
   birthday: birthday,
   posts: []
-})
-.then(function (docRef) {
-    name.value = "";
+ })
+ .then(function (docRef) {
     txtEmail.value = "";
     txtPassword.value = "";
     txtUserName.value = "";
@@ -99,13 +99,8 @@ function saveData() {
   })
   .catch(function (error) {
    console.error("Error adding document: ", error);
-   name.value = "";
-    txtEmail.value = "";
-    txtPassword.value = "";
-    txtUserName.value = "";
-    txtBirthday.value = "";
   });
-}
+ }
 
 /* Verificacion de correo electronico*/
 function verify() {
@@ -115,78 +110,76 @@ function verify() {
   }).catch(function (error) {
   console.log(error);
   });
-}
+ }
 
 /* boton para iniciar sesión*/
 const txtEmail2 = document.getElementById('txtEmail2');
 const textPassword2 = document.getElementById('txtPassword2');
 const navMenu = document.getElementById('top-nav');
 btnLogin.addEventListener('click', e => {
-  const email2 = txtEmail2.value;
-  const pass2 = textPassword2.value;
-  firebase.auth().signInWithEmailAndPassword(email2, pass2).catch(function (error) {
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  //  console.log(errorCode);
-  //  console.log(errorMessage);
-  txtEmail2.value = "";
-  textPassword2.value = "";
-  console.log('contraseña y/o correo invalido')
-  document.getElementById("errorMessage").innerHTML = "Contraseña o correo inválidos";
-    setTimeout(function(){ 
-        document.getElementById("errorMessage").innerHTML = "";
-    }, 2000);
-  });
+ const email2 = txtEmail2.value;
+ const pass2 = textPassword2.value;
+ firebase.auth().signInWithEmailAndPassword(email2, pass2).catch(function (error) {
+ var errorCode = error.code;
+ var errorMessage = error.message;
+ //  console.log(errorCode);
+ //  console.log(errorMessage);
+ console.log('contraseña y/o correo invalido')
+ document.getElementById("errorMessage").innerHTML = "Contraseña o correo inválidos";
+   setTimeout(function(){
+       document.getElementById("errorMessage").innerHTML = "";
+   }, 2000);
+ });
 });
 
-/* funcion para entrar a pagina principal (feed)*/
+/* funcion para entrar a pagina principal*/
 const container = document.getElementById('name-user');
 let userNickname = localStorage.getItem('nickname');
-// const logOutButton = document.getElementById('log-out-button'); 
-const footer = document.getElementById('footer'); 
+const footer = document.getElementById('log-out-button');
 function loged(user) {
-  var user = user;
-  if (user.emailVerified) {
-    window.location.href = '#home2'
-    container.innerHTML =
-    `
-    <div class="row name-user"><p> Hola ${userNickname}</p>
-    `
-    footer.innerHTML = `
-    <a onClick="logOut()"  class= "logOutButton">Cerrar Sesión</a>
-    `
-  } interactividad();
+ var user = user;
+ if (user.emailVerified) {
+   window.location.href = '#home2'
+   container.innerHTML =
+   `
+   <div class="row name-user"><p> Hola ${userNickname}</p>
+   `
+   footer.innerHTML = `
+   <button onClick="logOut()"  class= "logOutButton btn-small">Cerrar Sesión</button>
+   `
+ } interactividad();
 }
 
 /* Boton de cerrar sesión*/
 const btnLogout = document.getElementById('btnLogout');
 function logOut() {
-  //pop up de confirmación
-  firebase.auth().signOut()
-  .then(function () {
-    console.log('cerrando sesion')
-    window.location.href = '#home'
-  watcher()
-  })
-  .catch(function (error) {
-   console.log(error)
-  })
+ //pop up de confirmación
+ firebase.auth().signOut()
+ .then(function () {
+   console.log('cerrando sesion')
+   window.location.href = '#home'
+ watcher()
+ })
+ .catch(function (error) {
+  console.log(error)
+ })
 }
 
 // /* /leer documento firestone para perfil de usuario**/
 let uidOfUser = localStorage.getItem('useruid')
 var table = document.getElementById('table2');
 db.collection("users").doc(uidOfUser).onSnapshot(function(doc) {
-  let userNickname = localStorage.setItem('nickname' , doc.data().user)
-  table.innerHTML= "";
-      table.innerHTML +=
-      `
-      <p id="user-nameProfile">Nombre de usuario: ${doc.data().user}</p>
-      <p id="nameProfile">Nombre: ${doc.data().name}</p>
-      <p id="birthdayProfile">Cumpleaños: ${doc.data().birthday}</p>
-      <p id= "txtEmailProfile">Email: ${doc.data().email}</p>
-      `
-  });
+ let userNickname = localStorage.setItem('nickname' , doc.data().user)
+ table.innerHTML= "";
+     table.innerHTML +=
+     `
+     <p id="user-nameProfile">Nombre de usuario: ${doc.data().user}</p>
+     <p id="nameProfile">Nombre: ${doc.data().name}</p>
+     <p id="birthdayProfile">Cumpleaños: ${doc.data().birthday}</p>
+     <p id= "txtEmailProfile">Email: ${doc.data().email}</p>
+     `
+ });
+  
 /*función para borrar documentos*/
 function removeUsers(id){
   db.collection("users").doc(id).delete().then(function() {
@@ -194,7 +187,8 @@ function removeUsers(id){
   }).catch(function(error) {
     console.error("Error removing document: ", error);
   });
-}
+ }
+
 /*función para editar perfil*/
 const txtNameProfile = document.getElementById('nameProfile');
 const txtUserNameProfile = document.getElementById('user-nameProfile');
@@ -203,197 +197,192 @@ const txtEmailProfile = document.getElementById('txtEmailProfile');
 const txtPasswordProfile = document.getElementById('txtPasswordProfile');
 
 function editUsers(id, email, name, user, birthday){
-  txtEmail.value = email
-  txtName.value =  name
-  txtUserName.value = user
-  txtBirthday.value = birthday
-  btnSaveProfile.addEventListener('click', function(){
-    var washingtonRef = db.collection("users").doc(id);
+ txtEmail.value = email
+ txtName.value =  name
+ txtUserName.value = user
+ txtBirthday.value = birthday
+ btnSaveProfile.addEventListener('click', function(){
+   var washingtonRef = db.collection("users").doc(id);
 
-    var email = txtEmail.value
-    var name = txtName.value
-    var user = txtUserName.value
-    var birthday = txtBirthday.value
-    return washingtonRef.update({
-      email: email,
-      name: name,
-      user: user,
-      birthday: birthday
-    })
-    .then(function() {
-    console.log("Document successfully updated!");
-    })
-    .catch(function(error) {
-      console.error("Error updating document: ", error);
-    });
-  })
+   var email = txtEmail.value
+   var name = txtName.value
+   var user = txtUserName.value
+   var birthday = txtBirthday.value
+   return washingtonRef.update({
+     email: email,
+     name: name,
+     user: user,
+     birthday: birthday
+   })
+   .then(function() {
+   console.log("Document successfully updated!");
+   })
+   .catch(function(error) {
+     console.error("Error updating document: ", error);
+   });
+ })
 }
+
 /*oculta boton */
 const btnMas = document.getElementById('btn-mas');
 btnMas.addEventListener('click', () => {
-  btnEdit.classList.add('mi-hide');
-  btnPost.classList.remove('mi-hide');
+ btnEdit.classList.add('mi-hide');
+ btnPost.classList.remove('mi-hide');
 })
 /*validar formulario de post*/
 function validarFormulario(){
-  console.log('validando')
-  if(txtTitle.value == "" || txtPost.value == ""){
-    console.log('Campo de titulo vacio')
-    txtTitle.classList.add('error')
-    txtPost.classList.add('error')
-    return false;
-  }else {
-    return true;
-  }
+ console.log('validando')
+ if(txtTitle.value == "" || txtPost.value == ""){
+   console.log('Campo de titulo vacio')
+   txtTitle.classList.add('error')
+   txtPost.classList.add('error')
+   return false;
+ }else {
+   return true;
+ }
 }
 txtTitle.addEventListener('keyup', (event) =>{
-  if(txtTitle.classList.contains('error')){
-    txtTitle.classList.remove('error')
-  }
+ if(txtTitle.classList.contains('error')){
+   txtTitle.classList.remove('error')
+ }
 });
 txtPost.addEventListener('keyup', (event) =>{
-  if(txtPost.classList.contains('error')){
-    txtPost.classList.remove('error')
-  }
+ if(txtPost.classList.contains('error')){
+   txtPost.classList.remove('error')
+ }
 });
+
 /*Guardar la informacion en la bd post PUBLICAR*/
 // btnPost.addEventListener('click', saveDataInPostColection => {
-btnPost.addEventListener('click', (event) =>{
+  btnPost.addEventListener('click', (event) =>{
+    event.preventDefault()
+   if(validarFormulario() == false){
+     // aqui no pasa la validacion
+     console.log(' campo vacio')
+     return;
+   }else{
+     // si pasa la validacion ejecuta esto
+     const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado2
+     //console.log(privacy)
+     var post = txtPost.value;
+     var title = txtTitle.value;
+     const authorUid = firebase.auth().currentUser;
+     console.log(authorUid);
+     if(privacy == 2){
+       //condicional si es 1 el campo public será true y eso se imprimirá en el feed
+         db.collection("posts").add({
+         authoruid: authorUid.uid,
+         nick: authorUid.email,
+         title: title,
+         date: "",
+         post: post,
+         public: true,
+         like: 0
+       })
+       .then(function (docRef) {
+         console.log("Document written with ID: ", docRef.id);
+         txtPost.value = "";
+         txtTitle.value = "";
+         privacy.value = "";
+         window.location.replace('#home2');
+       })
+       .catch(function (error) {
+         console.error("Error adding document: ", error);
+       });
+     } else { //si no es true el campo public es false
+        
+         db.collection("posts").add({
+         authoruid: authorUid.uid,
+         nick: authorUid.email,
+         title: title,
+         date: "",
+         post: post,
+         public: false,
+         like: 0
+       })
+       .then(function (docRef) {
+         console.log("Document written with ID: ", docRef.id);
+         txtPost.value = "";
+         txtTitle.value = "";
+         privacy.value = "";
+         window.location.replace('#detail');
+       })
+       .catch(function (error) {
+         console.error("Error adding document: ", error);
+       });
+     }
+   }
   
-  event.preventDefault()
-  if(validarFormulario() == false){
-    // aqui no pasa la validacion
-    console.log(' campo vacio')
-    return;
-  }else{
-    // si pasa la validacion ejecuta esto
-    const privacy = document.getElementById("select-privacy").value //valor del select publico1 privado
-    var post = txtPost.value;
-    var title = txtTitle.value;
-    const authorUid = firebase.auth().currentUser;
-    console.log(authorUid);
-    if(privacy == 2){ 
-      //condicional si es 1 el campo public será true y eso se imprimirá en el feed
-        db.collection("posts").add({
-        authoruid: authorUid.uid,
-        nick: authorUid.email,
-        title: title,
-        date: "",
-        post: post,
-        public: true,
-        like: 0
-      })
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        txtPost.value = "";
-        txtTitle.value = "";
-        privacy.value = "";
-        window.location.replace('#home2');
-      })
-      .catch(function (error) {
-        console.error("Error adding document: ", error);
-      });
-    } else { //si no es true el campo public es false
-        db.collection("posts").add({
-        authoruid: authorUid.uid,
-        nick: authorUid.email,
-        title: title,
-        date: "",
-        post: post,
-        public: false,
-        like: 0
-      })
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        txtPost.value = "";
-        txtTitle.value = "";
-        privacy.value = "";
-        window.location.replace('#detail');
-      })
-      .catch(function (error) {
-        console.error("Error adding document: ", error);
-      });
-    } 
-  }
-
-})
+  })
 
 /*leer documento firestone*/
 var showPost = document.getElementById('container-feed-news');
 db.collection("posts").onSnapshot((querySnapshot) => {
-    showPost.innerHTML= "";
-    let uidOfUser = localStorage.getItem('useruid')
-  querySnapshot.forEach(function(doc) { 
-    if(doc.data().public == true && uidOfUser == doc.data().authoruid) { //condicional busca los public y los que tienen el mismo iud para imprimirlos con permisos para editar y eliminar
-      showPost.innerHTML += `
-      <div class="card">
-      <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_vert</i></span>
-      <p>${doc.data().post}</p>
-      <button id='${doc.id}' onclick="this.innerHTML = 'Buena Idea'" class="likeBtn" >like</button>
-      </div>
-      <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-      <a  onclick="edit('${doc.id}', '${doc.data().title}', '${doc.data().post}')">Editar</a>
-      <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Eliminar</a>
-      </div>
-      </div>
-      `
-    interactividad()
-    // removePost(doc.id)
-    } else if (doc.data().public == true) { //otro condiconal para solo imprimir los publicos sin permisos
-      showPost.innerHTML += `
-      <div class="card">
-      <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">${doc.data().title}</span>
-      <p>${doc.data().post}</p>
-      <button id='${doc.id}' onclick="this.innerHTML = 'Buena Idea'" class="likeBtn" >like</button>
-      </div>
-      </div>`
-    }
-  });
+   showPost.innerHTML= "";
+   let uidOfUser = localStorage.getItem('useruid')
+ querySnapshot.forEach(function(doc) {
+   if(doc.data().public == true && uidOfUser == doc.data().authoruid) { //condicional busca los public y los que tienen el mismo iud para imprimirlos con permisos para editar y eliminar
+     showPost.innerHTML += `
+     <div class="card">
+     <div class="card-content">
+     <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_horiz</i></span>
+     <p>${doc.data().post}</p>
+     <button id='${doc.id}' onclick="this.innerHTML = 'Buena Idea'" class="likeBtn" >like</button>
+     </div>
+     <div class="card-reveal">
+     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+     <a  onclick="edit('${doc.id}', '${doc.data().title}', '${doc.data().post}')"><i class="material-icons">create</i>Editar publicación</a><br>
+     <br><a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')"><i class="material-icons">delete</i>Eliminar</a>
+     </div>
+     </div>
+     `
+   interactividad()
+   // removePost(doc.id)
+   } else if (doc.data().public == true) { //otro condiconal para solo imprimir los publicos sin permisos
+     showPost.innerHTML += `
+     <div class="card">
+     <div class="card-content">
+     <span class="card-title activator grey-text text-darken-4">${doc.data().title}</span>
+     <p>${doc.data().post}</p>
+     <button id='${doc.id}' onclick="this.innerHTML = 'Buena Idea'" class="likeBtn" >like</button>
+     </div>
+     </div>`
+   }
+ });
 });
-
-// /*Like post*/
-// function likePost(){
-//   let btn = document.querySelector(".like");
-//   alert("Hello World!")
-// }
 
 /*Editar una publicaicon "GUARDAR"*/
 const btnEdit = document.getElementById('btn-edit');
 function edit(id, title, post) {
-
-      alert('ok');
-      btnPost.classList.add('mi-hide');
-      btnEdit.classList.remove('mi-hide');
-      window.location.replace('#list');
-      document.getElementById('txtPost').value = post
-      document.getElementById('input_text').value = title
-  btnEdit.onclick = function () {
-    if(validarFormulario() == false){
-      // aqui no pasa la validacion
-      console.log(' campo vacio')
-      return;
-    }else{
-    var updatePost = db.collection('posts').doc(id);
-    var newTitle = document.getElementById('input_text').value;
-    var newPost = document.getElementById('txtPost').value;
-    return updatePost.update({
-      title: newTitle,
-      post: newPost,
-    }).then(function () {
-      console.log('Registro actualizado correctamente');
-      document.getElementById('txtPost').value = '',
-      document.getElementById('input_text').value = '',
-      window.location.replace('#home2')
-      }).catch(function (error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert('Error de codigo:\n ' + errorCode + ' Mensaje de Error:\n ' + errorMessage);
-    })
-  }
-  }
+     btnPost.classList.add('mi-hide');
+     btnEdit.classList.remove('mi-hide');
+     window.location.replace('#list');
+     document.getElementById('txtPost').value = post
+     document.getElementById('input_text').value = title
+ btnEdit.onclick = function () {
+   if(validarFormulario() == false){
+     // aqui no pasa la validacion
+     console.log(' campo vacio')
+     return;
+   }else{
+   var updatePost = db.collection('posts').doc(id);
+   var newTitle = document.getElementById('input_text').value;
+   var newPost = document.getElementById('txtPost').value;
+   return updatePost.update({
+     title: newTitle,
+     post: newPost,
+   }).then(function () {
+     console.log('Registro actualizado correctamente');
+     document.getElementById('txtPost').value = '',
+     document.getElementById('input_text').value = '',
+     window.location.replace('#home2')
+     }).catch(function (error) {
+     var errorCode = error.code;
+     var errorMessage = error.message;
+     alert('Error de codigo:\n ' + errorCode + ' Mensaje de Error:\n ' + errorMessage);
+   })
+ }
+ }
 
 }
 
@@ -412,24 +401,23 @@ function removePost(id){
 /*IMPRIMIR PUBLICACIONES PRIVADAS EN EL PERFIL DEL USUARIO*/
 var personalWall = document.getElementById('personalWall');
 db.collection("posts").onSnapshot((querySnapshot) => {
-  personalWall.innerHTML= "";
-  let uidOfUser = localStorage.getItem('useruid')
-  querySnapshot.forEach(function(doc) {
-    if(doc.data().public == false && uidOfUser == doc.data().authoruid) {
-      personalWall.innerHTML += `
-      <div class="card">
-      <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_vert</i></span>
-      <p>${doc.data().post}</p>
-      </div>
-      <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-      <a onclick="edit('${doc.id}', '${doc.data().title}', '${doc.data().post}')">Editar</a>
-      <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Eliminar</a>
-      </div>
-      </div>
-      `
-      interactividad()
-    }
-  });
+ personalWall.innerHTML= "";
+ let uidOfUser = localStorage.getItem('useruid')
+ querySnapshot.forEach(function(doc) {
+   if(doc.data().public == false && uidOfUser == doc.data().authoruid) {
+     personalWall.innerHTML += `
+     <div class="card">
+     <div class="card-content">
+     <span class="card-title activator grey-text text-darken-4">${doc.data().title}<i class="material-icons right">more_horiz</i></span>
+     <p>${doc.data().post}</p>
+     </div>
+     <div class="card-reveal">
+     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+     <a onclick="edit('${doc.id}', '${doc.data().title}', '${doc.data().post}')"><i class="material-icons">create</i>Editar publicación</a><br><br>
+     <br><a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')"><i class="material-icons">delete</i>Eliminar</a>
+     </div>
+     </div>  `
+     interactividad()
+   }
+ });
 });
