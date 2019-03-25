@@ -90,8 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
         elem.classList.add('active2');
      });
 });
-
-
 /*ocultar inicio de sesion y registro */
 const registrer = document.getElementById('registrer');
 const sesion = document.getElementById('sesion');
