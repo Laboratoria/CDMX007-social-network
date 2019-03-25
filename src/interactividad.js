@@ -91,3 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
      });
 });
 
+
+/*ocultar inicio de sesion y registro */
+// const registrer = document.getElementById('registrer');
+// const sesion = document.getElementById('sesion');
+//     registrer.addEventListener('click'){
+//       alert('hsadjkhsdak');
+//     }
+

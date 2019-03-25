@@ -131,15 +131,16 @@ btnLogin.addEventListener('click', e => {
   });
 });
 
-/* funcion para entar a pagina principal (feed)*/
-const container = document.getElementById('container-feed');
+/* funcion para entrar a pagina principal (feed)*/
+const container = document.getElementById('name-user');
+let userNickname = localStorage.getItem('nickname');
 function loged(user) {
   var user = user;
   if (user.emailVerified) {
     window.location.href = '#home2'
     container.innerHTML =
     `
-    <div class="row user-email"><p> Hola ${user.email}</p>
+    <div class="row name-user"><p> Hola ${userNickname}</p>
     <button onClick="logOut()"  class= "btn btn-action">Cerrar Sesión</button></div>`;
   }
 }
@@ -163,6 +164,7 @@ function logOut() {
 let uidOfUser = localStorage.getItem('useruid')
 var table = document.getElementById('table2');
 db.collection("users").doc(uidOfUser).onSnapshot(function(doc) {
+  let userNickname = localStorage.setItem('nickname' , doc.data().user)
   table.innerHTML= "";
       table.innerHTML +=
       `
@@ -324,7 +326,7 @@ db.collection("posts").onSnapshot((querySnapshot) => {
       <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
       <a  onclick="edit('${doc.id}', '${doc.data().title}', '${doc.data().post}')">Editar</a>
-      <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Aceptar</a>
+      <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Eliminar</a>
       </div>
       </div>
       `
@@ -388,12 +390,14 @@ function edit(id, title, post) {
 
 /*eliminar post*/
 function removePost(id){
-    confirm('¿Quieres eliminar esta publicación?')
-  db.collection("posts").doc(id).delete().then(function() {
-    console.log("Document successfully deleted!");
-  }).catch(function(error) {
-    console.error("Error removing document: ", error);
-  })
+  let remove = confirm('¿Quieres eliminar esta publicación?') 
+  if(remove == true) {
+ db.collection("posts").doc(id).delete().then(function() {
+  console.log("Document successfully deleted!");
+ }).catch(function(error) {
+  console.error("Error removing document: ", error);
+ })
+}
 }
 
 /*IMPRIMIR PUBLICACIONES PRIVADAS EN EL PERFIL DEL USUARIO*/
@@ -412,7 +416,7 @@ db.collection("posts").onSnapshot((querySnapshot) => {
       <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
       <a onclick="edit('${doc.id}', '${doc.data().title}', '${doc.data().post}')">Editar</a>
-      <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Aceptar</a>
+      <a id="${doc.id}" class="modal-close mi-clase" onclick="removePost('${doc.id}')">Eliminar</a>
       </div>
       </div>
       `
