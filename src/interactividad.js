@@ -93,9 +93,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /*ocultar inicio de sesion y registro */
-// const registrer = document.getElementById('registrer');
-// const sesion = document.getElementById('sesion');
-//     registrer.addEventListener('click'){
-//       alert('hsadjkhsdak');
-//     }
+const registrer = document.getElementById('registrer');
+const sesion = document.getElementById('sesion');
+const formRegistrer = document.getElementById('form-registrer');
+const formLogin = document.getElementById('form-login');
 
+window.onload = function cargar(){
+    formLogin.classList.remove('hide');
+  }
+registrer.addEventListener("click", () =>{  
+    formRegistrer.classList.remove('hide');
+    formLogin.classList.add('hide');
+  })
+
+sesion.addEventListener("click", () =>{  
+    formRegistrer.classList.add('hide');
+    formLogin.classList.remove('hide');
+  })
