@@ -1,3 +1,95 @@
+# Cuisine Divine
+
+Cuisine Divine es una red social para estudiantes de Gastronomía, ubicados en la Ciudad de México, que estén interesados en la alta cocina. 
+![Cuisine Divine](./src/images/CuisineDivine.png)
+
+## Comenzando
+
+Para hacer una copia de este proyecto, necesitas hacer fork y después clonarlo.
+Este proyecto necesito Bootstrap para la parte del registro, así que, considera la instalación o los links del mismo.
+Utilizamos firebase para la base de datos y otros servicios. Puedes crear tu propio proyecto en la consola de firebase y pegar en tu proyecto los requerimientos de inicialización.
+
+## Construido con 
+
+Cuisine Divine es un proyecto Single-page Application.
+Utilizamos Bootstrap para la el formulario de registro.Todo lo demás esta diseñado con CSS, HTML5 y JavaScript vanilla.
+Utilizamos Firebase para login, autentificación de usuarios y base de datos.
+En el Single-page Application utilizamos el siguiente video como referencia para hacer este proyecto.
+[Librería Single-page Application](https://youtu.be/aY7eNeJWcjU).
+
+## Historias de usuario
+
+En este proyecto tomamos en cuenta las siguientes historias de usuario :
+
+* Yo como usuario, quiero poder loguearme con Facebook y con Google para agilizar el proceso.
+
+* Yo como usuario, quiero poder acceder a mi cuenta a traves de correo y contraseña.
+
+* Yo como usuario, quiero poder hacer publicaciones.
+
+* Yo como usuario, quiero poder borrar y editar mis publicaciones.
+
+* Yo como usuario, quiero poder dar Like a las publicaciones que me gusten de otros usuarios y mías.
+
+Las cuales se completaron siempre pensando en los usuarios de Cuisine Divine.
+
+## Experiencia de Usuario
+
+Para conocer el proceso de diseño y pruebas de usuario visita el siguiente link: 
+[Cuisine Divine](https://docs.google.com/document/d/1_9Q59hzfISf8It8oZPf3vOPP6TYuqCIUY26qmyv-8uo/edit?usp=sharing)
+
+## Definición del producto
+Una Red Social es un servicio online que gira en torno al usuario, que le permite compartir información, generar contenido y estar al tanto de las últimas novedades acerca de sus intereses sociales.
+
+Apesar de que existes varios tipos de redes sociales, estas tienen varios elementos en común:
+
+* Poner en contacto a las personas, de tal forma que, se facilite la conexión de forma rápida y sencilla.
+
+* Permite la interacción entre todos los usuarios de la plataforma, de distintas maneras.Ya sea compartiendo contenido y/o facilitando contacos de interés para el otro usuario.
+
+* Fomenta la posibilidad de que los usuarios que se contacten online acaben entablando un contacto real.
+
+* Permite el contacto ilimitado entre los usuarios desde cualquier lugar.
+
+Con base en esto creamos Cuisine Divine.
+En nuestra investigación detectamos que:
+* Los estudiantes de gastronomía no tenían un espacio donde recibir recomendaciones de utensilios de trabajo, ingredientes y todo esto a un bajo costo y de buena calidad.
+* Los estudiantes de gastronomía necesitan seguirse preparando y no tienen un espacio confiable donde recibir información acerca de cursos ó becas académicas.
+
+Esta investigación también nos arrojo que el los estudiantes de gastronomía que más necesidad tienen de este tipo de información son los estudiantes especializados en la alta cocina.
+
+Es aquí donde hacemos nuestra propuesta de valor, ya que Cuisine Divine no solo es un espacio para compartir recetas, si no que además, pueden interactuar con otros estudiantes de alta cocina para saber donde comprar todos estos utensilios o ingredientes de la mejor calidad. También esta pensado en que se puedan compartir cursos o becas para seguirse perfeccionando.
+
+Las principales funcionalidades de esta red social son:
+* Un espacio donde interactuen con otros  estudiantes especilizados en la alta cocina.
+
+* Login con Google y Facebook para un acceso más agíl y rápido.
+
+* Acceso al muro de publicaciones, donde puede darle like a sus publicaciones favoritas, editar y borrar sus propias publicaciones.
+
+Fuente : [3 Elementos básicos de una Red Social](https://www.eipe.es/blog/3-elementos-que-componen-red-social/)
+
+## Especificaciones de Código
+
+* Para este proyecto utilizamos HTML5.
+En nuestro HTML no ocurre ningún evento DOM, todo ocurre a través de JavaScript.
+
+* Esta hecho en vanilla JavaScript.
+Solo tiene un archivo JS (main.js), que contiene toda la funcionalidad de la web app. Tenemos funciones que firebase nos proporcionó para hacer la parte de Autentificación, Login y llevar datos a nuestra base de datos del proyecto. En cuanto a la base de datos escogimos Cloud Firestore y nuestras publicaciones suceden en tiempo real. En cuanto a funcionalidad del muro, el usuario puede dar me gusta a otras publicaciones, editar y borrar sus propias publicaciones.
+
+* Para nuestra single-page application utilizamos un index.html con un div vacio, y creamos más html para las vistas con el contenido a mostrar y nuestras rutas renderizan la vista que se va mostrar. Nuestro main.js es un objeto que contiene la funcionalidad de cada parte de las vistas, encerrada en objetos separados para que cuando se cargue la vista también cargue la funcionalidad y los elementos que necesita.
+
+## Autores
+
+Este proyecto fue hecho por las estudiantes:
+* Analhí Guadarrama Medina
+* Elenore Elisa Espinosa Nava
+* Gabriela Castro Guzmán
+
+## Agradecimientos 
+
+Agradecemos a Laboratoria por hacer posible este proyecto. Agradecemos a todas nuestras compañeras que nos dieron apoyo en el proyecto, especialmente a Erandi y Ameyali que nos dieron sus consejos para poder implementar algunas funcionalidades. Un agradecimiento especial a Jonh Parra que nos ayudo en los problemas de código. Y a nuestro equipo, muchas gracias por hacer esto posible y dar lo mejor de sí para este proyecto. Gracias chicas, sin ustedes esto no sería posible.
+
 # Creando una Red Social
 
 ## Preámbulo
@@ -380,9 +472,9 @@ Otras:
 
 ### `README.md`
 
-* [ ] Definición del producto
-* [ ] Resumen de entrevistas con usuarios.
-* [ ] Link/screenshots prototipo de baja fidelidad.
+* [x] Definición del producto
+* [x] Resumen de entrevistas con usuarios.
+* [x] Link/screenshots prototipo de baja fidelidad.
 * [ ] Conclusiones de pruebas con el producto en HTML.
 
 ### Pruebas / tests
@@ -393,29 +485,29 @@ Otras:
 
 ### Creación de cuenta (sign up)
 
-* [ ] Permite crear cuenta.
+* [x] Permite crear cuenta.
 * [ ] Valida email.
-* [ ] Valida password.
-* [ ] Muestra mensajes de error.
+* [x] Valida password.
+* [x] Muestra mensajes de error.
 
 ### Inicio de sesión (sign in)
 
-* [ ] Permite iniciar sesión.
-* [ ] Valida email.
-* [ ] Valida password.
-* [ ] Muestra mensajes de error.
+* [x] Permite iniciar sesión.
+* [x] Valida email.
+* [x] Valida password.
+* [x] Muestra mensajes de error.
 
 ### Muro (wall/feed)
 
-* [ ] Muestra _muro_, o lista de publicaciones.
-* [ ] Permite hacer nuevas publicaciones.
-* [ ] Permite eliminar publicaciones.
-* [ ] Pide confirmación antes de borrar publicación.
-* [ ] Permite editar publicación en el mismo lugar (in place).
+* [x] Muestra _muro_, o lista de publicaciones.
+* [x] Permite hacer nuevas publicaciones.
+* [x] Permite eliminar publicaciones.
+* [x] Pide confirmación antes de borrar publicación.
+* [x] Permite editar publicación en el mismo lugar (in place).
 * [ ] Permite filtrar publicaciones por público/privado.
-* [ ] Permite marcar publicaciones como _gustados_ (like, corazón, estrella,
+* [x] Permite marcar publicaciones como _gustados_ (like, corazón, estrella,
   etc...).
-* [ ] Permite ver cuántas marcas, likes, estrellas, corazones o lo que se haya
+* [x] Permite ver cuántas marcas, likes, estrellas, corazones o lo que se haya
   elegido, ha recibido una publicación.
 
 ### Hacker Edition

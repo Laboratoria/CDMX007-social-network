@@ -1,0 +1,27 @@
+{
+  "name": "cuisine-divine",
+  "version": "1.0.0",
+  "description": "red social para chefs",
+  "main": "index.js",
+  "scripts": {
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elenore29/CDMX007-social-network.git"
+  },
+  "author": "Elenor, Analhi, Gaby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elenore29/CDMX007-social-network/issues"
+  },
+  "dependencies": {
+    "eslint": "^5.9.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "htmlhint": "^0.10.1",
+    "jest": "^23.6.0"
+  }
+}

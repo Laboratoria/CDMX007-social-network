@@ -1,0 +1,989 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+
+body {
+    background-color: #682c2c;
+}
+
+#white {
+    width: 100%;
+    height: 13vh;
+    background-color: white;
+    position: absolute; 
+    top: -15%; 
+}
+
+ .hide{
+    display:none;
+} 
+
+#login {
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    bottom: 0px;
+}
+
+#login-white {
+    width: 100%;
+    height: 87vh;
+    background-color: #682c2c;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+}
+
+#cont {
+    position: relative;
+    top: -5%;
+}
+
+#logo {
+    width: 220px;
+    height: 220px;
+    background-image: url(./images/logo2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    margin: 0 auto;
+    position: relative;
+    top: -10%;
+}
+
+h1 {
+    color: white;
+    font-family: 'Nanum Gothic', sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.input-login::placeholder,
+.input-login {
+    width: 65%;
+    color: white;
+    font-family: 'Nanum Gothic', sans-serif;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom-width: 2px;
+    border-bottom-color: white;
+    background-color: #682c2c;
+    margin: 5px; 
+    font-size: 0.9em; 
+}
+
+#button-login {
+    width: 40%;
+    background-color: #682c2c;
+    font-family: 'Nanum Gothic', sans-serif;
+    border: 3px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-size: 1em;
+    margin-bottom: 10px; 
+}
+
+.options {
+    font-size: 1em;
+    color: white;
+}
+
+#register-one {
+    font-size: 0.9em;
+    color: white;
+    border: 0;
+}
+
+#logo-fb {
+    width: 70%; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+}
+
+#logo-google {
+    width: 70%;
+    padding: 5px; 
+}
+
+.logo-red {
+    width: 35%; 
+    margin: 0 auto; 
+    background-color: white; 
+    margin-top: 10px; 
+}
+
+.icons {
+    width: 7%;
+}
+
+/* Estilos del form de registro */
+#content-form {
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.form-row {
+    color: #682c2c;
+}
+
+.form-control:focus {
+    color: black;
+}
+
+.form-control {
+    color: #682c2c;
+}
+
+.form-control::placeholder {
+    color: #682c2c;
+}
+
+#register {
+    margin-left: 15px;
+    font-size: 1em;
+    color: #682c2c;
+    background-color: white;
+    border: 0;
+}
+
+/* Estilos del muro  */
+#menu {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    margin: 0 auto;
+    background-color: white;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-top-width: 2px;
+    border-top-color: #682c2c;
+    border-style: solid;
+}
+
+.menus {
+    width: 30%;
+    margin: 3px;
+    font-family: 'Nanum Gothic', sans-serif;
+    border: 1px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-size: 0.8em;
+    background-color: white;
+}
+
+#image-wallpaper {
+   display: none;
+}
+
+#time-line {
+   background-image: url("./images/muro2.png");
+   background-color:white; 
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   width: 15%;
+   height: 50px; 
+   border: 0px; 
+   margin-left: 8%;
+   margin-right: 8%;
+}
+
+#time-line:hover {
+    background-image: url("./images/muro.png");
+}
+
+#user-profile {
+   background-image: url("./images/perfil2.png");
+   background-color: white; 
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   width: 15%;
+   height: 50px; 
+   border: 0px; 
+   margin-right: 8%;
+   margin-left: 8%;
+}
+
+#user-profile:hover {
+    background-image: url("./images/perfil.png");
+}
+
+#log-out {
+    background-image: url("./images/cerrar.png");
+    background-color: white; 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 15%;
+    height: 50px; 
+    border: 0px; 
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+#log-out:hover {
+    background-image: url("./images/cerrar2.png");
+}
+
+#user-photo {
+    width: 12%; 
+    border-radius: 50%; 
+}
+
+#user-post {
+    width: 80%; 
+    margin: 0 auto; 
+    border: 2px;
+    border-style: solid;
+    border-color: #682c2c;
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-top: 10px; 
+}
+
+#bg-wall {
+    background-color: white; 
+}
+
+#post-area {
+    width: 80%; 
+    background-color: white; 
+    margin: 0 auto; 
+    margin-top: 10px; 
+    padding-top: 10px;
+}
+
+#post {
+    background-color: #682c2c;
+    border: 0px; 
+    color: white;  
+    height: 30px; 
+}
+
+#publication {
+    width: 100%;
+    border: 2px;
+    border-style: solid;
+    border-color: #682c2c;
+}
+
+#post-select {
+    border: 2px;
+    border-style: solid;
+    border-color: #682c2c;
+    background-color: white; 
+    height: 30px; 
+    color: #682c2c;
+}
+
+#upload-icon {
+    width: 15%;
+}
+
+#nav-icons {
+    width: 80%; 
+    margin: 0 auto; 
+}
+
+#mini-photo {
+    width: 15%;
+    height: 50%;
+    border-radius: 50%; 
+}
+
+#second-profile {
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    margin-right: 10%;
+    font-size: 1em; 
+    text-align: right; 
+}
+
+#save-button{
+    background-color: #682c2c;
+    border: 0px;
+    color: white;
+    font-size: .9em;
+    height: 25px;
+}
+
+/*Estilos botones post*/
+
+.buttons-content{
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+
+.delete{
+  background-image: url(./images/delete.png);
+  background-position: center;
+  background-size:cover;
+  background-color: white;
+  border: 0px;
+  width: 40px;
+  height:40px;
+  position: absolute; 
+  bottom: 10px;
+  left: 100px; 
+}
+
+.edit {
+    background-image: url(./images/edit.png);
+    background-position: center;
+    background-size:cover;
+    background-color: white;
+    border: 0px;
+    width: 40px;
+    height:40px;
+    position: absolute; 
+    bottom: 10px;
+    left: 50px; 
+}
+
+.like {
+    background-image: url(./images/like.png);
+    background-position: center;
+    background-size:cover;
+    background-color: white;
+    border: 0px;
+    width: 40px;
+    height:40px;
+    position: absolute; 
+    bottom: 10px;
+    left: 0px; 
+}
+
+.like:hover {
+    background-image: url(./images/like2.png);
+    color: white;
+}
+
+/* Estilos del text area */
+.post-edited{
+    width: 100%; 
+}
+
+.post-edited:read-write{
+    border: 5px; 
+    background-color: white;
+}
+
+.post-edited:focus {
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(0, 0, 0, 0.6);
+    outline: 0 none;
+}
+
+/* Estilos del perfil */
+
+.profile-photo {
+    width: 40%;
+}
+
+#profile-user {
+    width: 80%; 
+    margin: 0 auto;
+    text-align: center; 
+    color: white;  
+    font-size: 1em; 
+}
+
+.jump {
+    width: 100%; 
+    height: 100px;
+}
+
+@media (min-width: 550px) and (max-width: 649px) {
+    /* Estilos icons nav*/
+#nav-icons {
+    width: 70%;
+    margin-top: 11px;
+    margin-right: auto;
+    margin-bottom: 11px;
+    margin-left: auto;
+}
+
+#log-out {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-profile {
+    width: 10%;
+    margin-right: 8%;
+    margin-left: 12%;
+}
+
+#time-line {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+/*Estilo letra post*/
+#user-post {
+    font-size: 1.21em;
+}
+}
+
+@media (min-width: 650px) and (max-width: 767px) {
+    /* Estilos icons nav*/
+#nav-icons {
+    width: 70%;
+    margin-top: 11px;
+    margin-right: auto;
+    margin-bottom: 11px;
+    margin-left: auto;
+}
+
+#log-out {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-profile {
+    width: 10%;
+    margin-right: 8%;
+    margin-left: 12%;
+}
+
+#time-line {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+/*Estilo letra post*/
+#user-post {
+    font-size: 1.35em;
+}
+
+/* Estilos del perfil */
+.profile-photo {
+    width: 30%;
+}
+
+#profile-user {
+    font-size: 1.8em; 
+}
+}
+
+@media (min-width: 768px) and (max-width: 1049px) {
+
+    /* Estilos login */
+
+    #logo {
+        width: 306px;
+        height: 285px;
+    }
+
+    .input-login {
+        width: 65%;
+        font-size: 2.1em;
+    }
+
+    .options {
+        font-size: 2.1em;
+    }
+
+    .logo-red {
+        margin-top: 39px;
+        margin-bottom: 19px;
+    }
+  
+    #register-one {
+        font-size: 1.9em;
+    }
+
+
+    #button-login {
+        width: 55%;
+        font-size: 2.1em;
+        margin-bottom: 10px;
+    }
+
+/* Estilos muro */
+    #second-profile {
+        font-size: 2.0em;
+       
+    }
+
+    #mini-photo {
+        width: 13%;
+        height: 50%;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+
+    #publication {
+         height: 85px;
+         margin-bottom: 6px;
+         margin-top: 9px;
+           
+        }
+    
+    select {
+         word-wrap: normal;
+        font-size: 1.5em;
+        }   
+
+    #upload-icon {
+            width: 22%;
+        }
+
+    #user-photo {
+        width: 12%;
+        border-radius: 50%;
+        margin-bottom: 4px;
+        }  
+        
+    #post {
+    height: 39px;
+    width: 69px;
+    font-size: 1.5em;
+        }    
+    #post-select {
+        height: 39px;
+        }
+        
+    #user-post p {
+        margin-top: 0;
+        margin-bottom: 2rem;
+        font-size: 1.9em;
+    }
+
+    #user-post {
+        margin-bottom: 20px;
+    }
+
+    #save-button{
+        height: 39px;
+        width: 69px;
+        font-size: .8em;
+    }
+
+/* Estilos icons nav*/
+
+#nav-icons {
+    width: 70%;
+    margin-top: 11px;
+    margin-right: auto;
+    margin-bottom: 11px;
+    margin-left: auto;
+}
+
+#log-out {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-profile {
+    width: 10%;
+    margin-right: 8%;
+    margin-left: 12%;
+}
+
+#time-line {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: 1.9em;
+    line-height: inherit;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: 1.4em;
+    line-height: inherit;
+}
+
+/* Estilos del perfil */
+.profile-photo {
+    width: 25%;
+}
+
+#profile-user {
+    font-size: 2em; 
+}
+}
+
+@media screen and (min-width: 1050px){
+#image-wallpaper {
+    background-image: url("./images/wallpaper.jpg");
+    width: 60%;
+    height:100vh;
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#login{
+    float: right;
+    width: 40%;
+    height: 0vh;
+    background-color: white;
+    bottom: 0px;
+}
+
+#login-white {
+    width: 40%;
+    height: 87vh;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+}
+
+
+/*Estilos muro*/
+
+#second-profile {
+    font-size: 2.0em;
+}
+
+#mini-photo {
+    width: 10%;
+}
+
+#publication {
+    height: 85px;
+    margin-bottom: 6px
+    }
+
+select {
+    word-wrap: normal;
+    font-size: 1.5em;
+    }   
+
+#upload-icon {
+    width: 22%;
+    }
+
+#user-photo {
+    width: 12%;
+    border-radius: 50%;
+    margin-bottom: 4px;
+    }  
+    
+#post {
+    height: 39px;
+    width: 69px;
+    font-size: 1.5em;
+    }    
+
+#post-select {
+    height: 39px;
+    }
+
+    #user-post {
+
+     margin-bottom: 23px;
+      
+    }
+    
+#user-post p {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: 1.75em;
+}
+
+#save-button{
+    height: 39px;
+    width: 69px;
+    font-size: .9em;
+}
+
+#user-photo {
+    width: 10%;
+    border-radius: 50%;
+    margin-bottom: 4px;
+}
+
+/* Estilos icons nav*/
+#nav-icons {
+    width: 80%;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-bottom: 19px;
+    margin-left: 162px;
+}
+
+#log-out {
+    width: 8%;
+    margin-left: 15%;
+    margin-right: 8%;
+}
+
+#user-profile {
+    width: 8%;
+    margin-right: 8%;
+    margin-left: 15%;
+}
+
+#time-line {
+    width: 8%;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: 1.7em;
+    line-height: inherit;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: 1.4em;
+    line-height: inherit;
+}
+
+/* Estilos del perfil */
+
+.profile-photo {
+    width: 20%;
+}
+
+#profile-user {
+    font-size: 2em; 
+}
+}
+
+@media (min-width: 1200px) {
+
+/* Estilos icons nav*/
+
+#nav-icons {
+    width: 60%;
+    margin-top: 11px;
+    margin-right: auto;
+    margin-bottom: 11px;
+    margin-left: auto;
+}
+
+#log-out {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-profile {
+    width: 10%;
+    margin-right: 8%;
+    margin-left: 12%;
+}
+
+#time-line {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-photo {
+    width: 10%;
+    border-radius: 50%;
+    margin-bottom: 4px;
+}
+
+#user-post {
+    width: 70%; 
+}
+
+#post-area {
+    width: 70%;
+}
+
+#second-profile {
+    margin-right: 15%; 
+}
+
+/* Estilos del perfil */
+
+.profile-photo {
+    width: 20%;
+}
+#profile-user {
+    font-size: 2em; 
+}
+}
+
+@media (min-width: 1380px) {
+
+/* Estilos icons nav*/
+
+#nav-icons {
+    width: 50%;
+    margin-top: 11px;
+    margin-right: auto;
+    margin-bottom: 11px;
+    margin-left: auto;
+}
+
+#log-out {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-profile {
+    width: 10%;
+    margin-right: 8%;
+    margin-left: 12%;
+}
+
+#time-line {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-photo {
+    width: 10%;
+    border-radius: 50%;
+    margin-bottom: 4px;
+}
+}
+
+@media (min-width: 1400px) {
+
+ /* Estilos icons nav*/
+
+#nav-icons {
+    width: 40%;
+    margin-top: 11px;
+    margin-right: auto;
+    margin-bottom: 11px;
+    margin-left: auto;
+}
+
+#log-out {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-profile {
+    width: 10%;
+    margin-right: 8%;
+    margin-left: 12%;
+}
+
+#time-line {
+    width: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-photo {
+    width: 7%;
+    border-radius: 50%;
+    margin-bottom: 4px;
+}
+
+#mini-photo {
+    width: 8%;
+}
+}
+
+@media (min-width: 1900px) {
+
+/* Estilos icons nav*/
+
+#nav-icons {
+    width: 40%;
+    margin-top: 11px;
+    margin-right: auto;
+    margin-bottom: 11px;
+    margin-left: auto;
+}
+
+#log-out {
+    width: 8%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-profile {
+    width: 8%;
+    margin-right: 8%;
+    margin-left: 12%;
+}
+
+#time-line {
+    width: 8%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-photo {
+    width: 6%;
+    border-radius: 50%;
+    margin-bottom: 4px;
+}
+
+#user-post {
+    width: 60%; 
+}
+
+#post-area {
+    width: 60%;
+}
+
+#second-profile {
+    margin-right: 20%; 
+}
+}
+
+@media (min-width: 2500px) {
+
+/* Estilos icons nav*/
+
+#nav-icons {
+    width: 30%;
+    margin-top: 11px;
+    margin-right: auto;
+    margin-bottom: 11px;
+    margin-left: auto;
+}
+
+#log-out {
+    width: 8%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-profile {
+    width: 8%;
+    margin-right: 8%;
+    margin-left: 12%;
+}
+
+#time-line {
+    width: 8%;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+#user-photo {
+    width: 10%;
+    border-radius: 50%;
+    margin-bottom: 4px;
+}
+}
