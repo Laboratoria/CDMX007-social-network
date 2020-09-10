@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>SproutThink</title>
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--estilos sin framework-->
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <nav id="top-nav" class="top-nav hide">
+        <div class="row">
+            <ul>
+                <li id="icon-logo" class="logo col l9"><img class="img_logo" src="images/logo.png" alt=""><a class="logo"></a></li>
+                <li class="menu col s4 m4 l1" data-target="home2"><span data-target="home2" class="nav-link img_nav home active2" ></span></li>
+                <li id="btn-mas" class="menu col s4 m4 l1" data-target="list"><span data-target="list" class="nav-link img_nav msg" ></span></li>
+                <li class="menu col s4 m4 l1" data-target="detail"><span data-target="detail" class="nav-link img_nav profile" ></span></li>
+            </ul>
+        </div>
+        </nav>
+    <main>
+        <div class="container">
+            <div class="page active"></div>
+            <div id="home" class="page">
+                <div class="row login-registrer">
+                    <div class="forms">
+                        <div class="logo-sesion">
+                            <a class="logo"><img class="img_logo login" src="images/logo.png" alt=""></a>
+                        </div>
+                        <div id="form-login" class="form-login hide">
+                            <h5 class="title-login">Iniciar sesión</h5>
+                                <div class="row">
+                                <form class="col s12 m12 l12">
+                                    <div class="row">
+                                        <div class="input-field center-inpunts col s12 m12 l12">
+                                            <input id="txtEmail2" type="email" class="validate">
+                                            <label  for="txtEmail2">Correo electrónico</label>
+                                        </div>
+                                        <div class="input-field col s12 m12 l12">
+                                            <input id="txtPassword2" type="password" class="validate">
+                                            <label   for="txtPassword2">Contraseña</label>
+                                            <div id="errorMessage"></div>
+                                        </div>
+                                    </div>
+                                    <a id="btnLogin" class="waves-effect waves-light btn btnLogin">Entrar</a>
+                                </form>
+                                </div>
+                                <div class="row">
+                                    <p class="sub-registrer">¿Aún no tienes cuenta? <a id="registrer" class="subtitle-register">Regístrate</a></p>
+                                </div>  
+                        </div>
+                        <div id="form-registrer" class="form-registrer hide">
+                            <h5 class="title-login">Registrarse</h5>
+                                <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12 m12 l12">
+                                            <input id="name" type="text" class="validate">
+                                            <label for="name">Nombre</label>
+                                        </div>
+                                        <div class="input-field col s12 m12 l12">
+                                            <input id="user-name" type="text" class="validate">
+                                            <label for="user-name">Nombre de Usuario</label>
+                                        </div>
+                                        <div class="input-field col s12 m12 l12">
+                                            <input id="birthday" type="text" class="datepicker validate" placeholder="Fecha de nacimiento">
+                                            <label for="birthday"></label>
+                                        </div>
+                                        <div class="input-field col s12 m12 l12">
+                                            <input id="txtEmail" type="email" class="validate">
+                                            <label for="txtEmail">Correo electrónico </label>
+                                        </div>
+                                        <div class="input-field col s12 m12 l12">
+                                            <input id="txtPassword" type="password" class="validate">
+                                            <label for="txtPassword">Contraseña</label>
+                                        </div>
+                                    </div>
+                                    <a id="btnSignUp" class="waves-effect waves-light btn btnSignUp">Registrate</a>
+                                </form>
+                                </div>
+                                <div class="row">
+                                    <p class="sub-registrer">¿Ya tienes cuenta? <a id="sesion" class="subtitle-register">Inicia Sesión</a></p>
+                                </div>
+                            </div>
+                    </div>
+                        <div class="img-side"></div>
+                </div>
+            </div>
+            <div id="content" class="content">
+                <div id="home2" class="page">
+                    <header class="nav-feed">
+                        <a class="logo"><img class="img_logo" src="images/logo.png" alt=""></a>
+                    </header>
+                <div id="container-feed-news"></div>
+                </div>
+                <div id="list" class="page">
+                    <div class="row container-inner">
+                        <form>
+                            <div class="input-field col s12 l12">
+                                <input id="input_text" class="msg-title" type="text" data-length="10" placeholder="Titulo">
+                            </div>
+                            <div class="input-field col s12 l12">
+                                <textarea  id="txtPost" class="message-large" placeholder="Escribe tu historia..." data-length="120"></textarea>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="col s1 l1 center-align">
+                                <img class="img-privacity " src="images/user.svg" alt="">
+                            </div>
+                            <div class="col s6 l3">
+                                <select id="select-privacy">
+                                    <option value="0" class="msg-privacity"  disabled selected>Quien puede ver esto</option>
+                                    <option value="1" >Privado</option>
+                                    <option value="2">Público</option>
+                                </select>
+                            </div>
+                        <div class="col s5 l8 right-align">
+                            <a id="btn-post" class="mi-hide btn-post waves-effect waves-light btn-small" >Publicar</a>
+                            <a id="btn-edit" class="mi-hide btn-post waves-effect waves-light btn-small ">Guardar</a>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="detail" class="page">
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h5>Información general de la cuenta</h5>
+                                <p id="table2"></p>
+                            </div>
+                        </div>
+                        <div id="log-out-button"></div>
+                       <div><a data-target="modal1" class="modal-trigger btn-floating info"><i class="material-icons">info</i></a></div>
+                        <div class="img-portada">
+                            <div class="img-profile">
+                                <p id="name-user" class="name-user"></p>
+                            </div>
+                        </div>
+                        <div id="profile" class="row profile">
+                            <div id="container-feed"></div>
+                            <!-- <div id="table2"></div> -->
+                            <div id="personalWall"></div>
+                        </div>
+                </div>
+                </div>
+            </div>
+        </main>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+    <script src="spa.js"></script>
+    <script src="interactividad.js"></script>
+    <script src="validacion.js"></script>
+</body>
+</html>

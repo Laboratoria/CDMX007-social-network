@@ -1,0 +1,31 @@
+{
+  "name": "cdmx007-social-network",
+  "version": "1.0.0",
+  "description": "## Preámbulo",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiaramirez/CDMX007-social-network.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiaramirez/CDMX007-social-network/issues"
+  },
+  "homepage": "https://github.com/claudiaramirez/CDMX007-social-network#readme",
+  "devDependencies": {
+    "jest": "^24.1.0",
+    "eslint": "^5.9.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "htmlhint": "^0.10.1"
+  }
+}
