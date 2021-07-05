@@ -1,0 +1,31 @@
+{
+  "name": "cdmx007-social-network",
+  "version": "1.0.0",
+  "description": "Package json para social media",
+  "main": "index.js",
+  "scripts": {
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "pretesto": "npm run eslint && npm run htmlhint",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GENESIS-ENRIQUEZ/CDMX007-social-network.git"
+  },
+  "author": "Cristal García, Brenda Vasques, Génesis Enríquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GENESIS-ENRIQUEZ/CDMX007-social-network/issues"
+  },
+  "homepage": "https://github.com/GENESIS-ENRIQUEZ/CDMX007-social-network#readme",
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-plugin-jest": "^22.1.2",
+    "htmlhint": "^0.11.0",
+    "jest": "^24.3.0"
+  },
+  "dependencies": {
+    "firebaseui": "^3.5.2"
+  }
+}
