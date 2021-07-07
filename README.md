@@ -1,3 +1,108 @@
+# Red Social: Tejiendo en Azul
+### Nuestro primer contacto con las redes sociales 
+Las tres integrantes del equipo: [Claudia](https://github.com/claudiaferrusca), [Lore](https://github.com/lore0223), y [Pau-za](https://github.com/Pau-za), conocimos el mundo de las redes sociales mediante [hi5](https://hi5.com/). Era un mundo nuevo por descubrir, y nos gustaba que podíamos personalizar el fondo de nuestro muro, e interactuar con nuestros amigos de la vida real, pero también podíamos conocer a gente nueva con la que compartíamos algunos intereses. 
+
+### Necesidades de nuestros usuarios
+La integrante del equipo Paulina, tuvo la oportunidad de darle clases a estudiantes de bachillerato con todo tipo de discapacidad. Y se dio cuenta de que los estudiantes que se tenían algún [Trastorno del Espectro Autista](https://www.who.int/features/qa/85/es/), solían tener dificultades para socializar e interactuar con sus compañeros. Los estudiantes con las características mencionadas querían tener amigos, pero no sabían cómo hacerlo, y algunos de ellos buscaban relacionarse con personas mediante redes sociales como [Facebook](https://www.facebook.com/). Sin embargo, Paulina se dio cuenta de que los estudiantes se ponían en situaciones de riesgo al realizar la práctica de agregar como sus "amigos/as" a personas que no conocían. 
+
+Otra característica que notó Paulina fue que las personas dentro del *Trastorno del Espectro Autista*, es que tienen gustos e intereses muy particulares, y les encanta hablar de ellos todo el tiempo. Sin embargo, eso también los puede hacer vulnerables. Por ejemplo, a su ex-estudiante Juan le encanta coleccionar muñecas [Monster High](http://play.monsterhigh.com/en-us/character/index.html), lo cual lo hizo blanco de burlas de personas poco empáticas y conscientes de la Discapacidad. Y las personas con Discapacidad tienen tanto [derecho a la libertad de expresión, la comunicación, la inclusión, etc.](http://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPD_120718.pdf) como todas nosotras.
+
+Por lo tanto decidimos trabajar en una Red Social en la que las personas dentro del *Espectro Autista* puedan sentirse libres de compartir todo sobre sus intereses personales, y seguros al interactuar con personas que pueden estar viviendo situaciones similares en su día a día.
+
+El nombre de nuestra Red Social es *Tejiendo en Azul*. La palabra "tejiendo" la elegimos porque queremos que sea un sitio en el que las personas dentro del *Espectro* pueda crear _redes_, hacer _comunidad_, y el "azul" lo elegimos como el color base de nuestra red social porque [es el color del *Autismo*](https://www.elcomercio.com/afull/azul-simbolo-autismo-dia-onu.html). Además agregamos como parte de nuestro logo, una pieza de rompecabezas, ya que se utiliza para conscientizar sobre la [complejidad del *Trastorno*](https://autismodiario.org/2017/06/13/autismo-una-pieza-rompecabezas-la-evolucion-humana/). A continuación se presenta nuestro logo:
+
+![Logo-Tejiendo-en-Azul](https://github.com/lore0223/CDMX007-social-network/blob/master/public/images/logo-red-sin-fondo-contraste.png)
+
+### Encuesta
+
+Para conocer si las personas dentro del *Trastorno del Espectro Autista* utilizarían una red social con el enfoque de _Tejiendo en Azul_, decidimos realizar un [cuestionario](https://docs.google.com/forms/d/e/1FAIpQLSfV6EjAU24cl-rAF6pH_tPyC3RHnyCeo0XN_B9iXloXBVAqEw/viewform) a estudiantes con discapacidad de nivel bachillerato de entre 15 y 28 años, de un [Centro de Atención para Estudiantes con Discapacidad, CAED](http://www.sems.gob.mx/es_mx/sems/bnned_bachillerato_no_escolarizado_personas_discapacidad).
+
+Obtuvimos cuatro respuestas de personas dentro del Espectro, y tres respuestas de personas con alguna otra discapacidad. Nos dimos cuenta de que en general a las personas con discapacidad se les dificulta relacionarse a través de redes sociales con otras personas que tengan alguna discapacidad. Todas las personas encuestadas afirmaron que utilizarían una red social con el enfoque que proponemos, ya que además de conocer personas con alguna discapacidad podrían utilizarla para intercambiar información sobre los visto en sus clases, y sobre las tareas, y sobre otros intereses personales.
+
+A continuación se presentan las gráficas con la información que pudimos obtener de nuestros encuestados.
+
+#### Edades de usuarios: 15 - 28 años
+![Edades_usuarios](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/respuestas_usuarios/ages.PNG)
+
+#### Sexo: la mayoría de los usuarios son de sexo masculino
+![Sexo_usuarios](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/respuestas_usuarios/sex.PNG)
+
+#### Colores preferidos
+![Colores_usuarios](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/respuestas_usuarios/favorite-colors.PNG)
+
+#### Relación con redes sociales
+![Background_usuarios](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/respuestas_usuarios/social-media-background.PNG)
+
+#### Uso que le dan a las redes sociales
+![Background_usuarios_2](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/respuestas_usuarios/social-media-background-utility.PNG)
+
+#### Frecuencia de uso de las redes sociales
+![Background_usuarios_frecuencia_uso](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/respuestas_usuarios/frecuency.PNG)
+
+#### Todos los encuestados utilizarían una red social con este enfoque
+![Utilidad_red_social_propuesta](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/respuestas_usuarios/would-you-use-it.PNG)
+
+#### A los usuarios les gustaría que la red social tuviera:
+![Qué_debe_tener](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/respuestas_usuarios/wishes.PNG)
+
+
+### Principales funcionalidades del producto
+
+Actualmente la página le permite al usuario registrarse con su cuenta de [Facebook](https://www.facebook.com/) y de [Google](https://www.google.com/). 
+
+En cuanto el usuario ingresa a la red social, tiene que llenar un formulario mediante el cual obtenemos su información personal, la cual guarda en nuestra base de datos, alojada en [Firebase](https://firebase.google.com/). 
+
+Una vez que el usuario ha ingresado su datos, la información del usuario se puede ver reflejada en su perfil. Además puede comenzar a realizar publicaciones en el muro general.
+
+El usuario activo pude ver, desde su cuenta que solo sus publicaciones tienen dos botones, uno con un ícono de un bote de basura que le indica que puede eliminar la publicación, y otro que le indica que puede editar su publicación. Hasta este momento, únicamente tiene la función de eliminar publicaciones. Estamos trabajando en la edición de las mismas.
+
+Finalmente el usuario puede cerrar sesión con la seguridad de que su información estará intacta para cuando vuelva a ingresar a la plataforma.
+
+### Pruebas de usabilidad
+
+#### Parte Técnica
+En las pruebas de usabilidad nos dimos cuenta de que tenemos que trabajar en algunos detalles de la página, como el registro con correo electrónico. 
+
+#### Experiencia del Usuario
+Descubrimos que hay algunas cosas que no entienden los usuarios sobre el flujo de la página. Como que si sale el formulario de registro, deben llenarlo antes de poder navegar por la página. 
+
+Por lo tanto actualmente estamos trabajando en escribir instrucciones muy específicas en cada página de la red social para que los usuarios puedan realizar las tareas que se necesitan de manera sencilla y clara.
+
+![Usability_test](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/UT/WhatsApp%20Image%202019-03-24%20at%205.56.51%20PM.jpeg)
+
+### Cómo asegurarnos de que los usuarios utilicen la red
+
+Puede ser utilizada por los profesores para iformarles sobre las tareas, o compartirles material para estudiar para sus exámenes.
+
+
+## Historias de usuario
+
+* Yo, como usuario, quiero poder registrarme en la página "Tejiendo en Azul" para poder comenzar a interactuar con otras personas dentro del Espectro Autista.
+
+* Yo, como usuario, quiero poder llenar un formulario de registro para que se guarde mi información personal en una base de datos.
+
+* Yo, como usuario, quiero poder ver reflejada mi información personal en la página de mi perfil para que mis amigos puedan observarla (en el futuro).
+
+* Yo, como usuario, quiero poder hacer publicaciones para poder verlas reflejadas en un muro general, junto a las publicaciones de los demás usuarios de la red social.
+
+* Yo, como usuario, quiero poder eliminar mis propias publicaciones siempre que lo desee para poder tener mejor control de mi actividad en la red social.
+
+
+## Prototipos: Tejiendo en Azul
+
+A continuación presentamos nuestro prototipo de alta fidelidad:
+
+![loader-HFP](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/HFP/loader.PNG)
+
+![login-HFP](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/HFP/login.PNG)
+
+![register-HFP](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/HFP/register.PNG)
+
+![wall-HFP](https://github.com/Pau-za/CDMX007-social-network/blob/master/public/images/HFP/wall.PNG)
+
+
+----------------------------------------------
+
 # Creando una Red Social
 
 ## Preámbulo
@@ -380,10 +485,10 @@ Otras:
 
 ### `README.md`
 
-* [ ] Definición del producto
-* [ ] Resumen de entrevistas con usuarios.
-* [ ] Link/screenshots prototipo de baja fidelidad.
-* [ ] Conclusiones de pruebas con el producto en HTML.
+* [x] Definición del producto
+* [x] Resumen de entrevistas con usuarios.
+* [x] Link/screenshots prototipo de baja fidelidad.
+* [x] Conclusiones de pruebas con el producto en HTML.
 
 ### Pruebas / tests
 
@@ -393,24 +498,24 @@ Otras:
 
 ### Creación de cuenta (sign up)
 
-* [ ] Permite crear cuenta.
+* [x] Permite crear cuenta.
 * [ ] Valida email.
 * [ ] Valida password.
 * [ ] Muestra mensajes de error.
 
 ### Inicio de sesión (sign in)
 
-* [ ] Permite iniciar sesión.
+* [x] Permite iniciar sesión.
 * [ ] Valida email.
 * [ ] Valida password.
 * [ ] Muestra mensajes de error.
 
 ### Muro (wall/feed)
 
-* [ ] Muestra _muro_, o lista de publicaciones.
-* [ ] Permite hacer nuevas publicaciones.
-* [ ] Permite eliminar publicaciones.
-* [ ] Pide confirmación antes de borrar publicación.
+* [x] Muestra _muro_, o lista de publicaciones.
+* [x] Permite hacer nuevas publicaciones.
+* [x] Permite eliminar publicaciones.
+* [x] Pide confirmación antes de borrar publicación.
 * [ ] Permite editar publicación en el mismo lugar (in place).
 * [ ] Permite filtrar publicaciones por público/privado.
 * [ ] Permite marcar publicaciones como _gustados_ (like, corazón, estrella,
